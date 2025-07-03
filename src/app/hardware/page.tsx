@@ -41,20 +41,7 @@ export default function Hardware() {
   const [preorderStatus, setPreorderStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
   
-  // 제품 정보를 안전하게 가져오는 함수
-  const getProductInfo = (index: number, field: string) => {
-    const key = `hardware.products.${index}.${field}`
-    const value = t(key)
-    console.log(`Translation key: ${key}, value: ${value}`)
-    return value
-  }
-  
-  const getProductFeature = (productIndex: number, featureIndex: number) => {
-    const key = `hardware.products.${productIndex}.features.${featureIndex}`
-    const value = t(key)
-    console.log(`Feature key: ${key}, value: ${value}`)
-    return value
-  }
+
   
   const handlePreorder = (e: React.FormEvent) => {
     e.preventDefault()
@@ -215,7 +202,7 @@ export default function Hardware() {
                 {/* 출시 일정 배지 */}
                 <div className="absolute -top-4 right-6">
                   <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-sm font-semibold">
-                    {getProductInfo(index, 'releaseDate')}
+                    {t(`hardware.products.${index}.releaseDate`)}
                   </span>
                 </div>
                 
@@ -246,16 +233,16 @@ export default function Hardware() {
                 {/* 제품 정보 */}
                 <div className="text-center">
                   <h3 className="text-3xl font-bold text-slate-900 mb-2">
-                    {getProductInfo(index, 'name')}
+                    {t(`hardware.products.${index}.name`)}
                   </h3>
                   <p className="text-slate-600 mb-6 text-lg">
-                    {getProductInfo(index, 'description')}
+                    {t(`hardware.products.${index}.description`)}
                   </p>
                   
                   {/* 가격 */}
                   <div className="mb-6">
                     <span className="text-4xl font-bold text-slate-900">
-                      {getProductInfo(index, 'price')}
+                      {t(`hardware.products.${index}.price`)}
                     </span>
                   </div>
                   
@@ -265,7 +252,7 @@ export default function Hardware() {
                       <div key={featureIndex} className="flex items-center gap-3 text-slate-600">
                         <CheckCircleIcon className="w-5 h-5 text-green-500 flex-shrink-0" />
                         <span className="text-left">
-                          {getProductFeature(index, featureIndex)}
+                          {t(`hardware.products.${index}.features.${featureIndex}`)}
                         </span>
                       </div>
                     ))}
@@ -285,7 +272,7 @@ export default function Hardware() {
               {t('hardware.specs.title')}
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              {getProductInfo(selectedProduct, 'name')} {t('hardware.specs.subtitle')}
+              {t(`hardware.products.${selectedProduct}.name`)} {t('hardware.specs.subtitle')}
             </p>
           </AnimatedSection>
           

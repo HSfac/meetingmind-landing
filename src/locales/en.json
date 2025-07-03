@@ -166,6 +166,9 @@
     "titleHighlight": "Hardware",
     "subtitle": "Professional hardware solutions for AI-powered meeting analysis",
     "products": {
+      "title": "Choose Your Perfect Product",
+      "subtitle": "We provide optimal hardware solutions for your meeting environment and team size",
+      "selected": "Selected",
       "0": {
         "name": "MeetingMind Pod",
         "description": "Smart meeting device placed at the center of the table",
@@ -191,37 +194,9 @@
         "releaseDate": "Q2 2024"
       }
     },
-    "preorder": {
-      "title": "Pre-order Benefits",
-      "benefits": {
-        "0": "30% off launch price",
-        "1": "Free shipping",
-        "2": "1-year warranty",
-        "3": "3 months premium app free"
-      },
-      "title": "Pre-order Benefits",
-      "benefitTitles": {
-        "0": "Special Discount",
-        "1": "Free Shipping",
-        "2": "Quality Guarantee",
-        "3": "Premium Benefits"
-      },
-      "cta": "Pre-order Now",
-      "note": "* Pre-orders can be cancelled anytime",
-      "form": {
-        "placeholder": "Enter your email address",
-        "loading": "Processing...",
-        "success": "Pre-order completed! We'll notify you about the launch via email."
-      }
-    },
     "cta": {
       "explore": "Explore Products",
       "demo": "Watch Demo"
-    },
-    "products": {
-      "title": "Choose Your Perfect Product",
-      "subtitle": "We provide optimal hardware solutions for your meeting environment and team size",
-      "selected": "Selected"
     },
     "specs": {
       "title": "Technical Specifications",
@@ -260,12 +235,21 @@
       }
     },
     "preorder": {
+      "title": "Pre-order Benefits",
+      "benefits": {
+        "0": "30% off launch price",
+        "1": "Free shipping",
+        "2": "1-year warranty",
+        "3": "3 months premium app free"
+      },
       "benefitTitles": {
         "0": "Special Discount",
         "1": "Free Shipping",
         "2": "Quality Guarantee",
         "3": "Premium Benefits"
       },
+      "cta": "Pre-order Now",
+      "note": "* Pre-orders can be cancelled anytime",
       "form": {
         "placeholder": "Enter your email address",
         "loading": "Processing...",
