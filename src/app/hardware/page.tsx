@@ -47,18 +47,28 @@ export default function Hardware() {
 
   const products = [
     {
-      name: 'MeetingMind Pro',
-      price: '₩599,000',
-      description: '전문가급 AI 회의 솔루션',
-      features: ['4K 비디오 녹화', '실시간 AI 번역', '음성 인식 99.9%', '클라우드 동기화'],
-      image: '/api/placeholder/600/400'
+      name: t('hardware.products.0.name'),
+      price: t('hardware.products.0.price'),
+      description: t('hardware.products.0.description'),
+      features: [
+        t('hardware.products.0.features.0'),
+        t('hardware.products.0.features.1'),
+        t('hardware.products.0.features.2'),
+        t('hardware.products.0.features.3')
+      ],
+      releaseDate: t('hardware.products.0.releaseDate')
     },
     {
-      name: 'MeetingMind Essential',
-      price: '₩399,000',
-      description: '중소기업을 위한 스마트 솔루션',
-      features: ['HD 비디오 녹화', '기본 AI 번역', '음성 인식 95%', '로컬 저장'],
-      image: '/api/placeholder/600/400'
+      name: t('hardware.products.1.name'),
+      price: t('hardware.products.1.price'),
+      description: t('hardware.products.1.description'),
+      features: [
+        t('hardware.products.1.features.0'),
+        t('hardware.products.1.features.1'),
+        t('hardware.products.1.features.2'),
+        t('hardware.products.1.features.3')
+      ],
+      releaseDate: t('hardware.products.1.releaseDate')
     }
   ]
 
@@ -107,23 +117,32 @@ export default function Hardware() {
         <section className="pt-32 pb-24 bg-white relative overflow-hidden">
           <div className="max-w-6xl mx-auto px-6 text-center">
             <AnimatedSection>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-8"
+              >
+                <CpuChipIcon className="w-4 h-4" />
+                {t('hardware.badge')}
+              </motion.div>
+              
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="text-6xl lg:text-7xl font-semibold text-gray-900 mb-6 leading-tight tracking-tight"
+                className="text-5xl md:text-6xl lg:text-7xl apple-heading text-gray-900 mb-6 leading-tight"
               >
-                MeetingMind
+                {t('hardware.title')} <span className="text-gray-600">{t('hardware.titleHighlight')}</span>
               </motion.h1>
               
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl apple-subheading max-w-3xl mx-auto mb-12"
               >
-                AI가 만든 회의의 새로운 표준.<br />
-                더 스마트하고, 더 효율적인 회의를 경험하세요.
+                {t('hardware.subtitle')}
               </motion.p>
               
               <motion.div
@@ -132,11 +151,11 @@ export default function Hardware() {
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
               >
-                <button className="px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors duration-200">
-                  지금 주문하기
+                <button className="btn btn-primary">
+                  {t('hardware.cta.explore')}
                 </button>
-                <button className="px-8 py-3 text-blue-600 hover:text-blue-700 transition-colors duration-200 font-medium">
-                  더 알아보기
+                <button className="btn btn-secondary">
+                  {t('hardware.cta.demo')}
                 </button>
               </motion.div>
               
@@ -196,54 +215,60 @@ export default function Hardware() {
 
         {/* 제품 라인업 */}
         <section className="py-24 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6">
             <AnimatedSection className="text-center mb-16">
-              <h2 className="text-4xl font-semibold text-gray-900 mb-4">
-                라인업
+              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+                {t('hardware.products.title')}
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                당신의 필요에 맞는 완벽한 솔루션을 찾아보세요.
+              <p className="text-xl apple-subheading max-w-2xl mx-auto">
+                {t('hardware.products.subtitle')}
               </p>
             </AnimatedSection>
-
-            <div className="grid lg:grid-cols-2 gap-12">
+            
+            <div className="grid md:grid-cols-2 gap-8">
               {products.map((product, index) => (
-                <AnimatedSection key={index}>
-                  <motion.div
-                    whileHover={{ y: -5 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
-                  >
-                    <div className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl mb-6 flex items-center justify-center">
-                      <DevicePhoneMobileIcon className="w-20 h-20 text-gray-400" />
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="apple-card p-8 group cursor-pointer hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mb-6 group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
+                    <div className="w-24 h-24 bg-gray-300 rounded-xl flex items-center justify-center">
+                      <DevicePhoneMobileIcon className="w-12 h-12 text-gray-500" />
                     </div>
-                    
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-2">
-                      {product.name}
-                    </h3>
-                    
-                    <p className="text-gray-600 mb-4">
-                      {product.description}
-                    </p>
-                    
-                    <div className="text-3xl font-semibold text-gray-900 mb-6">
-                      {product.price}
+                  </div>
+                  
+                  <div className="mb-4">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-2xl font-semibold text-gray-900">{product.name}</h3>
+                      <span className="text-2xl font-bold text-gray-900">{product.price}</span>
                     </div>
-                    
-                    <ul className="space-y-2 mb-8">
-                      {product.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <CheckCircleIcon className="w-5 h-5 text-green-500" />
-                          <span className="text-gray-600">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    <button className="w-full py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors duration-200">
-                      선택하기
+                    <p className="text-gray-600 mb-4">{product.description}</p>
+                    <div className="text-sm text-gray-500 mb-4">
+                      출시 예정: {product.releaseDate}
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    {product.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center gap-3">
+                        <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center">
+                          <CheckCircleIcon className="w-3 h-3 text-green-600" />
+                        </div>
+                        <span className="text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <button className="w-full py-3 px-4 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors duration-200">
+                      {t('hardware.products.selected')}
                     </button>
-                  </motion.div>
-                </AnimatedSection>
+                  </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -251,120 +276,126 @@ export default function Hardware() {
 
         {/* 기술 사양 */}
         <section className="py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6">
             <AnimatedSection className="text-center mb-16">
-              <h2 className="text-4xl font-semibold text-gray-900 mb-4">
+              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
                 기술 사양
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                최첨단 기술로 완성된 완벽한 하드웨어.
+              <p className="text-xl apple-subheading max-w-2xl mx-auto">
+                업계 최고 수준의 하드웨어 기술
               </p>
             </AnimatedSection>
-
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {specifications.map((spec, index) => (
-                <AnimatedSection key={index}>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                      <spec.icon className="w-8 h-8 text-blue-600" />
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {spec.title}
-                    </h3>
-                    <p className="text-gray-600">
-                      {spec.description}
-                    </p>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="apple-card p-6 text-center group hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-gray-800 transition-colors">
+                    <spec.icon className="w-8 h-8 text-white" />
                   </div>
-                </AnimatedSection>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{spec.title}</h3>
+                  <p className="text-gray-600 text-sm">{spec.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 고객 후기 */}
+        {/* 고객 리뷰 */}
         <section className="py-24 bg-gray-50">
           <div className="max-w-6xl mx-auto px-6">
             <AnimatedSection className="text-center mb-16">
-              <h2 className="text-4xl font-semibold text-gray-900 mb-4">
-                고객 후기
+              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+                고객 리뷰
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                실제 사용자들의 생생한 후기를 확인해보세요.
+              <p className="text-xl apple-subheading max-w-2xl mx-auto">
+                실제 사용자들의 생생한 후기
               </p>
             </AnimatedSection>
-
+            
             <div className="grid md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
-                <AnimatedSection key={index}>
-                  <div className="bg-white rounded-3xl p-8 shadow-lg">
-                    <div className="flex items-center gap-1 mb-4">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-gray-600 mb-6 text-lg leading-relaxed">
-                      &ldquo;{testimonial.content}&rdquo;
-                    </p>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="apple-card p-8 hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center gap-2 mb-4">
+                    {Array.from({ length: testimonial.rating }).map((_, i) => (
+                      <StarIcon key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 mb-6 leading-relaxed">&ldquo;{testimonial.content}&rdquo;</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
                     <div>
-                      <div className="font-semibold text-gray-900">
-                        {testimonial.name}
-                      </div>
-                      <div className="text-gray-500">
-                        {testimonial.company}
-                      </div>
+                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                      <div className="text-sm text-gray-600">{testimonial.company}</div>
                     </div>
                   </div>
-                </AnimatedSection>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 주문 섹션 */}
+        {/* 사전 예약 */}
         <section className="py-24 bg-white">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <AnimatedSection>
-              <h2 className="text-4xl font-semibold text-gray-900 mb-4">
-                지금 주문하고 미래를 경험하세요
+              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+                사전 예약
               </h2>
-              <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-                한정 수량으로 사전 주문을 받고 있습니다. 
-                놓치지 마세요.
+              <p className="text-xl apple-subheading mb-8">
+                출시 소식을 가장 먼저 받아보세요
               </p>
               
               <form onSubmit={handlePreorder} className="max-w-md mx-auto">
-                <div className="flex gap-4 mb-6">
+                <div className="flex gap-4">
                   <input
                     type="email"
                     value={preorderEmail}
                     onChange={(e) => setPreorderEmail(e.target.value)}
-                    placeholder="이메일 주소"
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="이메일 주소를 입력하세요"
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900"
                     required
                   />
                   <button
                     type="submit"
                     disabled={preorderStatus === 'loading'}
-                    className="px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-700 transition-colors duration-200 disabled:opacity-50"
+                    className="btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {preorderStatus === 'loading' ? '처리 중...' : '사전 주문'}
+                    {preorderStatus === 'loading' ? (
+                      <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent"></div>
+                    ) : (
+                      '예약하기'
+                    )}
                   </button>
                 </div>
                 
                 {preorderStatus === 'success' && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="text-green-600 font-medium"
+                    className="mt-4 flex items-center justify-center gap-2 text-green-600"
                   >
-                    사전 주문이 완료되었습니다!
+                    <CheckCircleIcon className="w-5 h-5" />
+                    <span>사전 예약이 완료되었습니다!</span>
                   </motion.div>
                 )}
               </form>
             </AnimatedSection>
           </div>
         </section>
-
       </main>
     </>
   )

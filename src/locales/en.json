@@ -427,32 +427,81 @@
     "hero": {
       "title": "Leading with",
       "titleHighlight": "AI Meeting Innovation",
-      "subtitle": "MeetingMind helps tens of thousands of users worldwide make their meetings more efficient and productive."
+      "subtitle": "MeetingMind helps tens of thousands of users worldwide make their meetings more efficient and productive.",
+      "cta": {
+        "video": "Watch Product Video",
+        "contact": "Contact Us"
+      }
+    },
+    "achievements": {
+      "title": "Innovation Proven by Results",
+      "subtitle": "MeetingMind chosen by users worldwide",
+      "items": {
+        "0": {
+          "number": "25,000+",
+          "label": "Active Users"
+        },
+        "1": {
+          "number": "98%",
+          "label": "Customer Satisfaction"
+        },
+        "2": {
+          "number": "500,000+",
+          "label": "Meetings Analyzed"
+        },
+        "3": {
+          "number": "24/7",
+          "label": "Customer Support"
+        }
+      }
     },
     "mission": {
       "title": "Our Mission",
       "description": "MeetingMind presents a new paradigm of meetings through AI technology. Our goal is to go beyond simple recording to create insights and maximize team productivity.",
-      "stats": {
-        "users": "Active Users",
-        "meetings": "Meetings Analyzed",
-        "satisfaction": "Customer Satisfaction",
-        "languages": "Supported Languages"
+      "values": {
+        "0": {
+          "title": "Innovation",
+          "description": "We innovate meeting culture using the latest AI technology and provide better solutions through continuous R&D."
+        },
+        "1": {
+          "title": "Privacy",
+          "description": "We protect user privacy and meeting data with the highest level of security and maintain transparent data policies."
+        },
+        "2": {
+          "title": "User-Centric",
+          "description": "We improve our product based on user feedback and prioritize user experience in all decisions."
+        }
       }
     },
-    "values": {
-      "title": "Our Values",
-      "subtitle": "Core values that MeetingMind pursues",
-      "innovation": {
-        "title": "Innovation",
-        "description": "We innovate meeting culture using the latest AI technology and provide better solutions through continuous R&D."
-      },
-      "privacy": {
-        "title": "Privacy",
-        "description": "We protect user privacy and meeting data with the highest level of security and maintain transparent data policies."
-      },
-      "userFirst": {
-        "title": "User-Centric",
-        "description": "We improve our product based on user feedback and prioritize user experience in all decisions."
+    "timeline": {
+      "title": "Our Journey",
+      "subtitle": "The footsteps of innovation that MeetingMind has taken",
+      "items": {
+        "0": {
+          "year": "2023",
+          "title": "MeetingMind Founded",
+          "description": "The team was formed with the dream of an AI meeting solution. Started developing the initial prototype."
+        },
+        "1": {
+          "year": "2023 Q3",
+          "title": "Beta Version Launch",
+          "description": "Launched the first beta version and improved the product with 100 early adopters."
+        },
+        "2": {
+          "year": "2024 Q1",
+          "title": "Official Service Launch",
+          "description": "Launched the official service and acquired 1,000 users in the first month."
+        },
+        "3": {
+          "year": "2024 Q2",
+          "title": "Series A Funding",
+          "description": "Raised 5 billion won in Series A funding, laying the foundation for global expansion."
+        },
+        "4": {
+          "year": "2024 Q4",
+          "title": "AI Hardware Launch",
+          "description": "Launched the dedicated AI hardware 'MeetingMind Pro' to complete the integrated hardware and software solution."
+        }
       }
     },
     "team": {
@@ -603,6 +652,88 @@
       "buttons": {
         "freeTrial": "Start Free Trial",
         "liveDemo": "Schedule Live Demo"
+      }
+    }
+  },
+  "terms": {
+    "meta": {
+      "title": "Terms of Service",
+      "description": "Check MeetingMind's Terms of Service. Please read carefully before using our service.",
+      "keywords": "MeetingMind Terms of Service, service terms, usage conditions, user rights"
+    },
+    "title": "Terms of Service",
+    "lastUpdated": "Last Updated",
+    "sections": {
+      "general": {
+        "title": "Article 1 (Purpose)",
+        "content": "These Terms of Service aim to define the rights, obligations, and responsibilities between the Company and users regarding the use of AI-powered meeting analysis service (the 'Service') provided by MeetingMind (the 'Company')."
+      },
+      "definitions": {
+        "title": "Article 2 (Definitions)",
+        "content": "The definitions of terms used in these Terms are as follows:\n1. 'Service' refers to the AI-powered meeting analysis platform provided by the Company.\n2. 'User' refers to members and non-members who access the Service and receive services provided by the Company in accordance with these Terms.\n3. 'Member' refers to a person who has registered as a member by providing personal information to the Service and can continuously use the Service."
+      },
+      "service": {
+        "title": "Article 3 (Service Content)",
+        "content": "The Company provides the following services:\n1. Meeting voice recording and transcription service\n2. AI-powered meeting content analysis and summarization\n3. Meeting participant speech analysis and action item extraction\n4. Meeting data storage and search service\n5. Meeting content sharing and collaboration tools among team members\n6. Other services determined by the Company"
+      },
+      "membership": {
+        "title": "Article 4 (Membership Registration)",
+        "content": "Membership registration is concluded when a user agrees to the Terms and applies for membership registration, and the Company approves such application. The Company may not approve applications that fall under the following categories:\n1. When the applicant has previously lost membership status under these Terms\n2. When using a false name or another person's identity\n3. When false information is provided or required information is not provided"
+      },
+      "privacy": {
+        "title": "Article 5 (Privacy Protection)",
+        "content": "The Company establishes and publishes a privacy policy in accordance with applicable laws to protect users' personal information. Users' personal information is protected in accordance with applicable laws and the privacy policy."
+      },
+      "restrictions": {
+        "title": "Article 6 (Usage Restrictions)",
+        "content": "The Company may restrict or suspend service usage without prior notice when users engage in the following activities:\n1. Stealing others' information or registering false information\n2. Disrupting the stable operation of the Service\n3. Entering content that violates public order or good morals\n4. Engaging in criminal activities or other illegal activities"
+      },
+      "disclaimer": {
+        "title": "Article 7 (Disclaimer)",
+        "content": "The Company is exempt from responsibility for service provision when unable to provide services due to natural disasters, wars, and other force majeure events. The Company is not responsible for service usage disruptions or damages caused by users' fault."
+      }
+    }
+  },
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy",
+      "description": "Check MeetingMind's Privacy Policy. Detailed information about personal information collection, use, and protection.",
+      "keywords": "MeetingMind Privacy Policy, personal information protection, data processing, personal information collection"
+    },
+    "title": "Privacy Policy",
+    "lastUpdated": "Last Updated",
+    "sections": {
+      "overview": {
+        "title": "Privacy Policy Overview",
+        "content": "MeetingMind (the 'Company') values users' personal information and complies with applicable laws including the Personal Information Protection Act and the Act on Promotion of Information and Communications Network Utilization and Information Protection. The Company informs users about the purposes and methods of using personal information and the measures taken to protect personal information through this Privacy Policy."
+      },
+      "collection": {
+        "title": "Collection and Use of Personal Information",
+        "content": "The Company processes personal information for the following purposes:\n1. Contract fulfillment and fee settlement for service provision\n2. Confirmation of membership registration intention and member identification/authentication for membership services\n3. Maintenance and management of membership status, prevention of service misuse\n4. Record keeping for various notices, notifications, complaint handling, and dispute resolution\n5. Service improvement and customized service provision"
+      },
+      "items": {
+        "title": "Personal Information Items Collected",
+        "content": "The Company collects the following personal information:\n1. Required items: Name, email address, password\n2. Optional items: Mobile phone number, company name, job title\n3. Automatically collected items: IP address, cookies, service usage records, access logs, device information\n4. Information generated during service use: Meeting recording files, transcription text, analysis results"
+      },
+      "retention": {
+        "title": "Personal Information Retention and Use Period",
+        "content": "The Company destroys personal information without exception immediately after the collection and use purposes are achieved. However, the following information is retained for the specified periods for the reasons stated:\n1. Upon membership withdrawal: Retained for 1 year to prevent misuse\n2. Records related to contracts or subscription withdrawals: 5 years\n3. Records related to payment and supply of goods: 5 years\n4. Records related to consumer complaints or dispute resolution: 3 years"
+      },
+      "sharing": {
+        "title": "Third-Party Provision of Personal Information",
+        "content": "The Company does not provide users' personal information to external parties in principle. However, exceptions are made in the following cases:\n1. When users have given prior consent\n2. When required by law or legal procedures for investigation purposes\n3. When necessary for fee settlement related to service provision\n4. When provided in processed form that cannot identify specific individuals for statistics, academic research, or market research"
+      },
+      "security": {
+        "title": "Technical/Administrative Measures for Personal Information Protection",
+        "content": "The Company takes the following measures to safely process users' personal information:\n1. Minimization and education of personal information handling staff\n2. Access restrictions to personal information\n3. Storage and forgery prevention of access records\n4. Encryption of personal information\n5. Technical measures against hacking\n6. Access authority management for personal information processing systems"
+      },
+      "rights": {
+        "title": "Data Subject Rights and Exercise Methods",
+        "content": "Users can exercise the following rights as data subjects:\n1. Request for notification of personal information processing status\n2. Request for suspension of personal information processing\n3. Request for correction/deletion of personal information\n4. Request for damage compensation\nThe above rights can be exercised through written documents, telephone, email, fax, etc., and the Company will take measures without delay."
+      },
+      "contact": {
+        "title": "Personal Information Protection Officer",
+        "content": "The Company designates a Personal Information Protection Officer as follows to take overall responsibility for personal information processing and handle complaints and damage relief related to personal information processing:\n\nPersonal Information Protection Officer\nName: Mr. Kim OO\nPosition: Personal Information Protection Team Leader\nContact: privacy@meetingmind.ai\n\nPersonal Information Protection Department\nDepartment: Personal Information Protection Team\nContact: privacy@meetingmind.ai"
       }
     }
   }

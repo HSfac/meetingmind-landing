@@ -34,36 +34,36 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
 }
 
 export default function About() {
-  const { language } = useLanguage()
+  const { language, t } = useLanguage()
   
   const achievements = [
-    { number: "25K+", label: "활성 사용자", icon: UserGroupIcon },
-    { number: "500K+", label: "분석한 회의", icon: BoltIcon },
-    { number: "95%", label: "고객 만족도", icon: TrophyIcon },
-    { number: "12+", label: "지원 언어", icon: GlobeAltIcon }
+    { number: t('about.achievements.items.0.number'), label: t('about.achievements.items.0.label'), icon: UserGroupIcon },
+    { number: t('about.achievements.items.1.number'), label: t('about.achievements.items.1.label'), icon: BoltIcon },
+    { number: t('about.achievements.items.2.number'), label: t('about.achievements.items.2.label'), icon: TrophyIcon },
+    { number: t('about.achievements.items.3.number'), label: t('about.achievements.items.3.label'), icon: GlobeAltIcon }
   ]
 
   const timeline = [
-    { year: "2023", title: "회사 설립", desc: "AI 회의 솔루션의 비전으로 시작" },
-    { year: "2023 Q3", title: "베타 런칭", desc: "초기 사용자들과 함께 제품 검증" },
-    { year: "2024 Q1", title: "정식 출시", desc: "MeetingMind 1.0 공식 런칭" },
-    { year: "2024 Q2", title: "시리즈 A", desc: "50억원 투자 유치 성공" },
-    { year: "2024 Q4", title: "글로벌 진출", desc: "아시아 시장 확장 계획" }
+    { year: "2023", title: t('about.timeline.items.0.title'), desc: t('about.timeline.items.0.description') },
+    { year: "2023 Q3", title: t('about.timeline.items.1.title'), desc: t('about.timeline.items.1.description') },
+    { year: "2024 Q1", title: t('about.timeline.items.2.title'), desc: t('about.timeline.items.2.description') },
+    { year: "2024 Q2", title: t('about.timeline.items.3.title'), desc: t('about.timeline.items.3.description') },
+    { year: "2024 Q4", title: t('about.timeline.items.4.title'), desc: t('about.timeline.items.4.description') }
   ]
   
   return (
     <div>
       <Head>
-        <title>회사 소개 | MeetingMind</title>
-        <meta name="description" content="MeetingMind 회사 소개 - AI 기반 회의 솔루션으로 더 스마트한 회의 문화를 만들어갑니다." />
-        <meta name="keywords" content="MeetingMind, AI 회의, 회의 분석, 음성 인식, 회의 요약" />
-        <meta property="og:title" content="회사 소개 | MeetingMind" />
-        <meta property="og:description" content="MeetingMind 회사 소개 - AI 기반 회의 솔루션으로 더 스마트한 회의 문화를 만들어갑니다." />
+        <title>{t('about.meta.title')} | MeetingMind</title>
+        <meta name="description" content={t('about.meta.description')} />
+        <meta name="keywords" content={t('about.meta.keywords')} />
+        <meta property="og:title" content={`${t('about.meta.title')} | MeetingMind`} />
+        <meta property="og:description" content={t('about.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://meetingmind.ai/about" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="회사 소개 | MeetingMind" />
-        <meta name="twitter:description" content="MeetingMind 회사 소개 - AI 기반 회의 솔루션으로 더 스마트한 회의 문화를 만들어갑니다." />
+        <meta name="twitter:title" content={`${t('about.meta.title')} | MeetingMind`} />
+        <meta name="twitter:description" content={t('about.meta.description')} />
         <link rel="canonical" href="https://meetingmind.ai/about" />
         <html lang={language} />
       </Head>
@@ -80,7 +80,7 @@ export default function About() {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-8"
               >
                 <SparklesIcon className="w-4 h-4" />
-                회사 소개
+                {t('about.badge')}
               </motion.div>
               
               <motion.h1
@@ -89,9 +89,9 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-5xl md:text-6xl lg:text-7xl apple-heading text-gray-900 mb-6 leading-tight"
               >
-                미래의 회의를<br />
+                {t('about.hero.title')}<br />
                 <span className="text-gray-600">
-                  오늘 만나보세요
+                  {t('about.hero.titleHighlight')}
                 </span>
               </motion.h1>
               
@@ -101,7 +101,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-xl apple-subheading max-w-3xl mx-auto mb-12"
               >
-                MeetingMind는 AI 기반 회의 솔루션으로 더 스마트한 회의 문화를 만들어갑니다.
+                {t('about.hero.subtitle')}
               </motion.p>
               
               <motion.div
@@ -112,12 +112,12 @@ export default function About() {
               >
                 <button className="btn btn-primary group">
                   <PlayIcon className="w-5 h-5" />
-                  회사 소개 영상
+                  {t('about.hero.cta.video')}
                 </button>
                 
                 <button className="btn btn-secondary group">
                   <EnvelopeIcon className="w-5 h-5" />
-                  연락하기
+                  {t('about.hero.cta.contact')}
                   <ChevronRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </motion.div>
@@ -130,10 +130,10 @@ export default function About() {
           <div className="max-w-7xl mx-auto px-6">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
-                숫자로 보는 MeetingMind
+                {t('about.achievements.title')}
               </h2>
               <p className="text-xl apple-subheading max-w-2xl mx-auto">
-                전 세계 사용자들과 함께 만들어온 성과를 확인하세요
+                {t('about.achievements.subtitle')}
               </p>
             </AnimatedSection>
             
@@ -173,8 +173,8 @@ export default function About() {
                   <div className="w-24 h-24 bg-gray-900 rounded-3xl flex items-center justify-center mx-auto mb-8">
                     <LightBulbIcon className="w-12 h-12 text-white" />
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">혁신적 사고</h3>
-                  <p className="text-gray-600">AI 기술로 회의의 패러다임을 바꿉니다</p>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-4">{t('about.mission.values.0.title')}</h3>
+                  <p className="text-gray-600">{t('about.mission.values.0.description')}</p>
                 </div>
               </AnimatedSection>
               
@@ -182,29 +182,29 @@ export default function About() {
                 <div className="space-y-8">
                   <div>
                     <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-6">
-                      우리의 미션
+                      {t('about.mission.title')}
                     </h2>
                     <p className="text-xl apple-subheading leading-relaxed mb-8">
-                      모든 회의가 생산적이고 의미 있는 시간이 되도록 돕는 것이 우리의 목표입니다.
+                      {t('about.mission.description')}
                     </p>
                   </div>
                   
                   {/* Apple 스타일 가치 카드들 */}
                   <div className="space-y-4">
                     {[
-                      { icon: BoltIcon, title: "혁신", desc: "최신 AI 기술로 회의 문화 혁신" },
-                      { icon: ShieldCheckIcon, title: "신뢰", desc: "군사급 보안으로 데이터 보호" },
-                      { icon: HeartIcon, title: "사용자 중심", desc: "사용자 경험을 최우선으로" }
+                      { icon: BoltIcon, title: t('about.mission.values.0.title'), desc: t('about.mission.values.0.description') },
+                      { icon: ShieldCheckIcon, title: t('about.mission.values.1.title'), desc: t('about.mission.values.1.description') },
+                      { icon: HeartIcon, title: t('about.mission.values.2.title'), desc: t('about.mission.values.2.description') }
                     ].map((value, index) => (
                       <motion.div
                         key={index}
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="flex items-center gap-4 p-6 bg-gray-50 rounded-2xl hover:bg-gray-100 transition-all duration-300"
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="flex items-start gap-4 p-4 rounded-2xl hover:bg-gray-50 transition-colors"
                       >
-                        <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center">
+                        <div className="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
                           <value.icon className="w-6 h-6 text-white" />
                         </div>
                         <div>
@@ -222,19 +222,19 @@ export default function About() {
 
         {/* Apple 스타일 타임라인 섹션 */}
         <section className="py-24 bg-gray-50">
-          <div className="max-w-5xl mx-auto px-6">
+          <div className="max-w-7xl mx-auto px-6">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
-                성장의 여정
+                {t('about.timeline.title')}
               </h2>
-              <p className="text-xl apple-subheading">
-                MeetingMind가 걸어온 혁신의 발자취
+              <p className="text-xl apple-subheading max-w-2xl mx-auto">
+                {t('about.timeline.subtitle')}
               </p>
             </AnimatedSection>
             
             <div className="relative">
-              {/* Apple 스타일 타임라인 라인 */}
-              <div className="absolute left-1/2 transform -translate-x-0.5 w-1 h-full bg-gray-300 rounded-full" />
+              {/* 타임라인 라인 */}
+              <div className="absolute left-1/2 transform -translate-x-0.5 w-0.5 h-full bg-gray-300 hidden md:block"></div>
               
               <div className="space-y-12">
                 {timeline.map((item, index) => (
@@ -244,19 +244,20 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
+                    className={`flex items-center gap-8 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
                   >
-                    {/* Apple 스타일 타임라인 점 */}
-                    <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gray-900 rounded-full border-4 border-white shadow-md z-10" />
-                    
-                    {/* Apple 스타일 콘텐츠 카드 */}
-                    <div className={`w-5/12 ${index % 2 === 0 ? 'mr-auto pr-8' : 'ml-auto pl-8'}`}>
-                      <div className="apple-card p-6 hover:shadow-lg transition-all duration-300">
-                        <div className="text-sm font-semibold text-gray-600 mb-2">{item.year}</div>
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
+                    <div className="flex-1">
+                      <div className={`apple-card p-8 ${index % 2 === 0 ? 'md:text-right' : ''}`}>
+                        <div className="text-sm font-medium text-gray-500 mb-2">{item.year}</div>
+                        <h3 className="text-2xl font-semibold text-gray-900 mb-4">{item.title}</h3>
                         <p className="text-gray-600">{item.desc}</p>
                       </div>
                     </div>
+                    
+                    {/* 타임라인 노드 */}
+                    <div className="w-4 h-4 bg-gray-900 rounded-full flex-shrink-0 z-10 hidden md:block"></div>
+                    
+                    <div className="flex-1 hidden md:block"></div>
                   </motion.div>
                 ))}
               </div>
