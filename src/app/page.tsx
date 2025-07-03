@@ -34,7 +34,7 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
   )
 }
 
-// How It Works 섹션
+// How It Works 섹션 - Apple 스타일
 const HowItWorksSection = () => {
   const { t } = useLanguage()
   
@@ -42,37 +42,30 @@ const HowItWorksSection = () => {
     {
       step: '01',
       icon: MicrophoneIcon,
-      color: 'from-blue-500 to-slate-600',
       delay: 0.2
     },
     {
       step: '02',
       icon: BoltIcon,
-      color: 'from-slate-500 to-slate-700',
       delay: 0.4
     },
     {
       step: '03',
       icon: ShareIcon,
-      color: 'from-slate-700 to-slate-900',
       delay: 0.6
     }
   ]
 
   return (
-    <section id="how" className="py-32 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
-      {/* 배경 패턴 */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.1),transparent)] opacity-60" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(120,119,198,0.1),transparent)] opacity-60" />
-      
-      <div className="section-container relative z-10">
-        <AnimatedSection className="text-center mb-20">
+    <section id="how" className="py-24 bg-gray-50">
+      <div className="section-container">
+        <AnimatedSection className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6"
           >
             <BoltIcon className="w-4 h-4" />
             {t('howItWorks.badge')}
@@ -83,9 +76,9 @@ const HowItWorksSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl lg:text-6xl font-black text-slate-900 mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl apple-heading text-gray-900 mb-6"
           >
-            {t('howItWorks.title')} <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{t('howItWorks.titleHighlight')}</span>
+            {t('howItWorks.title')} <span className="text-gray-600">{t('howItWorks.titleHighlight')}</span>
           </motion.h2>
           
           <motion.p 
@@ -93,7 +86,7 @@ const HowItWorksSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl text-slate-600 max-w-2xl mx-auto"
+            className="text-xl apple-subheading max-w-2xl mx-auto"
           >
             {t('howItWorks.subtitle')}
           </motion.p>
@@ -103,90 +96,70 @@ const HowItWorksSection = () => {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 60, rotateX: -15 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ 
                 duration: 0.8, 
                 delay: step.delay,
-                ease: "easeOut"
-              }}
-              whileHover={{ 
-                y: -8, 
-                rotateY: 5, 
-                transition: { duration: 0.3 }
+                ease: [0.25, 0.1, 0.25, 1]
               }}
               className="group relative"
             >
               {/* 연결선 (마지막 카드가 아닐 때만) */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-6 w-12 h-0.5 bg-gradient-to-r from-slate-300 to-transparent z-0" />
+                <div className="hidden lg:block absolute top-1/2 -right-6 w-12 h-0.5 bg-gray-200 z-0" />
               )}
               
-              {/* 메인 카드 */}
-              <div className="relative bg-white rounded-3xl p-8 shadow-xl shadow-slate-200/50 border border-slate-100 group-hover:shadow-2xl group-hover:shadow-slate-300/30 transition-all duration-500 group-hover:border-slate-200">
-                {/* 카드 글로우 효과 */}
-                <div className={`absolute -inset-0.5 bg-gradient-to-r ${step.color} rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
-                
+              {/* Apple 스타일 카드 */}
+              <div className="apple-card p-8 text-center">
                 {/* 스텝 번호 */}
-                <div className="absolute -top-4 left-8">
-                  <div className={`w-12 h-12 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center shadow-lg text-white font-bold text-lg`}>
-                    {step.step}
-                  </div>
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-900 text-white rounded-full text-lg font-semibold mb-6">
+                  {step.step}
                 </div>
                 
                 {/* 아이콘 */}
-                <div className="flex justify-center mb-8 mt-4">
+                <div className="flex justify-center mb-6">
                   <motion.div
-                    whileHover={{ 
-                      scale: 1.1, 
-                      rotate: [0, 5, -5, 0],
-                      transition: { duration: 0.5 }
-                    }}
-                    className={`relative w-24 h-24 rounded-2xl bg-gradient-to-r ${step.color} flex items-center justify-center shadow-lg shadow-slate-300/30 group-hover:shadow-xl transition-all duration-300`}
+                    whileHover={{ scale: 1.05 }}
+                    className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-gray-200 transition-colors"
                   >
-                    <step.icon className="w-12 h-12 text-white" />
-                    
-                    {/* 아이콘 글로우 */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${step.color} rounded-2xl blur opacity-0 group-hover:opacity-40 transition-opacity duration-300`} />
+                    <step.icon className="w-8 h-8 text-gray-700" />
                   </motion.div>
                 </div>
                 
                 {/* 텍스트 콘텐츠 */}
-                <div className="text-center space-y-4">
+                <div className="space-y-4">
                   <div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-slate-800 transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {t(`howItWorks.steps.${index}.title`)}
                     </h3>
-                    <p className={`text-lg font-semibold bg-gradient-to-r ${step.color} bg-clip-text text-transparent`}>
+                    <p className="text-gray-600 font-medium">
                       {t(`howItWorks.steps.${index}.subtitle`)}
                     </p>
                   </div>
                   
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-gray-500 leading-relaxed">
                     {t(`howItWorks.steps.${index}.description`)}
                   </p>
                 </div>
-                
-                {/* 하단 장식 */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-slate-200 to-transparent group-hover:via-slate-300 transition-colors duration-300" />
               </div>
             </motion.div>
           ))}
         </div>
         
-        {/* 하단 장식 요소 */}
+        {/* Apple 스타일 하단 요소 */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex justify-center mt-16"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-full border border-blue-100">
-            <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-            <span className="text-slate-600 font-medium">{t('howItWorks.footer')}</span>
-            <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse delay-300" />
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-gray-200">
+            <div className="w-2 h-2 bg-green-500 rounded-full" />
+            <span className="text-gray-600 font-medium">{t('howItWorks.footer')}</span>
+            <div className="w-2 h-2 bg-blue-500 rounded-full" />
           </div>
         </motion.div>
       </div>
@@ -201,55 +174,40 @@ const FeaturesSection = () => {
   const features = [
     {
       icon: ChatBubbleBottomCenterTextIcon,
-      color: 'from-blue-500 to-slate-600',
       delay: 0.1
     },
     {
       icon: CheckCircleIcon,
-      color: 'from-slate-500 to-slate-700',
       delay: 0.2
     },
     {
       icon: MapIcon,
-      color: 'from-blue-600 to-slate-700',
       delay: 0.3
     },
     {
       icon: MagnifyingGlassIcon,
-      color: 'from-slate-600 to-slate-800',
       delay: 0.4
     },
     {
       icon: LinkIcon,
-      color: 'from-slate-500 to-slate-700',
       delay: 0.5
     },
     {
       icon: ShieldCheckIcon,
-      color: 'from-slate-600 to-slate-800',
       delay: 0.6
     }
   ]
 
   return (
-    <section id="features" className="py-32 bg-slate-900 relative overflow-hidden">
-      {/* 배경 그라데이션 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800/50 to-slate-900" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(100,116,139,0.05),transparent)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(100,116,139,0.05),transparent)]" />
-      
-      {/* 플로팅 요소들 */}
-      <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-slate-600/5 to-slate-700/5 rounded-full filter blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-slate-500/5 to-slate-600/5 rounded-full filter blur-3xl" />
-      
-      <div className="section-container relative z-10">
-        <AnimatedSection className="text-center mb-20">
+    <section id="features" className="py-24 bg-white">
+      <div className="section-container">
+        <AnimatedSection className="text-center mb-16">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100/10 to-purple-100/10 text-blue-400 text-sm font-medium mb-6 border border-blue-400/20"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6"
           >
             <BoltIcon className="w-4 h-4" />
             {t('features.badge')}
@@ -260,9 +218,9 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl lg:text-6xl font-black text-white mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl apple-heading text-gray-900 mb-6"
           >
-            {t('features.title')} <span className="bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">{t('features.titleHighlight')}</span>
+            {t('features.title')} <span className="text-gray-600">{t('features.titleHighlight')}</span>
           </motion.h2>
           
           <motion.p 
@@ -270,7 +228,7 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl text-slate-300 max-w-3xl mx-auto"
+            className="text-xl apple-subheading max-w-3xl mx-auto"
           >
             {t('features.subtitle')}
           </motion.p>
@@ -280,75 +238,47 @@ const FeaturesSection = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 60 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ 
                 duration: 0.6, 
                 delay: feature.delay,
-                ease: "easeOut"
+                ease: [0.25, 0.1, 0.25, 1]
               }}
-              whileHover={{ 
-                y: -8,
-                transition: { duration: 0.3 }
-              }}
-              className="group relative"
+              className="group"
             >
-              <div className="relative h-full bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/50 group-hover:border-slate-600/50 transition-all duration-500">
-                {/* 글래스모피즘 효과 */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-white/0 rounded-3xl" />
-                <div className={`absolute -inset-0.5 bg-gradient-to-r ${feature.color} rounded-3xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
-                
+              <div className="apple-card p-8 h-full">
                 {/* 배지 */}
-                <div className="absolute -top-3 right-6">
-                  <span className={`inline-block px-3 py-1 rounded-full bg-gradient-to-r ${feature.color} text-white text-xs font-semibold`}>
-                    {t(`features.items.${index}.badge`)}
-                  </span>
+                <div className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-700 mb-6">
+                  {t(`features.items.${index}.badge`)}
                 </div>
                 
                 {/* 아이콘 */}
-                <div className="relative mb-6">
+                <div className="mb-6">
                   <motion.div
-                    whileHover={{ 
-                      scale: 1.1,
-                      rotate: [0, 5, -5, 0],
-                      transition: { duration: 0.5 }
-                    }}
-                    className={`relative w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} flex items-center justify-center shadow-lg mb-4`}
+                    whileHover={{ scale: 1.05 }}
+                    className="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center group-hover:bg-gray-800 transition-colors"
                   >
-                    <feature.icon className="w-8 h-8 text-white" />
-                    
-                    {/* 리플 효과 */}
-                    <motion.div
-                      className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${feature.color}`}
-                      initial={{ scale: 1, opacity: 0 }}
-                      whileHover={{ 
-                        scale: 1.4, 
-                        opacity: [0, 0.3, 0],
-                        transition: { duration: 0.6 }
-                      }}
-                    />
+                    <feature.icon className="w-7 h-7 text-white" />
                   </motion.div>
                 </div>
                 
                 {/* 텍스트 콘텐츠 */}
-                <div className="relative z-10 space-y-4">
+                <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2 group-hover:text-slate-100 transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
                       {t(`features.items.${index}.title`)}
                     </h3>
-                    <p className={`text-sm font-semibold bg-gradient-to-r ${feature.color} bg-clip-text text-transparent`}>
+                    <p className="text-gray-600 font-medium">
                       {t(`features.items.${index}.subtitle`)}
                     </p>
                   </div>
                   
-                  <p className="text-slate-400 leading-relaxed group-hover:text-slate-300 transition-colors">
+                  <p className="text-gray-500 leading-relaxed">
                     {t(`features.items.${index}.description`)}
                   </p>
                 </div>
-                
-                {/* 하단 그라데이션 */}
-                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-60 transition-opacity duration-300 rounded-b-3xl`} />
               </div>
             </motion.div>
           ))}

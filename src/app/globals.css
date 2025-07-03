@@ -1,12 +1,40 @@
-/* 폰트 임포트 - 반드시 최상단에 위치 */
+/* Apple-style 폰트 임포트 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 컨테이너 및 유틸리티 클래스 */
+/* Apple-inspired CSS 변수 정의 */
+:root {
+  --color-primary: #007AFF;
+  --color-secondary: #5856D6;
+  --color-gray-light: #F2F2F7;
+  --color-gray-medium: #8E8E93;
+  --color-gray-dark: #1C1C1E;
+  --color-text-primary: #000000;
+  --color-text-secondary: #3C3C43;
+  --color-background: #FFFFFF;
+  --color-surface: #FAFAFA;
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 20px;
+  --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  --shadow-large: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* 기본 폰트 설정 - Apple SF Pro 스타일 */
+html {
+  font-family: 'Inter', 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+  scroll-behavior: smooth;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apple-style 컨테이너 */
 .section-container {
   @apply max-w-7xl mx-auto px-6 lg:px-8;
 }
@@ -15,33 +43,38 @@
   perspective: 1000px;
 }
 
-/* CSS 변수 정의 */
-:root {
-  --primary: #2E74FF;
-  --accent: #00C9A7;
-  --dark: #121826;
-  --light: #F8FAFC;
-  --radius-card: 12px;
-}
-
-/* 기본 폰트 설정 */
-html {
-  font-family: 'Pretendard Variable', 'Inter', sans-serif;
-  scroll-behavior: smooth;
-}
-
-/* 커스텀 버튼 스타일 */
+/* Apple-style 컴포넌트 스타일 */
 @layer components {
   .btn {
-    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ease-out;
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full font-medium transition-all duration-300 ease-out;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
   
   .btn-primary {
-    @apply btn text-white bg-gradient-to-r from-blue-600 to-teal-500 shadow-lg hover:opacity-90 hover:shadow-xl;
+    @apply btn text-white bg-black hover:bg-gray-800 active:bg-gray-900;
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .btn-secondary {
+    @apply btn text-black bg-white border border-gray-200 hover:bg-gray-50 active:bg-gray-100;
+    box-shadow: var(--shadow-small);
   }
   
   .btn-outline {
-    @apply btn border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white hover:shadow-lg;
+    @apply btn border-2 text-black hover:bg-black hover:text-white;
+    border-color: var(--color-gray-medium);
+  }
+
+  .apple-card {
+    @apply bg-white rounded-3xl border border-gray-100;
+    box-shadow: var(--shadow-small);
+    transition: all 0.3s ease;
+  }
+  
+  .apple-card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-2px);
   }
 
   .section-container {
@@ -54,6 +87,16 @@ html {
 
   .fade-in.visible {
     @apply opacity-100 translate-y-0;
+  }
+  
+  .apple-heading {
+    @apply font-semibold tracking-tight;
+    letter-spacing: -0.04em;
+  }
+  
+  .apple-subheading {
+    @apply text-gray-600 font-normal;
+    letter-spacing: -0.01em;
   }
 }
 

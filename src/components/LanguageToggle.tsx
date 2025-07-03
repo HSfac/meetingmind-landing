@@ -15,36 +15,23 @@ export const LanguageToggle: React.FC = () => {
   return (
     <motion.button
       onClick={toggleLanguage}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="relative inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+      className="relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-100 hover:bg-gray-200 transition-all duration-300"
       title={t('nav.languageToggle')}
     >
-      <GlobeAltIcon className="w-4 h-4" />
+      <GlobeAltIcon className="w-4 h-4 text-gray-600" />
       
-      {/* 언어 표시 */}
+      {/* Apple 스타일 언어 표시 */}
       <div className="relative flex items-center gap-1">
-        <span className={`text-sm font-medium transition-opacity duration-300 ${language === 'ko' ? 'opacity-100' : 'opacity-50'}`}>
+        <span className={`text-sm font-medium transition-colors duration-300 ${language === 'ko' ? 'text-gray-900' : 'text-gray-500'}`}>
           KO
         </span>
-        <span className="text-white/50">|</span>
-        <span className={`text-sm font-medium transition-opacity duration-300 ${language === 'en' ? 'opacity-100' : 'opacity-50'}`}>
+        <span className="text-gray-300">|</span>
+        <span className={`text-sm font-medium transition-colors duration-300 ${language === 'en' ? 'text-gray-900' : 'text-gray-500'}`}>
           EN
         </span>
       </div>
-      
-      {/* 슬라이딩 백그라운드 */}
-      <motion.div
-        className="absolute inset-0 bg-blue-500/30 rounded-full"
-        animate={{
-          x: language === 'ko' ? 0 : '100%'
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 30
-        }}
-      />
     </motion.button>
   )
 }

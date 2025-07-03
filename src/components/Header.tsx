@@ -17,36 +17,29 @@ const Header = () => {
     { href: '/contact', label: t('nav.contact') },
   ]
 
-  // 홈페이지, 하드웨어 페이지, 소개 페이지, 컨택트 페이지 모두 어두운 배경
-  const isHomePage = pathname === '/'
-  const isHardwarePage = pathname === '/hardware'
-  const isAboutPage = pathname === '/about'
-  const isContactPage = pathname === '/contact'
-  const isDarkBackground = isHomePage || isHardwarePage || isAboutPage || isContactPage
+  // Apple 스타일 - 모든 페이지에서 일관된 헤더 스타일
+  const headerClass = "fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200/50 px-6 py-4"
   
-  const headerClass = isDarkBackground 
-    ? "absolute top-0 left-0 right-0 z-50 p-6"
-    : "fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/50 px-6 py-4"
-  
-  const logoClass = isDarkBackground 
-    ? "text-2xl font-bold text-white"
-    : "text-2xl font-bold text-slate-900"
+  const logoClass = "text-xl font-semibold text-gray-900 apple-heading"
     
-  const navLinkClass = (isActive: boolean) => isDarkBackground
-    ? `font-medium transition-colors ${isActive ? 'text-white' : 'text-white/80 hover:text-white'}`
-    : `font-medium transition-colors ${isActive ? 'text-blue-600' : 'text-slate-600 hover:text-slate-900'}`
+  const navLinkClass = (isActive: boolean) => 
+    `font-medium transition-colors duration-300 ${
+      isActive 
+        ? 'text-gray-900' 
+        : 'text-gray-600 hover:text-gray-900'
+    }`
 
   return (
     <header className={headerClass}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* 로고 */}
+        {/* Apple 스타일 로고 */}
         <Link href="/" className={logoClass}>
           MeetingMind
         </Link>
 
-        {/* 네비게이션 & 액션 */}
+        {/* Apple 스타일 네비게이션 */}
         <div className="flex items-center gap-8">
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -57,7 +50,17 @@ const Header = () => {
               </Link>
             ))}
           </nav>
-          <LanguageToggle />
+          
+          {/* CTA 버튼 */}
+          <div className="flex items-center gap-4">
+            <LanguageToggle />
+            <Link
+              href="#cta"
+              className="btn btn-primary text-sm"
+            >
+              {t('nav.cta')}
+            </Link>
+          </div>
         </div>
       </div>
     </header>

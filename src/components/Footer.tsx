@@ -44,169 +44,162 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-slate-900 text-white relative overflow-hidden">
-      {/* 배경 장식 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-800/50 to-slate-900" />
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent" />
-      
-      <div className="relative z-10">
-        {/* 메인 푸터 콘텐츠 */}
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid lg:grid-cols-6 gap-12">
-            {/* 브랜드 섹션 */}
-            <div className="lg:col-span-2">
-              <Link href="/" className="inline-block mb-6">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <span className="text-white font-bold text-lg">M</span>
-                  </div>
-                  <span className="text-2xl font-bold">MeetingMind</span>
+    <footer className="bg-gray-50 text-gray-600 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid lg:grid-cols-6 gap-12">
+          {/* Apple 스타일 브랜드 섹션 */}
+          <div className="lg:col-span-2">
+            <Link href="/" className="inline-block mb-6">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-gray-900 rounded-2xl flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">M</span>
                 </div>
-              </Link>
-              
-              <p className="text-slate-300 text-lg leading-relaxed mb-6">
-                AI 기반 회의 솔루션으로 더 스마트한 회의 문화를 만들어갑니다.
-              </p>
-              
-              {/* 연락처 정보 */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3 text-slate-400">
-                  <EnvelopeIcon className="w-5 h-5" />
-                  <span>contact@meetingmind.ai</span>
-                </div>
-                <div className="flex items-center gap-3 text-slate-400">
-                  <PhoneIcon className="w-5 h-5" />
-                  <span>02-1234-5678</span>
-                </div>
-                <div className="flex items-center gap-3 text-slate-400">
-                  <MapPinIcon className="w-5 h-5" />
-                  <span>서울특별시 강남구 테헤란로 123</span>
-                </div>
+                <span className="text-xl font-semibold text-gray-900 apple-heading">MeetingMind</span>
               </div>
-            </div>
+            </Link>
             
-            {/* 링크 섹션들 */}
-            <div className="lg:col-span-4 grid md:grid-cols-4 gap-8">
-              {/* 제품 */}
-              <div>
-                <h3 className="font-semibold text-white mb-4">제품</h3>
-                <ul className="space-y-3">
-                  {footerLinks.product.map((link, index) => (
-                    <li key={index}>
-                      <Link 
-                        href={link.href}
-                        className="text-slate-400 hover:text-white transition-colors duration-200"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              AI 기반 회의 솔루션으로 더 스마트한 회의 문화를 만들어갑니다.
+            </p>
+            
+            {/* 연락처 정보 */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-gray-500">
+                <EnvelopeIcon className="w-5 h-5" />
+                <span>contact@meetingmind.ai</span>
               </div>
-              
-              {/* 지원 */}
-              <div>
-                <h3 className="font-semibold text-white mb-4">지원</h3>
-                <ul className="space-y-3">
-                  {footerLinks.support.map((link, index) => (
-                    <li key={index}>
-                      <Link 
-                        href={link.href}
-                        className="text-slate-400 hover:text-white transition-colors duration-200"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex items-center gap-3 text-gray-500">
+                <PhoneIcon className="w-5 h-5" />
+                <span>02-1234-5678</span>
               </div>
-              
-              {/* 회사 */}
-              <div>
-                <h3 className="font-semibold text-white mb-4">회사</h3>
-                <ul className="space-y-3">
-                  {footerLinks.company.map((link, index) => (
-                    <li key={index}>
-                      <Link 
-                        href={link.href}
-                        className="text-slate-400 hover:text-white transition-colors duration-200"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              {/* 법적 정보 */}
-              <div>
-                <h3 className="font-semibold text-white mb-4">법적 정보</h3>
-                <ul className="space-y-3">
-                  {footerLinks.legal.map((link, index) => (
-                    <li key={index}>
-                      <Link 
-                        href={link.href}
-                        className="text-slate-400 hover:text-white transition-colors duration-200"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex items-center gap-3 text-gray-500">
+                <MapPinIcon className="w-5 h-5" />
+                <span>서울특별시 강남구 테헤란로 123</span>
               </div>
             </div>
           </div>
+          
+          {/* Apple 스타일 링크 섹션들 */}
+          <div className="lg:col-span-4 grid md:grid-cols-4 gap-8">
+            {/* 제품 */}
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-4">제품</h3>
+              <ul className="space-y-3">
+                {footerLinks.product.map((link, index) => (
+                  <li key={index}>
+                    <Link 
+                      href={link.href}
+                      className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* 지원 */}
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-4">지원</h3>
+              <ul className="space-y-3">
+                {footerLinks.support.map((link, index) => (
+                  <li key={index}>
+                    <Link 
+                      href={link.href}
+                      className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* 회사 */}
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-4">회사</h3>
+              <ul className="space-y-3">
+                {footerLinks.company.map((link, index) => (
+                  <li key={index}>
+                    <Link 
+                      href={link.href}
+                      className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* 법적 정보 */}
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-4">법적 정보</h3>
+              <ul className="space-y-3">
+                {footerLinks.legal.map((link, index) => (
+                  <li key={index}>
+                    <Link 
+                      href={link.href}
+                      className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
         
-        {/* 하단 바 */}
-        <div className="border-t border-slate-800">
+        {/* Apple 스타일 하단 바 */}
+        <div className="border-t border-gray-200">
           <div className="max-w-7xl mx-auto px-6 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="flex items-center gap-6 text-sm text-slate-400">
+              <div className="flex items-center gap-6 text-sm text-gray-500">
                 <span>© 2024 MeetingMind. All rights reserved.</span>
                 <span>Made with ❤️ in Seoul</span>
               </div>
               
               {/* 소셜 링크 & 맨 위로 버튼 */}
               <div className="flex items-center gap-4">
-                {/* 소셜 링크들 */}
+                {/* Apple 스타일 소셜 링크들 */}
                 <div className="flex items-center gap-3">
                   <a 
                     href="#" 
-                    className="w-8 h-8 bg-slate-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-colors duration-200"
+                    className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors duration-200"
                     aria-label="Twitter"
                   >
-                    <span className="text-xs font-bold">T</span>
+                    <span className="text-xs font-bold text-gray-600">T</span>
                   </a>
                   <a 
                     href="#" 
-                    className="w-8 h-8 bg-slate-800 hover:bg-blue-800 rounded-lg flex items-center justify-center transition-colors duration-200"
+                    className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors duration-200"
                     aria-label="LinkedIn"
                   >
-                    <span className="text-xs font-bold">in</span>
+                    <span className="text-xs font-bold text-gray-600">in</span>
                   </a>
                   <a 
                     href="#" 
-                    className="w-8 h-8 bg-slate-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors duration-200"
+                    className="w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center transition-colors duration-200"
                     aria-label="GitHub"
                   >
-                    <span className="text-xs font-bold">G</span>
+                    <span className="text-xs font-bold text-gray-600">G</span>
                   </a>
                 </div>
                 
-                {/* 맨 위로 버튼 */}
+                {/* Apple 스타일 맨 위로 버튼 */}
                 <button
                   onClick={scrollToTop}
-                  className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-105"
+                  className="w-10 h-10 bg-gray-900 hover:bg-gray-800 rounded-xl flex items-center justify-center transition-all duration-200 hover:scale-105"
                   aria-label="맨 위로"
                 >
-                  <ArrowUpIcon className="w-5 h-5" />
+                  <ArrowUpIcon className="w-5 h-5 text-white" />
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
     </footer>
   )
 }
