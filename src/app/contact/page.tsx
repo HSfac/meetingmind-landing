@@ -8,26 +8,25 @@ import {
   EnvelopeIcon,
   PhoneIcon,
   MapPinIcon,
-  ClockIcon,
   ChatBubbleLeftRightIcon,
   PaperAirplaneIcon,
   CheckCircleIcon,
-  ExclamationTriangleIcon,
-  GlobeAltIcon,
   UserGroupIcon,
   HeartIcon,
   LightBulbIcon,
-  SparklesIcon
+  ChevronDownIcon,
+  BuildingOfficeIcon,
+  DevicePhoneMobileIcon
 } from '@heroicons/react/24/outline'
 
 // 애니메이션 컴포넌트
 const AnimatedSection = ({ children, className = '' }: { children: React.ReactNode, className?: string }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-100px' }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+      viewport={{ once: true, margin: '-50px' }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={className}
     >
       {children}
@@ -46,6 +45,7 @@ export default function Contact() {
   })
   const [formStatus, setFormStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [selectedCategory, setSelectedCategory] = useState('general')
+  const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -73,61 +73,67 @@ export default function Contact() {
     }, 2000)
   }
 
-  const contactInfo = [
+  const contactMethods = [
     {
       icon: EnvelopeIcon,
-      title: t('contactPage.contactInfo.items.email.title'),
-      value: t('contactPage.contactInfo.items.email.value'),
-      description: t('contactPage.contactInfo.items.email.description'),
-      color: 'from-blue-500 to-blue-600'
+      title: '이메일',
+      value: 'hello@meetingmind.ai',
+      description: '24시간 내 답변',
+      color: 'blue'
     },
     {
       icon: PhoneIcon,
-      title: t('contactPage.contactInfo.items.phone.title'),
-      value: t('contactPage.contactInfo.items.phone.value'),
-      description: t('contactPage.contactInfo.items.phone.description'),
-      color: 'from-green-500 to-green-600'
+      title: '전화',
+      value: '+82 2-1234-5678',
+      description: '평일 9시-18시',
+      color: 'green'
     },
     {
       icon: MapPinIcon,
-      title: t('contactPage.contactInfo.items.office.title'),
-      value: t('contactPage.contactInfo.items.office.value'),
-      description: t('contactPage.contactInfo.items.office.description'),
-      color: 'from-purple-500 to-purple-600'
+      title: '오피스',
+      value: '서울특별시 강남구',
+      description: '사전 예약 필요',
+      color: 'purple'
     },
     {
       icon: ChatBubbleLeftRightIcon,
-      title: t('contactPage.contactInfo.items.chat.title'),
-      value: t('contactPage.contactInfo.items.chat.value'),
-      description: t('contactPage.contactInfo.items.chat.description'),
-      color: 'from-pink-500 to-pink-600'
+      title: '라이브 채팅',
+      value: '실시간 상담',
+      description: '즉시 응답',
+      color: 'pink'
     }
   ]
 
   const categories = [
-    { id: 'general', label: t('contactPage.form.categories.general'), icon: ChatBubbleLeftRightIcon },
-    { id: 'sales', label: t('contactPage.form.categories.sales'), icon: UserGroupIcon },
-    { id: 'support', label: t('contactPage.form.categories.support'), icon: LightBulbIcon },
-    { id: 'partnership', label: t('contactPage.form.categories.partnership'), icon: HeartIcon }
+    { id: 'general', label: '일반 문의', icon: ChatBubbleLeftRightIcon },
+    { id: 'sales', label: '영업 문의', icon: UserGroupIcon },
+    { id: 'support', label: '기술 지원', icon: LightBulbIcon },
+    { id: 'partnership', label: '파트너십', icon: HeartIcon }
   ]
 
   const faqs = [
     {
-      question: t('contactPage.faq.items.0.question'),
-      answer: t('contactPage.faq.items.0.answer')
+      question: '무료 체험은 어떻게 신청하나요?',
+      answer: '웹사이트에서 간단한 정보를 입력하시면 즉시 14일 무료 체험을 시작할 수 있습니다.'
     },
     {
-      question: t('contactPage.faq.items.1.question'),
-      answer: t('contactPage.faq.items.1.answer')
+      question: '어떤 기기에서 사용할 수 있나요?',
+      answer: 'Windows, Mac, iOS, Android 등 모든 주요 플랫폼에서 사용 가능합니다.'
     },
     {
-      question: t('contactPage.faq.items.2.question'),
-      answer: t('contactPage.faq.items.2.answer')
+      question: '데이터 보안은 어떻게 보장되나요?',
+      answer: '엔터프라이즈급 보안 시스템과 종단간 암호화로 데이터를 안전하게 보호합니다.'
     },
     {
-      question: t('contactPage.faq.items.3.question'),
-      answer: t('contactPage.faq.items.3.answer')
+      question: '기업 할인이 있나요?',
+      answer: '10명 이상 기업 고객에게는 특별 할인 혜택을 제공합니다.'
     }
+  ]
+
+  const officeHours = [
+    { day: '월요일 - 금요일', time: '09:00 - 18:00' },
+    { day: '토요일', time: '10:00 - 14:00' },
+    { day: '일요일', time: '휴무' }
   ]
 
   return (
@@ -147,379 +153,415 @@ export default function Contact() {
         <html lang={language} />
       </Head>
       
-      <main className="min-h-screen bg-gradient-to-br from-slate-800 via-blue-900 to-purple-900 text-white">
+      <main className="min-h-screen bg-white">
 
-        {/* Hero 섹션 */}
-        <section className="pt-24 pb-20 relative overflow-hidden">
-          {/* 배경 효과 */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.3),transparent)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(147,51,234,0.2),transparent)]" />
-          
-          {/* 플로팅 파티클 */}
-          <div className="absolute inset-0 overflow-hidden">
-            {[
-              { left: 15, top: 25 },
-              { left: 85, top: 20 },
-              { left: 30, top: 65 },
-              { left: 75, top: 75 },
-              { left: 50, top: 35 },
-              { left: 95, top: 50 },
-              { left: 10, top: 80 },
-              { left: 65, top: 30 },
-              { left: 40, top: 90 },
-              { left: 80, top: 60 }
-            ].map((position, i) => (
+        {/* Apple 스타일 Hero 섹션 */}
+        <section className="pt-32 pb-24 bg-white">
+          <div className="max-w-6xl mx-auto px-6 text-center">
+            <AnimatedSection>
               <motion.div
-                key={i}
-                className="absolute w-2 h-2 bg-white/20 rounded-full"
-                style={{
-                  left: `${position.left}%`,
-                  top: `${position.top}%`,
-                }}
-                animate={{
-                  y: [0, -20, 0],
-                  opacity: [0.2, 0.8, 0.2],
-                }}
-                transition={{
-                  duration: 3 + (i % 3),
-                  repeat: Infinity,
-                  delay: i * 0.3,
-                }}
-              />
-            ))}
-          </div>
-          
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
-            <AnimatedSection className="text-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium mb-8"
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-8"
               >
                 <ChatBubbleLeftRightIcon className="w-4 h-4" />
-                {t('contactPage.hero.badge')}
+                고객 지원
               </motion.div>
               
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl lg:text-6xl font-black mb-6 leading-tight"
+                className="text-5xl md:text-6xl lg:text-7xl apple-heading text-gray-900 mb-6"
               >
-                {t('contactPage.hero.title')}{' '}
-                <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  {t('contactPage.hero.titleHighlight')}
-                </span>
+                문의하기
               </motion.h1>
               
               <motion.p
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
+                className="text-xl apple-subheading max-w-3xl mx-auto"
               >
-                {t('contactPage.hero.subtitle')}
+                궁금한 점이 있으신가요?<br />
+                언제든지 연락주세요. 도움을 드리겠습니다.
               </motion.p>
+              
+              {/* 앱 다운로드 버튼 */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12"
+              >
+                <div className="text-sm text-gray-500 mb-4 sm:mb-0 sm:mr-4">
+                  모바일 앱으로 간편하게 문의하세요
+                </div>
+                <div className="flex gap-4">
+                  {/* App Store 버튼 */}
+                  <button className="flex items-center gap-3 px-6 py-3 bg-black text-white rounded-2xl hover:bg-gray-800 transition-colors duration-200">
+                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                    </svg>
+                    <div className="text-left">
+                      <div className="text-xs opacity-70">Download on the</div>
+                      <div className="text-sm font-semibold">App Store</div>
+                    </div>
+                  </button>
+                  
+                  {/* Google Play 버튼 */}
+                  <button className="flex items-center gap-3 px-6 py-3 bg-black text-white rounded-2xl hover:bg-gray-800 transition-colors duration-200">
+                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                    </svg>
+                    <div className="text-left">
+                      <div className="text-xs opacity-70">GET IT ON</div>
+                      <div className="text-sm font-semibold">Google Play</div>
+                    </div>
+                  </button>
+                </div>
+              </motion.div>
             </AnimatedSection>
           </div>
         </section>
 
-        {/* 연락처 정보 섹션 */}
-        <section className="py-20 bg-white text-slate-900">
-          <div className="max-w-7xl mx-auto px-6">
+        {/* Apple 스타일 연락 방법 */}
+        <section className="py-24 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-6">
             <AnimatedSection className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">
-                {t('contactPage.contactInfo.title')}
+              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+                연락 방법
               </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                {t('contactPage.contactInfo.subtitle')}
+              <p className="text-xl apple-subheading max-w-2xl mx-auto">
+                가장 편한 방법으로 문의해주세요.
               </p>
             </AnimatedSection>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {contactInfo.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                  className="group"
-                >
-                  <div className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 text-center">
-                    <div className="relative mb-6">
-                      <div className={`w-16 h-16 bg-gradient-to-r ${item.color} rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300`}>
-                        <item.icon className="w-8 h-8 text-white" />
-                      </div>
-                      <div className={`absolute inset-0 bg-gradient-to-r ${item.color} rounded-2xl blur opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
+              {contactMethods.map((method, index) => (
+                <AnimatedSection key={index}>
+                  <div className="apple-card p-8 text-center hover:shadow-lg transition-all duration-300">
+                    <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                      <method.icon className="w-8 h-8 text-white" />
                     </div>
-                    
-                    <h3 className="text-xl font-bold text-slate-900 mb-2">
-                      {item.title}
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {method.title}
                     </h3>
-                    <p className="text-slate-900 font-medium mb-2">
-                      {item.value}
+                    <p className="text-gray-900 font-medium mb-2">
+                      {method.value}
                     </p>
-                    <p className="text-slate-600 text-sm">
-                      {item.description}
+                    <p className="text-gray-600 text-sm">
+                      {method.description}
                     </p>
                   </div>
-                </motion.div>
+                </AnimatedSection>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 문의 폼 섹션 */}
-        <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50/30">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16">
-              {/* 폼 */}
-              <AnimatedSection>
-                <div className="bg-white rounded-3xl p-8 shadow-xl">
-                  <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                    {t('contactPage.form.title')}
-                  </h2>
-                  
-                  {/* 카테고리 선택 */}
-                  <div className="mb-6">
-                    <label className="block text-sm font-medium text-slate-700 mb-3">
-                      {t('contactPage.form.categoryLabel')}
-                    </label>
-                    <div className="grid grid-cols-2 gap-3">
-                      {categories.map((category) => (
-                        <button
-                          key={category.id}
-                          onClick={() => setSelectedCategory(category.id)}
-                          className={`flex items-center gap-2 p-3 rounded-xl border transition-all duration-200 ${
-                            selectedCategory === category.id
-                              ? 'border-blue-500 bg-blue-50 text-blue-700'
-                              : 'border-slate-200 hover:border-slate-300 text-slate-600'
-                          }`}
-                        >
-                          <category.icon className="w-4 h-4" />
-                          <span className="text-sm font-medium">{category.label}</span>
-                        </button>
-                      ))}
-                    </div>
+        {/* Apple 스타일 문의 폼 */}
+        <section className="py-24 bg-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <AnimatedSection className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+                메시지 보내기
+              </h2>
+              <p className="text-xl apple-subheading max-w-2xl mx-auto">
+                아래 양식을 작성해주시면 빠르게 답변드리겠습니다.
+              </p>
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Apple 스타일 카테고리 선택 */}
+                <div>
+                  <label className="block text-lg font-medium text-gray-900 mb-4">
+                    문의 유형
+                  </label>
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    {categories.map((category) => (
+                      <motion.button
+                        key={category.id}
+                        type="button"
+                        onClick={() => setSelectedCategory(category.id)}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        className={`p-4 rounded-2xl border-2 transition-all duration-200 ${
+                          selectedCategory === category.id
+                            ? 'border-gray-900 bg-gray-900 text-white'
+                            : 'border-gray-200 bg-white text-gray-700 hover:border-gray-300'
+                        }`}
+                      >
+                        <category.icon className="w-6 h-6 mx-auto mb-2" />
+                        <span className="text-sm font-medium">{category.label}</span>
+                      </motion.button>
+                    ))}
                   </div>
-                  
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-2">
-                          {t('contactPage.form.fields.name')} *
-                        </label>
-                        <input
-                          type="text"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                          placeholder={t('contactPage.form.placeholders.name')}
-                        />
-                      </div>
-                      
-                      <div>
-                        <label className="block text-sm font-medium text-slate-700 mb-2">
-                          {t('contactPage.form.fields.email')} *
-                        </label>
-                        <input
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                          placeholder={t('contactPage.form.placeholders.email')}
-                        />
-                      </div>
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
-                        {t('contactPage.form.fields.company')}
-                      </label>
-                      <input
-                        type="text"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                        placeholder={t('contactPage.form.placeholders.company')}
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
-                        {t('contactPage.form.fields.subject')} *
-                      </label>
-                      <input
-                        type="text"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                        placeholder={t('contactPage.form.placeholders.subject')}
-                      />
-                    </div>
-                    
-                    <div>
-                      <label className="block text-sm font-medium text-slate-700 mb-2">
-                        {t('contactPage.form.fields.message')} *
-                      </label>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        rows={6}
-                        className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                        placeholder={t('contactPage.form.placeholders.message')}
-                      />
-                    </div>
-                    
+                </div>
+
+                {/* 기본 정보 */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-lg font-medium text-gray-900 mb-2">
+                      이름 *
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-200"
+                      placeholder="홍길동"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-lg font-medium text-gray-900 mb-2">
+                      이메일 *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-200"
+                      placeholder="hello@example.com"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-lg font-medium text-gray-900 mb-2">
+                    회사명
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-200"
+                    placeholder="회사명 (선택사항)"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-lg font-medium text-gray-900 mb-2">
+                    제목 *
+                  </label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-200"
+                    placeholder="문의 제목을 입력해주세요"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-lg font-medium text-gray-900 mb-2">
+                    메시지 *
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 transition-all duration-200 resize-none"
+                    placeholder="자세한 문의 내용을 입력해주세요"
+                  />
+                </div>
+
+                {/* 제출 버튼 */}
+                <div className="text-center">
+                  <motion.button
+                    type="submit"
+                    disabled={formStatus === 'loading'}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="btn btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {formStatus === 'loading' ? (
+                      <span className="flex items-center gap-2">
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        전송 중...
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        <PaperAirplaneIcon className="w-5 h-5" />
+                        메시지 보내기
+                      </span>
+                    )}
+                  </motion.button>
+                </div>
+
+                {/* 성공 메시지 */}
+                {formStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="text-center p-6 bg-green-50 rounded-2xl border border-green-200"
+                  >
+                    <CheckCircleIcon className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                    <h3 className="text-lg font-semibold text-green-800 mb-2">
+                      메시지가 성공적으로 전송되었습니다!
+                    </h3>
+                    <p className="text-green-700">
+                      24시간 내에 답변드리겠습니다.
+                    </p>
+                  </motion.div>
+                )}
+              </form>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        {/* 자주 묻는 질문 */}
+        <section className="py-24 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-6">
+            <AnimatedSection className="text-center mb-16">
+              <h2 className="text-4xl font-semibold text-gray-900 mb-4">
+                자주 묻는 질문
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                빠른 답변을 위해 자주 묻는 질문들을 확인해보세요.
+              </p>
+            </AnimatedSection>
+
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AnimatedSection key={index}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-white rounded-3xl overflow-hidden shadow-lg"
+                  >
                     <button
-                      type="submit"
-                      disabled={formStatus === 'loading'}
-                      className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
+                      className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                     >
-                      {formStatus === 'loading' ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          {t('contactPage.form.buttons.sending')}
-                        </>
-                      ) : (
-                        <>
-                          <PaperAirplaneIcon className="w-5 h-5" />
-                          {t('contactPage.form.buttons.send')}
-                        </>
-                      )}
+                      <span className="text-lg font-semibold text-gray-900">
+                        {faq.question}
+                      </span>
+                      <motion.div
+                        animate={{ rotate: expandedFAQ === index ? 180 : 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <ChevronDownIcon className="w-6 h-6 text-gray-500" />
+                      </motion.div>
                     </button>
                     
-                    {/* 상태 메시지 */}
-                    {formStatus === 'success' && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-2 p-4 bg-green-50 border border-green-200 rounded-xl text-green-800"
-                      >
-                        <CheckCircleIcon className="w-5 h-5" />
-                        <span>{t('contactPage.form.messages.success')}</span>
-                      </motion.div>
-                    )}
-                    
-                    {formStatus === 'error' && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-xl text-red-800"
-                      >
-                        <ExclamationTriangleIcon className="w-5 h-5" />
-                        <span>{t('contactPage.form.messages.error')}</span>
-                      </motion.div>
-                    )}
-                  </form>
-                </div>
-              </AnimatedSection>
-              
-              {/* 추가 정보 */}
-              <AnimatedSection>
-                <div className="space-y-8">
-                  {/* 오피스 위치 */}
-                  <div className="bg-white rounded-3xl p-8 shadow-lg">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                      {t('contactPage.office.title')}
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <MapPinIcon className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-slate-900 mb-1">{t('contactPage.office.address.title')}</h4>
-                          <p className="text-slate-600 whitespace-pre-line">{t('contactPage.office.address.value')}</p>
-                        </div>
+                    <motion.div
+                      initial={{ height: 0 }}
+                      animate={{ height: expandedFAQ === index ? 'auto' : 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-8 pb-6">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
                       </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <ClockIcon className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-slate-900 mb-1">{t('contactPage.office.hours.title')}</h4>
-                          <p className="text-slate-600 whitespace-pre-line">{t('contactPage.office.hours.value')}</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <UserGroupIcon className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-slate-900 mb-1">{t('contactPage.office.consultation.title')}</h4>
-                          <p className="text-slate-600 whitespace-pre-line">{t('contactPage.office.consultation.value')}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* 자주 묻는 질문 */}
-                  <div className="bg-white rounded-3xl p-8 shadow-lg">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                      {t('contactPage.faq.title')}
-                    </h3>
-                    <div className="space-y-4">
-                      {faqs.map((faq, index) => (
-                        <details key={index} className="group">
-                          <summary className="flex items-center justify-between cursor-pointer p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
-                            <span className="font-medium text-slate-900">{faq.question}</span>
-                            <SparklesIcon className="w-5 h-5 text-slate-400 group-open:rotate-180 transition-transform" />
-                          </summary>
-                          <div className="p-4 text-slate-600 leading-relaxed">
-                            {faq.answer}
-                          </div>
-                        </details>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
+                    </motion.div>
+                  </motion.div>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* CTA 섹션 */}
-        <section className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white relative overflow-hidden">
-          {/* 배경 장식 */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.1),transparent)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.05),transparent)]" />
-          
-          <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <AnimatedSection>
-              <h2 className="text-4xl font-bold mb-6">
-                {t('contactPage.cta.title')}
+        {/* 오피스 정보 */}
+        <section className="py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <AnimatedSection className="text-center mb-16">
+              <h2 className="text-4xl font-semibold text-gray-900 mb-4">
+                오피스 방문
               </h2>
-              <p className="text-xl text-white/80 mb-8">
-                {t('contactPage.cta.subtitle')}
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                직접 방문하여 상담을 원하시는 경우 사전 예약을 해주세요.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-                  <GlobeAltIcon className="w-5 h-5" />
-                  {t('contactPage.cta.buttons.freeTrial')}
-                </button>
-                
-                <button className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl font-semibold hover:bg-white/20 transition-all duration-300">
-                  <ChatBubbleLeftRightIcon className="w-5 h-5" />
-                  {t('contactPage.cta.buttons.liveDemo')}
-                </button>
-              </div>
             </AnimatedSection>
+
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* 지도 영역 */}
+              <AnimatedSection>
+                <div className="bg-gray-100 rounded-3xl p-8 h-96 flex items-center justify-center">
+                  <div className="text-center">
+                    <MapPinIcon className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                    <p className="text-gray-600">지도가 여기에 표시됩니다</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+
+              {/* 오피스 정보 */}
+              <AnimatedSection>
+                <div className="space-y-8">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                      오피스 정보
+                    </h3>
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                          <BuildingOfficeIcon className="w-6 h-6 text-blue-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900">주소</h4>
+                          <p className="text-gray-600">
+                            서울특별시 강남구 테헤란로 123<br />
+                            스타트업 빌딩 10층
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                          <DevicePhoneMobileIcon className="w-6 h-6 text-green-600" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-gray-900">연락처</h4>
+                          <p className="text-gray-600">
+                            +82 2-1234-5678<br />
+                            hello@meetingmind.ai
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+                      운영 시간
+                    </h3>
+                    <div className="space-y-3">
+                      {officeHours.map((hour, index) => (
+                        <div key={index} className="flex justify-between items-center py-2 border-b border-gray-100">
+                          <span className="text-gray-700">{hour.day}</span>
+                          <span className="font-medium text-gray-900">{hour.time}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-blue-50 rounded-2xl p-6">
+                    <h4 className="font-semibold text-blue-900 mb-2">
+                      방문 전 알려드립니다
+                    </h4>
+                    <p className="text-blue-800 text-sm">
+                      원활한 상담을 위해 방문 전 미리 연락주시기 바랍니다.
+                      주차 공간이 제한적이므로 대중교통을 이용해주세요.
+                    </p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            </div>
           </div>
         </section>
 

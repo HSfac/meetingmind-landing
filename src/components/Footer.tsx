@@ -36,8 +36,8 @@ const Footer = () => {
       { label: '언론 보도', href: '#' },
     ],
     legal: [
-      { label: '개인정보처리방침', href: '#' },
-      { label: '이용약관', href: '#' },
+      { label: '개인정보처리방침', href: '/privacy' },
+      { label: '이용약관', href: '/terms' },
       { label: '쿠키 정책', href: '#' },
       { label: '보안', href: '#' },
     ]
