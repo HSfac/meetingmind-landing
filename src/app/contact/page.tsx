@@ -111,7 +111,24 @@ export default function Contact() {
     { id: 'partnership', label: t('contactPage.form.categories.partnership'), icon: HeartIcon }
   ]
 
-  const faqs = t('contactPage.faq.items') as Array<{question: string, answer: string}>
+  const faqs = [
+    {
+      question: t('contactPage.faq.items.0.question'),
+      answer: t('contactPage.faq.items.0.answer')
+    },
+    {
+      question: t('contactPage.faq.items.1.question'),
+      answer: t('contactPage.faq.items.1.answer')
+    },
+    {
+      question: t('contactPage.faq.items.2.question'),
+      answer: t('contactPage.faq.items.2.answer')
+    },
+    {
+      question: t('contactPage.faq.items.3.question'),
+      answer: t('contactPage.faq.items.3.answer')
+    }
+  ]
 
   return (
     <>
