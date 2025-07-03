@@ -1,26 +1,76 @@
-@import "tailwindcss";
+/* 폰트 임포트 - 반드시 최상단에 위치 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 컨테이너 및 유틸리티 클래스 */
+.section-container {
+  @apply max-w-7xl mx-auto px-6 lg:px-8;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* CSS 변수 정의 */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #2E74FF;
+  --accent: #00C9A7;
+  --dark: #121826;
+  --light: #F8FAFC;
+  --radius-card: 12px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* 기본 폰트 설정 */
+html {
+  font-family: 'Pretendard Variable', 'Inter', sans-serif;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* 커스텀 버튼 스타일 */
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold transition-all duration-300 ease-out;
+  }
+  
+  .btn-primary {
+    @apply btn text-white bg-gradient-to-r from-blue-600 to-teal-500 shadow-lg hover:opacity-90 hover:shadow-xl;
+  }
+  
+  .btn-outline {
+    @apply btn border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white hover:shadow-lg;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-6 lg:px-8;
+  }
+
+  .fade-in {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in.visible {
+    @apply opacity-100 translate-y-0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* 커스텀 스크롤바 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

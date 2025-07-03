@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "languageToggle": "Language Toggle",
+    "home": "Home",
+    "about": "About",
+    "hardware": "Hardware",
+    "contact": "Contact",
+    "cta": "Get Started"
+  },
+  "hero": {
+    "badge": "AI-Powered Meeting Assistant",
+    "title": "Record your meeting—",
+    "titleHighlight": "MeetingMind does the rest",
+    "subtitle": "Just record your meeting, MeetingMind handles the rest!",
+    "description": "AI analyzes your meetings and organizes key insights for you.",
+    "cta": {
+      "appStore": "App Store",
+      "googlePlay": "Google Play"
+    },
+    "card": {
+      "title": "AI Meeting Assistant",
+      "subtitle": "Real-time transcription & summarization",
+      "status": {
+        "recording": "Recording",
+        "analyzing": "Analyzing", 
+        "summarizing": "Summarizing"
+      },
+      "stats": {
+        "accuracy": "95%",
+        "accuracyLabel": "Accuracy",
+        "speed": "10s",
+        "speedLabel": "Summary"
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "3 Simple Steps",
+    "title": "How It",
+    "titleHighlight": "Works",
+    "subtitle": "Transform your meetings into smart insights with 3 simple steps",
+    "steps": [
+      {
+        "title": "Hit Record",
+        "subtitle": "Start Recording",
+        "description": "Start recording with one tap and get real-time captions"
+      },
+      {
+        "title": "Instant Summary",
+        "subtitle": "AI Analysis",
+        "description": "AI analyzes and summarizes key content within 10 seconds"
+      },
+      {
+        "title": "Visualize & Share",
+        "subtitle": "Share & Visualize",
+        "description": "Create mind maps and share instantly with your team"
+      }
+    ],
+    "footer": "Ready in minutes, not hours"
+  },
+  "features": {
+    "badge": "AI-Powered Features",
+    "title": "Everything you need",
+    "titleHighlight": "in one place",
+    "subtitle": "6 essential features to maximize your meeting productivity",
+    "items": [
+      {
+        "title": "Live Captions",
+        "subtitle": "Real-time Subtitles",
+        "description": "Get real-time accurate captions during meetings with 95%+ accuracy for all conversations",
+        "badge": "95% Accuracy"
+      },
+      {
+        "title": "Action Items",
+        "subtitle": "Task Extraction",
+        "description": "Automatically extract important tasks and decisions, organized by priority",
+        "badge": "AI-Powered"
+      },
+      {
+        "title": "Auto Mind-map",
+        "subtitle": "Mind Map Generation",
+        "description": "Automatically convert meeting content into visual mind maps to grasp key points at a glance",
+        "badge": "Instant Generation"
+      },
+      {
+        "title": "Semantic Search",
+        "subtitle": "Smart Search",
+        "description": "Find content quickly with meaning-based search, including related context",
+        "badge": "Smart Search"
+      },
+      {
+        "title": "Team Share Link",
+        "subtitle": "Team Sharing",
+        "description": "Easily share meeting content with team members and get real-time comments and feedback",
+        "badge": "Real-time Collaboration"
+      },
+      {
+        "title": "AES-256 Security",
+        "subtitle": "Security Encryption",
+        "description": "Military-grade encryption protects meeting content, ensuring GDPR and SOC2 compliance",
+        "badge": "Military-grade Security"
+      }
+    ]
+  },
+  "demo": {
+    "badge": "Live Demo",
+    "title": "See MeetingMind",
+    "titleHighlight": "in Action",
+    "subtitle": "See how MeetingMind works in real meeting scenarios",
+    "videoTitle": "MeetingMind Live Demo",
+    "videoDescription": "Experience AI analysis process in real meeting environments",
+    "stats": {
+      "speed": "10s",
+      "speedLabel": "Summary Time",
+      "accuracy": "95%",
+      "accuracyLabel": "Accuracy",
+      "languages": "12+",
+      "languagesLabel": "Supported Languages"
+    }
+  },
+  "testimonials": {
+    "badge": "5.0 Rating • 2,500+ Reviews",
+    "title": "Real user",
+    "titleHighlight": "success stories",
+    "subtitle": "Over 2,500 users worldwide are revolutionizing their meeting productivity with MeetingMind",
+    "items": [
+      {
+        "text": "Meeting time cut in half! I no longer miss meeting content because of note-taking.",
+        "name": "Minsu Kim",
+        "role": "Product Manager",
+        "company": "TechCorp"
+      },
+      {
+        "text": "The AI summary feature is amazing. I can grasp the essence of a 2-hour meeting in just 1 minute.",
+        "name": "Jiyoung Lee",
+        "role": "CEO",
+        "company": "StartupX"
+      },
+      {
+        "text": "Sharing meeting content with team members has become so easy. All meetings are managed transparently and systematically.",
+        "name": "Sehun Park",
+        "role": "Engineering Lead",
+        "company": "DevLabs"
+      },
+      {
+        "text": "Multi-language support is perfect. We can communicate without language barriers in global team meetings.",
+        "name": "Suyeon Jung",
+        "role": "Head of Sales",
+        "company": "GlobalTech"
+      },
+      {
+        "text": "Auto action item extraction makes post-meeting tasks crystal clear. No more 'What were we supposed to do?' questions.",
+        "name": "Taehyun Jang",
+        "role": "Team Lead",
+        "company": "DevStudio"
+      }
+    ]
+  },
+  "hardware": {
+    "meta": {
+      "title": "Smart Meeting Hardware",
+      "description": "MeetingMind Pod & Mic - Professional hardware solutions for AI-powered meeting analysis. Pre-order now available!",
+      "keywords": "MeetingMind Pod, MeetingMind Mic, smart microphone, meeting hardware, AI voice recognition, pre-order"
+    },
+    "badge": "Hardware Coming Soon",
+    "title": "Smart Meeting",
+    "titleHighlight": "Hardware",
+    "subtitle": "Professional hardware solutions for AI-powered meeting analysis",
+    "products": {
+      "0": {
+        "name": "MeetingMind Pod",
+        "description": "Smart meeting device placed at the center of the table",
+        "features": {
+          "0": "360° voice recognition",
+          "1": "Speaker separation technology",
+          "2": "Wireless charging",
+          "3": "LED status indicator"
+        },
+        "price": "$249",
+        "releaseDate": "Q3 2024"
+      },
+      "1": {
+        "name": "MeetingMind Mic",
+        "description": "Personal smart microphone",
+        "features": {
+          "0": "Noise cancellation",
+          "1": "Voice enhancement",
+          "2": "USB-C connection",
+          "3": "Portable design"
+        },
+        "price": "$79",
+        "releaseDate": "Q2 2024"
+      }
+    },
+    "preorder": {
+      "title": "Pre-order Benefits",
+      "benefits": {
+        "0": "30% off launch price",
+        "1": "Free shipping",
+        "2": "1-year warranty",
+        "3": "3 months premium app free"
+      },
+      "title": "Pre-order Benefits",
+      "benefitTitles": {
+        "0": "Special Discount",
+        "1": "Free Shipping",
+        "2": "Quality Guarantee",
+        "3": "Premium Benefits"
+      },
+      "cta": "Pre-order Now",
+      "note": "* Pre-orders can be cancelled anytime",
+      "form": {
+        "placeholder": "Enter your email address",
+        "loading": "Processing...",
+        "success": "Pre-order completed! We'll notify you about the launch via email."
+      }
+    },
+    "cta": {
+      "explore": "Explore Products",
+      "demo": "Watch Demo"
+    },
+    "products": {
+      "title": "Choose Your Perfect Product",
+      "subtitle": "We provide optimal hardware solutions for your meeting environment and team size",
+      "selected": "Selected"
+    },
+    "specs": {
+      "title": "Technical Specifications",
+      "subtitle": "detailed technical specifications",
+      "technical": "Technical Specs",
+      "connectivity": "Connectivity & Compatibility",
+      "0": {
+        "technical": {
+          "0": { "label": "Microphone Array", "value": "6 Digital Microphones" },
+          "1": { "label": "Voice Recognition Range", "value": "360° / 5m Radius" },
+          "2": { "label": "Battery Life", "value": "20 Hours Continuous" },
+          "3": { "label": "Charging", "value": "Wireless + USB-C" },
+          "4": { "label": "Size", "value": "120mm × 35mm" }
+        }
+      },
+      "1": {
+        "technical": {
+          "0": { "label": "Microphone Type", "value": "Unidirectional" },
+          "1": { "label": "Voice Recognition Range", "value": "1.5m Radius" },
+          "2": { "label": "Battery Life", "value": "12 Hours Continuous" },
+          "3": { "label": "Connection", "value": "USB-C + Bluetooth" },
+          "4": { "label": "Weight", "value": "85g" }
+        }
+      },
+      "wifi": {
+        "title": "Wi-Fi Connectivity",
+        "description": "Dual-band 2.4GHz/5GHz support ensures stable connection"
+      },
+      "power": {
+        "title": "Power Management",
+        "description": "Smart power saving mode enables up to 20 hours continuous use"
+      },
+      "compatibility": {
+        "title": "Platform Compatibility",
+        "description": "Supports all major video conferencing platforms like Zoom, Teams, Meet"
+      }
+    },
+    "preorder": {
+      "benefitTitles": {
+        "0": "Special Discount",
+        "1": "Free Shipping",
+        "2": "Quality Guarantee",
+        "3": "Premium Benefits"
+      },
+      "form": {
+        "placeholder": "Enter your email address",
+        "loading": "Processing...",
+        "success": "Pre-order completed! We'll notify you about the launch via email."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Common questions about our hardware products",
+      "items": {
+        "0": {
+          "question": "When will the hardware products be released?",
+          "answer": "MeetingMind Mic is scheduled for Q2 2024, and MeetingMind Pod for Q3 2024. Pre-order to be the first to receive launch notifications."
+        },
+        "1": {
+          "question": "Are they compatible with existing meeting software?",
+          "answer": "Yes, they're fully compatible with all major video conferencing platforms including Zoom, Microsoft Teams, Google Meet, and Webex. Plug-and-play ready without additional driver installation."
+        },
+        "2": {
+          "question": "How long does the battery last?",
+          "answer": "MeetingMind Pod offers up to 20 hours, and MeetingMind Mic up to 12 hours of continuous use. Smart power saving automatically minimizes power consumption when not in use."
+        },
+        "3": {
+          "question": "Can I cancel my pre-order?",
+          "answer": "Yes, you can cancel your pre-order anytime before launch. No cancellation fees or penalties - simply cancel with one email."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "Experience the Future of Meetings",
+      "subtitle": "Start smarter meetings with MeetingMind hardware",
+      "preorder": "Pre-order Now",
+      "tryApp": "Try the App"
+    }
+  },
+  "pricing": {
+    "badge": "Simple Pricing",
+    "title": "Fair pricing",
+    "titleHighlight": "for every team",
+    "subtitle": "Transparent pricing policy that all teams can use, regardless of size",
+    "toggle": {
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "yearlyDiscount": "2 months free"
+    },
+    "currency": {
+      "krw": "₩",
+      "usd": "$"
+    },
+    "plans": {
+      "0": {
+        "name": "Free",
+        "price": {
+          "krw": "0",
+          "usd": "0"
+        },
+        "period": "Free",
+        "features": {
+          "0": "5 meetings per month",
+          "1": "30 min meeting length",
+          "2": "Basic summary features",
+          "3": "Personal use"
+        },
+        "cta": "Start Free"
+      },
+      "1": {
+        "name": "Pro",
+        "price": {
+          "krw": "9,900",
+          "usd": "7.99"
+        },
+        "period": "month",
+        "popular": true,
+        "features": {
+          "0": "Unlimited meetings",
+          "1": "2 hour meeting length",
+          "2": "Advanced AI analysis",
+          "3": "Team sharing features"
+        },
+        "cta": "Start Pro"
+      }
+    },
+    "trust": [
+      {
+        "title": "Secure Payment",
+        "description": "SSL secure payment"
+      },
+      {
+        "title": "Cancel Anytime",
+        "description": "No commitment"
+      },
+      {
+        "title": "24/7 Support",
+        "description": "Dedicated customer support"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "title": "Have any",
+    "titleHighlight": "questions?",
+    "subtitle": "We've compiled the most frequently asked questions",
+    "items": [
+      {
+        "question": "How accurate is the transcription?",
+        "answer": "MeetingMind boasts high accuracy of over 95%. Through deep learning-based speech recognition technology and speaker separation technology, we provide accurate transcription even in complex meeting environments."
+      },
+      {
+        "question": "Which languages are supported?",
+        "answer": "We currently support 12 languages including Korean, English, Japanese, and Chinese, and we're continuously expanding language support. Automatic language recognition is also available for multilingual meetings."
+      },
+      {
+        "question": "Is team sharing secure?",
+        "answer": "Yes, it's very secure. All data is protected through AES-256 encryption, and we comply with GDPR and SOC2 security standards. Team member access control is also available."
+      },
+      {
+        "question": "When am I billed?",
+        "answer": "Pro plans are billed monthly or yearly on a subscription basis. After the first payment, you'll be automatically billed on the same date each month, and you can cancel anytime."
+      },
+      {
+        "question": "What are the limitations of the free plan?",
+        "answer": "The free plan supports up to 5 meetings per month, with a maximum of 30 minutes per meeting. Basic summary features are provided, but advanced AI analysis and team sharing features are available in the Pro plan."
+      },
+      {
+        "question": "How can I get customer support?",
+        "answer": "Pro plan users get 24/7 priority support. Support is available via email, chat, and video calls, with an average response time of within 1 hour."
+      }
+    ],
+    "support": {
+      "title": "Need more help?",
+      "description": "Feel free to contact us anytime. Our dedicated team will help you.",
+      "cta": "Customer Support Center"
+    }
+  },
+  "cta": {
+    "title": "Ready to save hours on meeting notes?",
+    "titleKo": "Experience MeetingMind right now!",
+    "subtitle": "The smart meeting solution chosen by 2,500+ users",
+    "form": {
+      "placeholder": "Enter your email address",
+      "cta": "Start Free Trial",
+      "loading": "Processing...",
+      "success": "Successfully registered! Please check your email.",
+      "error": "An error occurred. Please try again."
+    },
+    "buttons": {
+      "appStore": "App Store",
+      "googlePlay": "Google Play"
+    },
+    "stats": {
+      "0": {
+        "number": "25,000+",
+        "label": "Active Users"
+      },
+      "1": {
+        "number": "95%",
+        "label": "Customer Satisfaction"
+      },
+      "2": {
+        "number": "500,000+",
+        "label": "Meetings Analyzed"
+      },
+      "3": {
+        "number": "24/7",
+        "label": "Customer Support"
+      }
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "About Us",
+      "description": "MeetingMind is a startup revolutionizing meeting culture with AI technology. Learn about our mission, values, and team.",
+      "keywords": "MeetingMind, about us, AI meetings, startup, team, mission, vision"
+    },
+    "hero": {
+      "title": "Leading with",
+      "titleHighlight": "AI Meeting Innovation",
+      "subtitle": "MeetingMind helps tens of thousands of users worldwide make their meetings more efficient and productive."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "description": "MeetingMind presents a new paradigm of meetings through AI technology. Our goal is to go beyond simple recording to create insights and maximize team productivity.",
+      "stats": {
+        "users": "Active Users",
+        "meetings": "Meetings Analyzed",
+        "satisfaction": "Customer Satisfaction",
+        "languages": "Supported Languages"
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "Core values that MeetingMind pursues",
+      "innovation": {
+        "title": "Innovation",
+        "description": "We innovate meeting culture using the latest AI technology and provide better solutions through continuous R&D."
+      },
+      "privacy": {
+        "title": "Privacy",
+        "description": "We protect user privacy and meeting data with the highest level of security and maintain transparent data policies."
+      },
+      "userFirst": {
+        "title": "User-Centric",
+        "description": "We improve our product based on user feedback and prioritize user experience in all decisions."
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "Experts passionate about AI and meeting culture innovation have come together",
+      "members": {
+        "0": {
+          "name": "Minsu Kim",
+          "role": "CEO & Co-founder",
+          "description": "Stanford AI Lab alumni with 10 years of speech recognition technology research experience."
+        },
+        "1": {
+          "name": "Jiyoung Park",
+          "role": "CTO & Co-founder",
+          "description": "Former Google engineer with experience building large-scale AI systems."
+        },
+        "2": {
+          "name": "Seoyeon Lee",
+          "role": "Head of Design",
+          "description": "Former Apple Design Team member who designs intuitive and beautiful UX."
+        }
+      }
+    },
+    "contact": {
+      "title": "Join Us",
+      "subtitle": "Let's change meeting culture together with MeetingMind",
+      "website": {
+        "title": "Website"
+      },
+      "support": {
+        "title": "Customer Support"
+      },
+      "community": {
+        "title": "Community",
+        "description": "Meet us on Slack, Discord"
+      }
+    }
+  }
+} 

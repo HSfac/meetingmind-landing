@@ -1,0 +1,510 @@
+{
+  "nav": {
+    "languageToggle": "언어 변경",
+    "home": "홈",
+    "about": "소개",
+    "hardware": "하드웨어",
+    "contact": "문의하기",
+    "cta": "시작하기"
+  },
+  "hero": {
+    "badge": "AI 기반 회의 도우미",
+    "title": "회의는 녹음만,",
+    "titleHighlight": "정리는 MeetingMind가!",
+    "subtitle": "회의를 녹음하기만 하면 MeetingMind가 모든 것을 처리합니다.",
+    "description": "AI가 회의를 분석하고 핵심을 정리해드립니다.",
+    "cta": {
+      "appStore": "앱스토어",
+      "googlePlay": "구글 플레이"
+    },
+    "card": {
+      "title": "AI 회의 도우미",
+      "subtitle": "실시간 전사 및 요약",
+      "status": {
+        "recording": "녹음 중",
+        "analyzing": "분석 중", 
+        "summarizing": "요약 중"
+      },
+      "stats": {
+        "accuracy": "95%",
+        "accuracyLabel": "정확도",
+        "speed": "10초",
+        "speedLabel": "요약"
+      }
+    }
+  },
+  "howItWorks": {
+    "badge": "간단한 3단계",
+    "title": "작동",
+    "titleHighlight": "원리",
+    "subtitle": "간단한 3단계로 회의를 스마트하게 정리하세요",
+    "steps": [
+      {
+        "title": "녹음 시작",
+        "subtitle": "간편한 녹음",
+        "description": "원탭으로 회의 녹음을 시작하고 실시간 자막을 확인하세요"
+      },
+      {
+        "title": "AI 요약",
+        "subtitle": "즉시 요약",
+        "description": "AI가 10초 만에 핵심 내용을 분석하고 요약해드립니다"
+      },
+      {
+        "title": "도식 & 공유",
+        "subtitle": "시각화 & 공유",
+        "description": "마인드맵으로 시각화하고 팀원들과 즉시 공유하세요"
+      }
+    ],
+    "footer": "몇 시간이 아닌 몇 분 만에 준비 완료"
+  },
+  "features": {
+    "badge": "AI 기반 기능",
+    "title": "모든 기능이",
+    "titleHighlight": "한곳에",
+    "subtitle": "회의 생산성을 극대화하는 6가지 핵심 기능",
+    "items": [
+      {
+        "title": "실시간 자막",
+        "subtitle": "라이브 캡션",
+        "description": "회의 중 실시간으로 정확한 자막을 제공하며, 95% 이상의 정확도로 모든 대화를 기록합니다",
+        "badge": "95% 정확도"
+      },
+      {
+        "title": "액션 아이템 추출",
+        "subtitle": "할 일 추출",
+        "description": "중요한 할 일과 결정사항을 자동으로 추출하고 우선순위에 따라 정리해드립니다",
+        "badge": "AI 기반"
+      },
+      {
+        "title": "마인드맵 생성",
+        "subtitle": "자동 마인드맵",
+        "description": "회의 내용을 시각적 마인드맵으로 자동 변환하여 핵심 포인트를 한눈에 파악할 수 있습니다",
+        "badge": "즉시 생성"
+      },
+      {
+        "title": "의미 기반 검색",
+        "subtitle": "스마트 검색",
+        "description": "의미 기반 검색으로 원하는 내용을 빠르게 찾고, 관련된 맥락까지 함께 제공합니다",
+        "badge": "스마트 검색"
+      },
+      {
+        "title": "팀 공유 링크",
+        "subtitle": "팀 공유",
+        "description": "팀원들과 쉽게 회의 내용을 공유하고, 실시간으로 댓글과 피드백을 받을 수 있습니다",
+        "badge": "실시간 협업"
+      },
+      {
+        "title": "AES-256 암호화",
+        "subtitle": "보안 암호화",
+        "description": "군사급 암호화로 회의 내용을 안전하게 보호하며, GDPR 및 SOC2 준수를 보장합니다",
+        "badge": "군사급 보안"
+      }
+    ]
+  },
+  "demo": {
+    "badge": "라이브 데모",
+    "title": "실제 작동하는",
+    "titleHighlight": "MeetingMind",
+    "subtitle": "실제 회의 시나리오에서 MeetingMind가 어떻게 작동하는지 확인해보세요",
+    "videoTitle": "MeetingMind 실시간 데모",
+    "videoDescription": "실제 회의 환경에서의 AI 분석 과정을 확인하세요",
+    "stats": {
+      "speed": "10초",
+      "speedLabel": "요약 시간",
+      "accuracy": "95%",
+      "accuracyLabel": "정확도",
+      "languages": "12+",
+      "languagesLabel": "지원 언어"
+    }
+  },
+  "testimonials": {
+    "badge": "5.0 평점 • 2,500+ 리뷰",
+    "title": "실제 사용자들의",
+    "titleHighlight": "생생한 후기",
+    "subtitle": "전 세계 2,500명 이상의 사용자들이 MeetingMind로 회의 생산성을 혁신하고 있습니다",
+    "items": [
+      {
+        "text": "회의 시간이 절반으로 줄었어요! 이제 더 이상 메모 때문에 회의 내용을 놓치지 않습니다.",
+        "name": "김민수",
+        "role": "Product Manager",
+        "company": "TechCorp"
+      },
+      {
+        "text": "AI 요약 기능이 정말 놀라워요. 2시간 회의를 1분 만에 핵심만 파악할 수 있습니다.",
+        "name": "이지영",
+        "role": "CEO",
+        "company": "StartupX"
+      },
+      {
+        "text": "팀원들과 회의 내용을 공유하기가 너무 편해졌어요. 모든 회의가 투명하고 체계적으로 관리됩니다.",
+        "name": "박세훈",
+        "role": "Engineering Lead",
+        "company": "DevLabs"
+      },
+      {
+        "text": "다국어 지원이 완벽해요. 글로벌 팀 회의에서 언어 장벽 없이 소통할 수 있습니다.",
+        "name": "정수연",
+        "role": "Head of Sales",
+        "company": "GlobalTech"
+      },
+      {
+        "text": "액션 아이템 자동 추출 기능 덕분에 회의 후 할 일이 명확해져요. 더 이상 '뭘 하기로 했었지?'라는 질문은 없습니다.",
+        "name": "장태현",
+        "role": "Team Lead",
+        "company": "DevStudio"
+      }
+    ]
+  },
+  "hardware": {
+    "meta": {
+      "title": "스마트 회의 하드웨어",
+      "description": "MeetingMind Pod와 Mic - AI 기반 회의 분석을 위한 전문 하드웨어 솔루션. 사전 예약 진행 중!",
+      "keywords": "MeetingMind Pod, MeetingMind Mic, 스마트 마이크, 회의 하드웨어, AI 음성인식, 사전예약"
+    },
+    "badge": "하드웨어 출시 예정",
+    "title": "스마트 회의",
+    "titleHighlight": "하드웨어",
+    "subtitle": "AI 기반 회의 분석을 위한 전문 하드웨어 솔루션",
+    "products": {
+      "0": {
+        "name": "MeetingMind Pod",
+        "description": "테이블 중앙에 배치하는 스마트 회의 장치",
+        "features": {
+          "0": "360도 음성 인식",
+          "1": "화자 분리 기술",
+          "2": "무선 충전",
+          "3": "LED 상태 표시"
+        },
+        "price": "₩299,000",
+        "releaseDate": "2024년 3분기"
+      },
+      "1": {
+        "name": "MeetingMind Mic",
+        "description": "개인용 스마트 마이크로폰",
+        "features": {
+          "0": "노이즈 캔슬링",
+          "1": "음성 향상",
+          "2": "USB-C 연결",
+          "3": "휴대용 디자인"
+        },
+        "price": "₩89,000",
+        "releaseDate": "2024년 2분기"
+      }
+    },
+    "preorder": {
+      "title": "사전 예약 혜택",
+      "benefits": {
+        "0": "출시가 대비 30% 할인",
+        "1": "무료 배송",
+        "2": "1년 무상 A/S",
+        "3": "프리미엄 앱 3개월 무료"
+      },
+      "title": "사전 예약 혜택",
+      "benefitTitles": {
+        "0": "특가 할인",
+        "1": "무료 배송", 
+        "2": "품질 보증",
+        "3": "프리미엄 특전"
+      },
+      "cta": "사전 예약하기",
+      "note": "* 사전 예약은 언제든 취소 가능합니다",
+      "form": {
+        "placeholder": "이메일 주소를 입력하세요",
+        "loading": "처리 중...",
+        "success": "사전 예약이 완료되었습니다! 출시 소식을 이메일로 알려드릴게요."
+      }
+    },
+    "products": {
+      "title": "완벽한 제품을 선택하세요",
+      "subtitle": "회의 환경과 팀 규모에 맞는 최적의 하드웨어를 제공합니다",
+      "selected": "선택됨"
+    },
+    "cta": {
+      "explore": "제품 둘러보기",
+      "demo": "데모 보기"
+    },
+    "specs": {
+      "title": "기술 사양",
+      "subtitle": "의 상세한 기술 사양을 확인하세요",
+      "technical": "기술 사양",
+      "connectivity": "연결성 & 호환성",
+      "0": {
+        "technical": {
+          "0": { "label": "마이크 배열", "value": "6개 디지털 마이크" },
+          "1": { "label": "음성 인식 범위", "value": "360° / 5m 반경" },
+          "2": { "label": "배터리", "value": "20시간 연속 사용" },
+          "3": { "label": "충전", "value": "무선 + USB-C" },
+          "4": { "label": "크기", "value": "120mm × 35mm" }
+        }
+      },
+      "1": {
+        "technical": {
+          "0": { "label": "마이크 타입", "value": "단일 지향성" },
+          "1": { "label": "음성 인식 범위", "value": "1.5m 반경" },
+          "2": { "label": "배터리", "value": "12시간 연속 사용" },
+          "3": { "label": "연결", "value": "USB-C + 블루투스" },
+          "4": { "label": "무게", "value": "85g" }
+        }
+      },
+      "wifi": {
+        "title": "Wi-Fi 연결",
+        "description": "2.4GHz/5GHz 듀얼밴드 지원으로 안정적인 연결 보장"
+      },
+      "power": {
+        "title": "전원 관리",
+        "description": "스마트 절전 모드로 최대 20시간 연속 사용 가능"
+      },
+      "compatibility": {
+        "title": "플랫폼 호환성",
+        "description": "Zoom, Teams, Meet 등 모든 주요 화상회의 플랫폼 지원"
+      }
+    },
+    "preorder": {
+      "benefitTitles": {
+        "0": "특가 할인",
+        "1": "무료 배송",
+        "2": "품질 보증",
+        "3": "프리미엄 특전"
+      },
+      "form": {
+        "placeholder": "이메일 주소를 입력하세요",
+        "loading": "처리 중...",
+        "success": "사전 예약이 완료되었습니다! 출시 소식을 이메일로 알려드릴게요."
+      }
+    },
+    "faq": {
+      "title": "자주 묻는 질문",
+      "subtitle": "하드웨어에 대해 궁금한 점들을 정리했습니다",
+      "items": {
+        "0": {
+          "question": "하드웨어 제품은 언제 출시되나요?",
+          "answer": "MeetingMind Mic은 2024년 2분기, MeetingMind Pod는 3분기에 출시 예정입니다. 사전 예약하시면 출시 소식을 가장 먼저 받아보실 수 있습니다."
+        },
+        "1": {
+          "question": "기존 회의 소프트웨어와 호환되나요?",
+          "answer": "네, Zoom, Microsoft Teams, Google Meet, Webex 등 모든 주요 화상회의 플랫폼과 완벽하게 호환됩니다. 별도의 드라이버 설치 없이 플러그 앤 플레이로 바로 사용 가능합니다."
+        },
+        "2": {
+          "question": "배터리 수명은 얼마나 되나요?",
+          "answer": "MeetingMind Pod는 최대 20시간, MeetingMind Mic은 최대 12시간 연속 사용이 가능합니다. 스마트 절전 기능으로 사용하지 않을 때는 자동으로 전력 소모를 최소화합니다."
+        },
+        "3": {
+          "question": "사전 예약 취소가 가능한가요?",
+          "answer": "네, 출시 전까지는 언제든지 사전 예약을 취소하실 수 있습니다. 별도의 위약금이나 수수료는 없으며, 이메일 한 통으로 간단하게 취소 가능합니다."
+        }
+      }
+    },
+    "finalCta": {
+      "title": "회의의 미래를 경험하세요",
+      "subtitle": "MeetingMind 하드웨어로 더 스마트한 회의를 시작하세요",
+      "preorder": "지금 사전 예약하기",
+      "tryApp": "앱 체험하기"
+    }
+  },
+  "pricing": {
+    "badge": "투명한 가격",
+    "title": "모든 팀을 위한",
+    "titleHighlight": "합리적 가격",
+    "subtitle": "규모에 상관없이 모든 팀이 사용할 수 있는 투명한 가격정책",
+    "toggle": {
+      "monthly": "월간",
+      "yearly": "연간",
+      "yearlyDiscount": "2개월 무료"
+    },
+    "currency": {
+      "krw": "₩",
+      "usd": "$"
+    },
+    "plans": {
+      "0": {
+        "name": "Free",
+        "price": {
+          "krw": "0",
+          "usd": "0"
+        },
+        "period": "무료",
+        "features": {
+          "0": "월 5회 회의",
+          "1": "30분 회의 길이",
+          "2": "기본 요약 기능",
+          "3": "개인 사용"
+        },
+        "cta": "무료 시작"
+      },
+      "1": {
+        "name": "Pro",
+        "price": {
+          "krw": "9,900",
+          "usd": "7.99"
+        },
+        "period": "월",
+        "popular": true,
+        "features": {
+          "0": "무제한 회의",
+          "1": "2시간 회의 길이",
+          "2": "고급 AI 분석",
+          "3": "팀 공유 기능"
+        },
+        "cta": "Pro 시작"
+      }
+    },
+    "trust": [
+      {
+        "title": "안전한 결제",
+        "description": "SSL 보안 결제"
+      },
+      {
+        "title": "언제든 취소",
+        "description": "약정 없음"
+      },
+      {
+        "title": "24/7 지원",
+        "description": "전담 고객지원"
+      }
+    ]
+  },
+  "faq": {
+    "badge": "자주 묻는 질문",
+    "title": "궁금한 점이",
+    "titleHighlight": "있으신가요?",
+    "subtitle": "자주 묻는 질문들을 정리했습니다",
+    "items": [
+      {
+        "question": "전사 정확도는 어떻게 되나요?",
+        "answer": "MeetingMind는 95% 이상의 높은 정확도를 자랑합니다. 딥러닝 기반의 음성 인식 기술과 화자 분리 기술을 통해 복잡한 회의 환경에서도 정확한 전사를 제공합니다."
+      },
+      {
+        "question": "어떤 언어를 지원하나요?",
+        "answer": "현재 한국어, 영어, 일본어, 중국어 등 12개 언어를 지원하며, 지속적으로 지원 언어를 확대하고 있습니다. 다국어 회의에서도 언어별 자동 인식이 가능합니다."
+      },
+      {
+        "question": "팀 공유는 안전한가요?",
+        "answer": "네, 매우 안전합니다. AES-256 암호화를 통해 모든 데이터가 보호되며, GDPR 및 SOC2 보안 표준을 준수합니다. 팀원별 접근 권한 관리도 가능합니다."
+      },
+      {
+        "question": "요금은 언제 청구되나요?",
+        "answer": "Pro 플랜의 경우 월간 또는 연간 구독 방식으로 청구됩니다. 첫 결제 후 매월 동일한 날짜에 자동 청구되며, 언제든 취소 가능합니다."
+      },
+      {
+        "question": "무료 플랜의 제한사항은?",
+        "answer": "무료 플랜은 월 5회 회의, 회의당 최대 30분까지 지원됩니다. 기본적인 요약 기능은 제공되지만, 고급 AI 분석이나 팀 공유 기능은 Pro 플랜에서 이용 가능합니다."
+      },
+      {
+        "question": "고객지원은 어떻게 받을 수 있나요?",
+        "answer": "Pro 플랜 사용자는 24/7 우선 지원을 받을 수 있습니다. 이메일, 채팅, 화상 통화를 통한 지원이 가능하며, 평균 응답 시간은 1시간 이내입니다."
+      }
+    ],
+    "support": {
+      "title": "더 많은 도움이 필요하신가요?",
+      "description": "언제든 문의해 주세요. 전담 팀이 도와드리겠습니다.",
+      "cta": "고객지원 센터"
+    }
+  },
+  "cta": {
+    "title": "회의를 더 스마트하게",
+    "titleKo": "MeetingMind와 함께 시작하세요",
+    "subtitle": "지금 바로 무료로 체험해보세요. 설치 시간 단 2분!",
+    "form": {
+      "placeholder": "이메일 주소를 입력하세요",
+      "cta": "무료 체험 시작",
+      "loading": "처리 중...",
+      "success": "성공적으로 등록되었습니다! 이메일을 확인해 주세요.",
+      "error": "오류가 발생했습니다. 다시 시도해 주세요."
+    },
+    "buttons": {
+      "appStore": "App Store에서 다운로드",
+      "googlePlay": "Google Play에서 다운로드"
+    },
+    "stats": {
+      "0": {
+        "number": "25,000+",
+        "label": "활성 사용자"
+      },
+      "1": {
+        "number": "95%",
+        "label": "고객 만족도"
+      },
+      "2": {
+        "number": "500,000+",
+        "label": "분석한 회의"
+      },
+      "3": {
+        "number": "24/7",
+        "label": "고객 지원"
+      }
+    }
+  },
+  "about": {
+    "meta": {
+      "title": "회사 소개",
+      "description": "MeetingMind는 AI 기술로 회의 문화를 혁신하는 스타트업입니다. 우리의 미션, 가치, 팀을 소개합니다.",
+      "keywords": "MeetingMind, 회사소개, AI 회의, 스타트업, 팀, 미션, 비전"
+    },
+    "hero": {
+      "title": "혁신으로 이끄는",
+      "titleHighlight": "AI 회의 솔루션",
+      "subtitle": "MeetingMind는 전 세계 수만 명의 사용자가 회의를 더 효율적이고 생산적으로 만들 수 있도록 돕고 있습니다."
+    },
+    "mission": {
+      "title": "우리의 미션",
+      "description": "MeetingMind는 AI 기술을 통해 회의의 새로운 패러다임을 제시합니다. 단순한 기록을 넘어 인사이트를 창출하고, 팀의 생산성을 극대화하는 것이 우리의 목표입니다.",
+      "stats": {
+        "users": "활성 사용자",
+        "meetings": "분석한 회의",
+        "satisfaction": "고객 만족도",
+        "languages": "지원 언어"
+      }
+    },
+    "values": {
+      "title": "우리의 가치",
+      "subtitle": "MeetingMind가 추구하는 핵심 가치들입니다",
+      "innovation": {
+        "title": "혁신",
+        "description": "최신 AI 기술을 활용하여 회의 문화를 혁신하고, 지속적인 연구개발을 통해 더 나은 솔루션을 제공합니다."
+      },
+      "privacy": {
+        "title": "프라이버시",
+        "description": "사용자의 개인정보와 회의 데이터를 최고 수준의 보안으로 보호하며, 투명한 데이터 정책을 유지합니다."
+      },
+      "userFirst": {
+        "title": "사용자 중심",
+        "description": "사용자의 피드백을 바탕으로 제품을 개선하며, 모든 결정에서 사용자 경험을 최우선으로 고려합니다."
+      }
+    },
+    "team": {
+      "title": "우리 팀",
+      "subtitle": "AI와 회의 문화 혁신에 열정을 가진 전문가들이 모였습니다",
+      "members": {
+        "0": {
+          "name": "김민수",
+          "role": "CEO & Co-founder",
+          "description": "스탠포드 AI 연구소 출신으로 10년간 음성 인식 기술을 연구해왔습니다."
+        },
+        "1": {
+          "name": "박지영",
+          "role": "CTO & Co-founder",
+          "description": "구글 출신 엔지니어로 대규모 AI 시스템 구축 경험을 보유하고 있습니다."
+        },
+        "2": {
+          "name": "이서연",
+          "role": "Head of Design",
+          "description": "애플 디자인 팀 출신으로 직관적이고 아름다운 UX를 설계합니다."
+        }
+      }
+    },
+    "contact": {
+      "title": "함께해요",
+      "subtitle": "MeetingMind와 함께 회의 문화를 바꿔나가요",
+      "website": {
+        "title": "웹사이트"
+      },
+      "support": {
+        "title": "고객지원"
+      },
+      "community": {
+        "title": "커뮤니티",
+        "description": "슬랙, 디스코드에서 만나요"
+      }
+    }
+  }
+} 
