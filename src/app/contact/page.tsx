@@ -36,7 +36,7 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
 }
 
 export default function Contact() {
-  const { language } = useLanguage()
+  const { language, t } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -76,73 +76,56 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: EnvelopeIcon,
-      title: '이메일',
-      value: 'contact@meetingmind.ai',
-      description: '24시간 내 답변 드립니다',
+      title: t('contactPage.contactInfo.items.email.title'),
+      value: t('contactPage.contactInfo.items.email.value'),
+      description: t('contactPage.contactInfo.items.email.description'),
       color: 'from-blue-500 to-blue-600'
     },
     {
       icon: PhoneIcon,
-      title: '전화',
-      value: '02-1234-5678',
-      description: '평일 9:00 - 18:00',
+      title: t('contactPage.contactInfo.items.phone.title'),
+      value: t('contactPage.contactInfo.items.phone.value'),
+      description: t('contactPage.contactInfo.items.phone.description'),
       color: 'from-green-500 to-green-600'
     },
     {
       icon: MapPinIcon,
-      title: '오피스',
-      value: '서울특별시 강남구 테헤란로 123',
-      description: '방문 상담 가능 (사전 예약)',
+      title: t('contactPage.contactInfo.items.office.title'),
+      value: t('contactPage.contactInfo.items.office.value'),
+      description: t('contactPage.contactInfo.items.office.description'),
       color: 'from-purple-500 to-purple-600'
     },
     {
       icon: ChatBubbleLeftRightIcon,
-      title: '라이브 채팅',
-      value: '실시간 상담',
-      description: '평일 9:00 - 18:00',
+      title: t('contactPage.contactInfo.items.chat.title'),
+      value: t('contactPage.contactInfo.items.chat.value'),
+      description: t('contactPage.contactInfo.items.chat.description'),
       color: 'from-pink-500 to-pink-600'
     }
   ]
 
   const categories = [
-    { id: 'general', label: '일반 문의', icon: ChatBubbleLeftRightIcon },
-    { id: 'sales', label: '영업 문의', icon: UserGroupIcon },
-    { id: 'support', label: '기술 지원', icon: LightBulbIcon },
-    { id: 'partnership', label: '파트너십', icon: HeartIcon }
+    { id: 'general', label: t('contactPage.form.categories.general'), icon: ChatBubbleLeftRightIcon },
+    { id: 'sales', label: t('contactPage.form.categories.sales'), icon: UserGroupIcon },
+    { id: 'support', label: t('contactPage.form.categories.support'), icon: LightBulbIcon },
+    { id: 'partnership', label: t('contactPage.form.categories.partnership'), icon: HeartIcon }
   ]
 
-  const faqs = [
-    {
-      question: '무료 체험은 어떻게 시작하나요?',
-      answer: '웹사이트에서 회원가입 후 즉시 무료 체험을 시작할 수 있습니다. 신용카드 정보는 필요하지 않습니다.'
-    },
-    {
-      question: '기업용 플랜은 어떻게 구매하나요?',
-      answer: '기업용 플랜은 영업팀과 상담 후 맞춤형 견적을 제공해드립니다. 연락처를 남겨주시면 24시간 내 연락드립니다.'
-    },
-    {
-      question: '온사이트 교육이 가능한가요?',
-      answer: '네, 기업 고객을 위한 온사이트 교육 서비스를 제공합니다. 팀 규모와 요구사항에 따라 맞춤형 교육 프로그램을 진행합니다.'
-    },
-    {
-      question: 'API 연동이 가능한가요?',
-      answer: 'RESTful API와 WebSocket을 통한 실시간 연동을 지원합니다. 개발자 문서와 SDK를 제공하여 쉽게 연동할 수 있습니다.'
-    }
-  ]
+  const faqs = t('contactPage.faq.items') as Array<{question: string, answer: string}>
 
   return (
     <>
       <Head>
-        <title>문의하기 | MeetingMind</title>
-        <meta name="description" content="MeetingMind 팀과 연락하세요. 궁금한 점이나 제안사항이 있으시면 언제든 문의해주세요." />
-        <meta name="keywords" content="MeetingMind, 연락처, 문의, 고객지원, 상담" />
-        <meta property="og:title" content="문의하기 | MeetingMind" />
-        <meta property="og:description" content="MeetingMind 팀과 연락하세요. 궁금한 점이나 제안사항이 있으시면 언제든 문의해주세요." />
+        <title>{t('contactPage.meta.title')} | MeetingMind</title>
+        <meta name="description" content={t('contactPage.meta.description')} />
+        <meta name="keywords" content={t('contactPage.meta.keywords')} />
+        <meta property="og:title" content={`${t('contactPage.meta.title')} | MeetingMind`} />
+        <meta property="og:description" content={t('contactPage.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://meetingmind.ai/contact" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="문의하기 | MeetingMind" />
-        <meta name="twitter:description" content="MeetingMind 팀과 연락하세요. 궁금한 점이나 제안사항이 있으시면 언제든 문의해주세요." />
+        <meta name="twitter:title" content={`${t('contactPage.meta.title')} | MeetingMind`} />
+        <meta name="twitter:description" content={t('contactPage.meta.description')} />
         <link rel="canonical" href="https://meetingmind.ai/contact" />
         <html lang={language} />
       </Head>
@@ -198,7 +181,7 @@ export default function Contact() {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium mb-8"
               >
                 <ChatBubbleLeftRightIcon className="w-4 h-4" />
-                언제든 연락주세요
+                {t('contactPage.hero.badge')}
               </motion.div>
               
               <motion.h1
@@ -207,9 +190,9 @@ export default function Contact() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-5xl lg:text-6xl font-black mb-6 leading-tight"
               >
-                함께 만들어가는{' '}
+                {t('contactPage.hero.title')}{' '}
                 <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  미래
+                  {t('contactPage.hero.titleHighlight')}
                 </span>
               </motion.h1>
               
@@ -219,7 +202,7 @@ export default function Contact() {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed"
               >
-                궁금한 점이나 제안사항이 있으시면 언제든 연락주세요. MeetingMind 팀이 성심성의껏 도와드리겠습니다.
+                {t('contactPage.hero.subtitle')}
               </motion.p>
             </AnimatedSection>
           </div>
@@ -230,10 +213,10 @@ export default function Contact() {
           <div className="max-w-7xl mx-auto px-6">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">
-                다양한 방법으로 연락하세요
+                {t('contactPage.contactInfo.title')}
               </h2>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                가장 편한 방법으로 연락주시면 빠르게 답변드리겠습니다
+                {t('contactPage.contactInfo.subtitle')}
               </p>
             </AnimatedSection>
             
@@ -280,13 +263,13 @@ export default function Contact() {
               <AnimatedSection>
                 <div className="bg-white rounded-3xl p-8 shadow-xl">
                   <h2 className="text-3xl font-bold text-slate-900 mb-6">
-                    메시지 보내기
+                    {t('contactPage.form.title')}
                   </h2>
                   
                   {/* 카테고리 선택 */}
                   <div className="mb-6">
                     <label className="block text-sm font-medium text-slate-700 mb-3">
-                      문의 유형
+                      {t('contactPage.form.categoryLabel')}
                     </label>
                     <div className="grid grid-cols-2 gap-3">
                       {categories.map((category) => (
@@ -310,7 +293,7 @@ export default function Contact() {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-medium text-slate-700 mb-2">
-                          이름 *
+                          {t('contactPage.form.fields.name')} *
                         </label>
                         <input
                           type="text"
@@ -319,13 +302,13 @@ export default function Contact() {
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                          placeholder="홍길동"
+                          placeholder={t('contactPage.form.placeholders.name')}
                         />
                       </div>
                       
                       <div>
                         <label className="block text-sm font-medium text-slate-700 mb-2">
-                          이메일 *
+                          {t('contactPage.form.fields.email')} *
                         </label>
                         <input
                           type="email"
@@ -334,14 +317,14 @@ export default function Contact() {
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                          placeholder="hong@example.com"
+                          placeholder={t('contactPage.form.placeholders.email')}
                         />
                       </div>
                     </div>
                     
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-2">
-                        회사명
+                        {t('contactPage.form.fields.company')}
                       </label>
                       <input
                         type="text"
@@ -349,13 +332,13 @@ export default function Contact() {
                         value={formData.company}
                         onChange={handleInputChange}
                         className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                        placeholder="회사명 (선택사항)"
+                        placeholder={t('contactPage.form.placeholders.company')}
                       />
                     </div>
                     
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-2">
-                        제목 *
+                        {t('contactPage.form.fields.subject')} *
                       </label>
                       <input
                         type="text"
@@ -364,13 +347,13 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-                        placeholder="문의 제목을 입력하세요"
+                        placeholder={t('contactPage.form.placeholders.subject')}
                       />
                     </div>
                     
                     <div>
                       <label className="block text-sm font-medium text-slate-700 mb-2">
-                        메시지 *
+                        {t('contactPage.form.fields.message')} *
                       </label>
                       <textarea
                         name="message"
@@ -379,7 +362,7 @@ export default function Contact() {
                         required
                         rows={6}
                         className="w-full px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-none"
-                        placeholder="궁금한 점이나 요청사항을 자세히 적어주세요"
+                        placeholder={t('contactPage.form.placeholders.message')}
                       />
                     </div>
                     
@@ -391,12 +374,12 @@ export default function Contact() {
                       {formStatus === 'loading' ? (
                         <>
                           <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          전송 중...
+                          {t('contactPage.form.buttons.sending')}
                         </>
                       ) : (
                         <>
                           <PaperAirplaneIcon className="w-5 h-5" />
-                          메시지 보내기
+                          {t('contactPage.form.buttons.send')}
                         </>
                       )}
                     </button>
@@ -409,7 +392,7 @@ export default function Contact() {
                         className="flex items-center gap-2 p-4 bg-green-50 border border-green-200 rounded-xl text-green-800"
                       >
                         <CheckCircleIcon className="w-5 h-5" />
-                        <span>메시지가 성공적으로 전송되었습니다! 24시간 내 답변드리겠습니다.</span>
+                        <span>{t('contactPage.form.messages.success')}</span>
                       </motion.div>
                     )}
                     
@@ -420,7 +403,7 @@ export default function Contact() {
                         className="flex items-center gap-2 p-4 bg-red-50 border border-red-200 rounded-xl text-red-800"
                       >
                         <ExclamationTriangleIcon className="w-5 h-5" />
-                        <span>전송 중 오류가 발생했습니다. 다시 시도해주세요.</span>
+                        <span>{t('contactPage.form.messages.error')}</span>
                       </motion.div>
                     )}
                   </form>
@@ -433,7 +416,7 @@ export default function Contact() {
                   {/* 오피스 위치 */}
                   <div className="bg-white rounded-3xl p-8 shadow-lg">
                     <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                      오피스 방문
+                      {t('contactPage.office.title')}
                     </h3>
                     <div className="space-y-4">
                       <div className="flex items-start gap-4">
@@ -441,8 +424,8 @@ export default function Contact() {
                           <MapPinIcon className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-slate-900 mb-1">주소</h4>
-                          <p className="text-slate-600">서울특별시 강남구 테헤란로 123<br />MeetingMind 빌딩 5층</p>
+                          <h4 className="font-semibold text-slate-900 mb-1">{t('contactPage.office.address.title')}</h4>
+                          <p className="text-slate-600 whitespace-pre-line">{t('contactPage.office.address.value')}</p>
                         </div>
                       </div>
                       
@@ -451,8 +434,8 @@ export default function Contact() {
                           <ClockIcon className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-slate-900 mb-1">운영시간</h4>
-                          <p className="text-slate-600">평일 9:00 - 18:00<br />주말 및 공휴일 휴무</p>
+                          <h4 className="font-semibold text-slate-900 mb-1">{t('contactPage.office.hours.title')}</h4>
+                          <p className="text-slate-600 whitespace-pre-line">{t('contactPage.office.hours.value')}</p>
                         </div>
                       </div>
                       
@@ -461,8 +444,8 @@ export default function Contact() {
                           <UserGroupIcon className="w-5 h-5 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-slate-900 mb-1">방문 상담</h4>
-                          <p className="text-slate-600">사전 예약 필수<br />데모 및 상세 설명 제공</p>
+                          <h4 className="font-semibold text-slate-900 mb-1">{t('contactPage.office.consultation.title')}</h4>
+                          <p className="text-slate-600 whitespace-pre-line">{t('contactPage.office.consultation.value')}</p>
                         </div>
                       </div>
                     </div>
@@ -471,7 +454,7 @@ export default function Contact() {
                   {/* 자주 묻는 질문 */}
                   <div className="bg-white rounded-3xl p-8 shadow-lg">
                     <h3 className="text-2xl font-bold text-slate-900 mb-6">
-                      자주 묻는 질문
+                      {t('contactPage.faq.title')}
                     </h3>
                     <div className="space-y-4">
                       {faqs.map((faq, index) => (
@@ -502,21 +485,21 @@ export default function Contact() {
           <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
             <AnimatedSection>
               <h2 className="text-4xl font-bold mb-6">
-                아직 MeetingMind를 사용해보지 않으셨나요?
+                {t('contactPage.cta.title')}
               </h2>
               <p className="text-xl text-white/80 mb-8">
-                지금 바로 무료로 체험해보세요. 설치 시간 단 2분!
+                {t('contactPage.cta.subtitle')}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                   <GlobeAltIcon className="w-5 h-5" />
-                  무료 체험 시작
+                  {t('contactPage.cta.buttons.freeTrial')}
                 </button>
                 
                 <button className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl font-semibold hover:bg-white/20 transition-all duration-300">
                   <ChatBubbleLeftRightIcon className="w-5 h-5" />
-                  라이브 데모 예약
+                  {t('contactPage.cta.buttons.liveDemo')}
                 </button>
               </div>
             </AnimatedSection>

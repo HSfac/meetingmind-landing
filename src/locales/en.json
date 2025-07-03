@@ -506,5 +506,120 @@
         "description": "Meet us on Slack, Discord"
       }
     }
+  },
+  "contactPage": {
+    "meta": {
+      "title": "Contact Us",
+      "description": "Get in touch with the MeetingMind team. Contact us anytime if you have questions or suggestions.",
+      "keywords": "MeetingMind, contact, inquiry, customer support, consultation"
+    },
+    "hero": {
+      "badge": "Contact us anytime",
+      "title": "Building the future",
+      "titleHighlight": "together",
+      "subtitle": "Contact us anytime if you have questions or suggestions. The MeetingMind team will be happy to help you."
+    },
+    "contactInfo": {
+      "title": "Get in touch with us",
+      "subtitle": "Contact us in the most convenient way and we'll get back to you quickly",
+      "items": {
+        "email": {
+          "title": "Email",
+          "value": "contact@meetingmind.ai",
+          "description": "We'll respond within 24 hours"
+        },
+        "phone": {
+          "title": "Phone",
+          "value": "02-1234-5678",
+          "description": "Weekdays 9:00 - 18:00"
+        },
+        "office": {
+          "title": "Office",
+          "value": "123 Teheran-ro, Gangnam-gu, Seoul",
+          "description": "Visit consultation available (advance booking)"
+        },
+        "chat": {
+          "title": "Live Chat",
+          "value": "Real-time consultation",
+          "description": "Weekdays 9:00 - 18:00"
+        }
+      }
+    },
+    "form": {
+      "title": "Send Message",
+      "categoryLabel": "Inquiry Type",
+      "categories": {
+        "general": "General Inquiry",
+        "sales": "Sales Inquiry",
+        "support": "Technical Support",
+        "partnership": "Partnership"
+      },
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "company": "Company",
+        "subject": "Subject",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "John Doe",
+        "email": "john@example.com",
+        "company": "Company name (optional)",
+        "subject": "Enter your inquiry subject",
+        "message": "Please describe your questions or requests in detail"
+      },
+      "buttons": {
+        "send": "Send Message",
+        "sending": "Sending..."
+      },
+      "messages": {
+        "success": "Message sent successfully! We'll respond within 24 hours.",
+        "error": "An error occurred while sending. Please try again."
+      }
+    },
+    "office": {
+      "title": "Office Visit",
+      "address": {
+        "title": "Address",
+        "value": "123 Teheran-ro, Gangnam-gu, Seoul\nMeetingMind Building 5F"
+      },
+      "hours": {
+        "title": "Operating Hours",
+        "value": "Weekdays 9:00 - 18:00\nWeekends and holidays closed"
+      },
+      "consultation": {
+        "title": "Visit Consultation",
+        "value": "Advance booking required\nDemo and detailed explanation provided"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How do I start a free trial?",
+          "answer": "You can start a free trial immediately after signing up on the website. No credit card information is required."
+        },
+        {
+          "question": "How do I purchase an enterprise plan?",
+          "answer": "Enterprise plans are provided with customized quotes after consultation with our sales team. Leave your contact information and we'll contact you within 24 hours."
+        },
+        {
+          "question": "Is on-site training available?",
+          "answer": "Yes, we provide on-site training services for enterprise customers. We conduct customized training programs according to team size and requirements."
+        },
+        {
+          "question": "Is API integration possible?",
+          "answer": "We support real-time integration through RESTful API and WebSocket. We provide developer documentation and SDK for easy integration."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Haven't tried MeetingMind yet?",
+      "subtitle": "Start your free trial now. Only 2 minutes to set up!",
+      "buttons": {
+        "freeTrial": "Start Free Trial",
+        "liveDemo": "Schedule Live Demo"
+      }
+    }
   }
 } 

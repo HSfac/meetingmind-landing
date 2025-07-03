@@ -54,11 +54,27 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // 중첩된 객체에서 값을 가져오는 헬퍼 함수
   const getNestedValue = (obj: Record<string, unknown>, path: string): string => {
-    return path.split('.').reduce((current: unknown, key: string) => {
-      return current && typeof current === 'object' && current !== null && key in current 
-        ? (current as Record<string, unknown>)[key] 
-        : path
-    }, obj) as string
+    const keys = path.split('.')
+    let current: unknown = obj
+    
+    for (const key of keys) {
+      if (current === null || current === undefined) {
+        return path
+      }
+      
+      if (typeof current === 'object' && current !== null) {
+        const currentObj = current as Record<string, unknown>
+        if (key in currentObj) {
+          current = currentObj[key]
+        } else {
+          return path
+        }
+      } else {
+        return path
+      }
+    }
+    
+    return typeof current === 'string' ? current : path
   }
 
   // 번역 함수
