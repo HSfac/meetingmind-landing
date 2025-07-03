@@ -151,16 +151,16 @@ export default function Contact() {
       <main className="min-h-screen bg-white">
 
         {/* Apple 스타일 Hero 섹션 */}
-        <section className="pt-32 pb-24 bg-white">
-          <div className="max-w-6xl mx-auto px-6 text-center">
+        <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-white">
+          <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
             <AnimatedSection>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-8"
+                className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm font-medium mb-6 md:mb-8"
               >
-                <ChatBubbleLeftRightIcon className="w-4 h-4" />
+                <ChatBubbleLeftRightIcon className="w-3 h-3 md:w-4 md:h-4" />
                 {t('contactPage.hero.badge')}
               </motion.div>
               
@@ -168,7 +168,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-5xl md:text-6xl lg:text-7xl apple-heading text-gray-900 mb-6"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl apple-heading text-gray-900 mb-4 md:mb-6"
               >
                 {t('contactPage.hero.title')} <span className="text-gray-600">{t('contactPage.hero.titleHighlight')}</span>
               </motion.h1>
@@ -177,7 +177,7 @@ export default function Contact() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-xl apple-subheading max-w-3xl mx-auto"
+                className="text-base md:text-lg lg:text-xl apple-subheading max-w-3xl mx-auto"
               >
                 {t('contactPage.hero.subtitle')}
               </motion.p>
@@ -186,18 +186,18 @@ export default function Contact() {
         </section>
 
         {/* Apple 스타일 연락 방법 */}
-        <section className="py-24 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-6">
-            <AnimatedSection className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4 md:px-6">
+            <AnimatedSection className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl apple-heading text-gray-900 mb-3 md:mb-4">
                 {t('contactPage.contactInfo.title')}
               </h2>
-              <p className="text-xl apple-subheading max-w-2xl mx-auto">
+              <p className="text-base md:text-lg lg:text-xl apple-subheading max-w-2xl mx-auto">
                 {t('contactPage.contactInfo.subtitle')}
               </p>
             </AnimatedSection>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {contactMethods.map((method, index) => (
                 <motion.div
                   key={index}
@@ -205,16 +205,16 @@ export default function Contact() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="apple-card p-8 text-center group cursor-pointer hover:shadow-lg transition-all duration-300"
+                  className="apple-card p-6 md:p-8 text-center group cursor-pointer hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="mb-6">
-                    <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-800 transition-colors">
-                      <method.icon className="w-8 h-8 text-white" />
+                  <div className="mb-4 md:mb-6">
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-900 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto group-hover:bg-gray-800 transition-colors">
+                      <method.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{method.title}</h3>
-                  <p className="text-gray-700 font-medium mb-2">{method.value}</p>
-                  <p className="text-sm text-gray-500">{method.description}</p>
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">{method.title}</h3>
+                  <p className="text-gray-700 font-medium mb-2 text-sm md:text-base">{method.value}</p>
+                  <p className="text-xs md:text-sm text-gray-500">{method.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -222,39 +222,39 @@ export default function Contact() {
         </section>
 
         {/* Apple 스타일 문의 폼 */}
-        <section className="py-24 bg-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <AnimatedSection className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-4xl mx-auto px-4 md:px-6">
+            <AnimatedSection className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl apple-heading text-gray-900 mb-3 md:mb-4">
                 {t('contactPage.form.title')}
               </h2>
-              <p className="text-xl apple-subheading max-w-2xl mx-auto">
+              <p className="text-base md:text-lg lg:text-xl apple-subheading max-w-2xl mx-auto">
                 {t('contactPage.form.subtitle')}
               </p>
             </AnimatedSection>
 
             <AnimatedSection>
-              <div className="apple-card p-8 md:p-12">
+              <div className="apple-card p-4 md:p-8 lg:p-12">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* 카테고리 선택 */}
-                  <div className="mb-8">
-                    <label className="block text-sm font-medium text-gray-700 mb-4">
+                  <div className="mb-6 md:mb-8">
+                    <label className="block text-sm font-medium text-gray-700 mb-3 md:mb-4">
                       {t('contactPage.form.categoryLabel')}
                     </label>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
                       {categories.map((category) => (
                         <button
                           key={category.id}
                           type="button"
                           onClick={() => setSelectedCategory(category.id)}
-                          className={`flex items-center gap-2 p-4 rounded-lg border-2 transition-all ${
+                          className={`flex items-center gap-2 p-3 md:p-4 rounded-lg border-2 transition-all ${
                             selectedCategory === category.id
                               ? 'border-gray-900 bg-gray-50'
                               : 'border-gray-200 hover:border-gray-300'
                           }`}
                         >
-                          <category.icon className="w-5 h-5" />
-                          <span className="text-sm font-medium">{category.label}</span>
+                          <category.icon className="w-4 h-4 md:w-5 md:h-5" />
+                          <span className="text-xs md:text-sm font-medium">{category.label}</span>
                         </button>
                       ))}
                     </div>
@@ -394,52 +394,52 @@ export default function Contact() {
         </section>
 
         {/* 오피스 정보 */}
-        <section className="py-24 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-6">
-            <AnimatedSection className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <AnimatedSection className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl apple-heading text-gray-900 mb-3 md:mb-4">
                 {t('contactPage.office.title')}
               </h2>
             </AnimatedSection>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
               <AnimatedSection>
-                <div className="apple-card p-8 text-center">
-                  <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <MapPinIcon className="w-8 h-8 text-white" />
+                <div className="apple-card p-6 md:p-8 text-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-900 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6">
+                    <MapPinIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 md:mb-4">
                     {t('contactPage.office.address.title')}
                   </h3>
-                  <p className="text-gray-600 whitespace-pre-line">
+                  <p className="text-gray-600 whitespace-pre-line text-sm md:text-base">
                     {t('contactPage.office.address.value')}
                   </p>
                 </div>
               </AnimatedSection>
               
               <AnimatedSection>
-                <div className="apple-card p-8 text-center">
-                  <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <BuildingOfficeIcon className="w-8 h-8 text-white" />
+                <div className="apple-card p-6 md:p-8 text-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-900 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6">
+                    <BuildingOfficeIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 md:mb-4">
                     {t('contactPage.office.hours.title')}
                   </h3>
-                  <p className="text-gray-600 whitespace-pre-line">
+                  <p className="text-gray-600 whitespace-pre-line text-sm md:text-base">
                     {t('contactPage.office.hours.value')}
                   </p>
                 </div>
               </AnimatedSection>
               
               <AnimatedSection>
-                <div className="apple-card p-8 text-center">
-                  <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <UserGroupIcon className="w-8 h-8 text-white" />
+                <div className="apple-card p-6 md:p-8 text-center">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-900 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-4 md:mb-6">
+                    <UserGroupIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 md:mb-4">
                     {t('contactPage.office.consultation.title')}
                   </h3>
-                  <p className="text-gray-600 whitespace-pre-line">
+                  <p className="text-gray-600 whitespace-pre-line text-sm md:text-base">
                     {t('contactPage.office.consultation.value')}
                   </p>
                 </div>
@@ -449,25 +449,25 @@ export default function Contact() {
         </section>
 
         {/* FAQ 섹션 */}
-        <section className="py-24 bg-white">
-          <div className="max-w-4xl mx-auto px-6">
-            <AnimatedSection className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-4xl mx-auto px-4 md:px-6">
+            <AnimatedSection className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl apple-heading text-gray-900 mb-3 md:mb-4">
                 {t('contactPage.faq.title')}
               </h2>
             </AnimatedSection>
             
-            <div className="space-y-4">
+            <div className="space-y-3 md:space-y-4">
               {faqs.map((faq, index) => (
                 <AnimatedSection key={index}>
                   <div className="apple-card overflow-hidden">
                     <button
                       onClick={() => setExpandedFAQ(expandedFAQ === index ? null : index)}
-                      className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                      className="w-full px-4 py-3 md:px-6 md:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                     >
-                      <span className="font-medium text-gray-900">{faq.question}</span>
+                      <span className="font-medium text-gray-900 text-sm md:text-base pr-4">{faq.question}</span>
                       <ChevronDownIcon 
-                        className={`w-5 h-5 text-gray-500 transition-transform ${
+                        className={`w-4 h-4 md:w-5 md:h-5 text-gray-500 transition-transform flex-shrink-0 ${
                           expandedFAQ === index ? 'rotate-180' : ''
                         }`}
                       />
@@ -477,7 +477,7 @@ export default function Contact() {
                         initial={{ height: 0 }}
                         animate={{ height: 'auto' }}
                         exit={{ height: 0 }}
-                        className="px-6 pb-4 text-gray-600"
+                        className="px-4 pb-3 md:px-6 md:pb-4 text-gray-600 text-xs md:text-sm"
                       >
                         {faq.answer}
                       </motion.div>
@@ -490,16 +490,16 @@ export default function Contact() {
         </section>
 
         {/* CTA 섹션 */}
-        <section className="py-24 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+        <section className="py-16 md:py-24 bg-gray-50">
+          <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-5xl apple-heading text-gray-900 mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl apple-heading text-gray-900 mb-3 md:mb-4">
                 {t('contactPage.cta.title')}
               </h2>
-              <p className="text-xl apple-subheading mb-8">
+              <p className="text-base md:text-lg lg:text-xl apple-subheading mb-6 md:mb-8">
                 {t('contactPage.cta.subtitle')}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
                 <button className="btn btn-primary">
                   {t('contactPage.cta.buttons.freeTrial')}
                 </button>

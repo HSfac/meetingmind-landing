@@ -57,17 +57,17 @@ const HowItWorksSection = () => {
   ]
 
   return (
-    <section id="how" className="py-24 bg-gray-50">
+    <section id="how" className="py-16 md:py-24 bg-gray-50">
       <div className="section-container">
-        <AnimatedSection className="text-center mb-16">
+        <AnimatedSection className="text-center mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm font-medium mb-4 md:mb-6"
           >
-            <BoltIcon className="w-4 h-4" />
+            <BoltIcon className="w-3 h-3 md:w-4 md:h-4" />
             {t('howItWorks.badge')}
           </motion.div>
           
@@ -76,7 +76,7 @@ const HowItWorksSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl apple-heading text-gray-900 mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl apple-heading text-gray-900 mb-4 md:mb-6 px-4"
           >
             {t('howItWorks.title')} <span className="text-gray-600">{t('howItWorks.titleHighlight')}</span>
           </motion.h2>
@@ -86,13 +86,13 @@ const HowItWorksSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl apple-subheading max-w-2xl mx-auto"
+            className="text-base md:text-lg lg:text-xl apple-subheading max-w-2xl mx-auto px-4"
           >
             {t('howItWorks.subtitle')}
           </motion.p>
         </AnimatedSection>
         
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -112,34 +112,34 @@ const HowItWorksSection = () => {
               )}
               
               {/* Apple 스타일 카드 */}
-              <div className="apple-card p-8 text-center">
+              <div className="apple-card p-6 md:p-8 text-center">
                 {/* 스텝 번호 */}
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-900 text-white rounded-full text-lg font-semibold mb-6">
+                <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-gray-900 text-white rounded-full text-base md:text-lg font-semibold mb-4 md:mb-6">
                   {step.step}
                 </div>
                 
                 {/* 아이콘 */}
-                <div className="flex justify-center mb-6">
+                <div className="flex justify-center mb-4 md:mb-6">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center group-hover:bg-gray-200 transition-colors"
+                    className="w-12 h-12 md:w-16 md:h-16 bg-gray-100 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:bg-gray-200 transition-colors"
                   >
-                    <step.icon className="w-8 h-8 text-gray-700" />
+                    <step.icon className="w-6 h-6 md:w-8 md:h-8 text-gray-700" />
                   </motion.div>
                 </div>
                 
                 {/* 텍스트 콘텐츠 */}
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
                       {t(`howItWorks.steps.${index}.title`)}
                     </h3>
-                    <p className="text-gray-600 font-medium">
+                    <p className="text-sm md:text-base text-gray-600 font-medium">
                       {t(`howItWorks.steps.${index}.subtitle`)}
                     </p>
                   </div>
                   
-                  <p className="text-gray-500 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-500 leading-relaxed">
                     {t(`howItWorks.steps.${index}.description`)}
                   </p>
                 </div>
@@ -154,12 +154,12 @@ const HowItWorksSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex justify-center mt-16"
+          className="flex justify-center mt-12 md:mt-16"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 bg-white rounded-full border border-gray-200">
-            <div className="w-2 h-2 bg-green-500 rounded-full" />
-            <span className="text-gray-600 font-medium">{t('howItWorks.footer')}</span>
-            <div className="w-2 h-2 bg-blue-500 rounded-full" />
+          <div className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-white rounded-full border border-gray-200">
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-500 rounded-full" />
+            <span className="text-sm md:text-base text-gray-600 font-medium">{t('howItWorks.footer')}</span>
+            <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-blue-500 rounded-full" />
           </div>
         </motion.div>
       </div>
@@ -199,17 +199,17 @@ const FeaturesSection = () => {
   ]
 
   return (
-    <section id="features" className="py-24 bg-white">
+    <section id="features" className="py-16 md:py-24 bg-white">
       <div className="section-container">
-        <AnimatedSection className="text-center mb-16">
+        <AnimatedSection className="text-center mb-12 md:mb-16">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm font-medium mb-4 md:mb-6"
           >
-            <BoltIcon className="w-4 h-4" />
+            <BoltIcon className="w-3 h-3 md:w-4 md:h-4" />
             {t('features.badge')}
           </motion.div>
           
@@ -218,7 +218,7 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl apple-heading text-gray-900 mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl apple-heading text-gray-900 mb-4 md:mb-6 px-4"
           >
             {t('features.title')} <span className="text-gray-600">{t('features.titleHighlight')}</span>
           </motion.h2>
@@ -228,13 +228,13 @@ const FeaturesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl apple-subheading max-w-3xl mx-auto"
+            className="text-base md:text-lg lg:text-xl apple-subheading max-w-3xl mx-auto px-4"
           >
             {t('features.subtitle')}
           </motion.p>
         </AnimatedSection>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -248,34 +248,34 @@ const FeaturesSection = () => {
               }}
               className="group"
             >
-              <div className="apple-card p-8 h-full">
+              <div className="apple-card p-6 md:p-8 h-full">
                 {/* 배지 */}
-                <div className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-700 mb-6">
+                <div className="inline-flex items-center gap-1 px-2.5 py-1 md:px-3 md:py-1 bg-gray-100 rounded-full text-xs font-medium text-gray-700 mb-4 md:mb-6">
                   {t(`features.items.${index}.badge`)}
                 </div>
                 
                 {/* 아이콘 */}
-                <div className="mb-6">
+                <div className="mb-4 md:mb-6">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center group-hover:bg-gray-800 transition-colors"
+                    className="w-12 h-12 md:w-14 md:h-14 bg-gray-900 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:bg-gray-800 transition-colors"
                   >
-                    <feature.icon className="w-7 h-7 text-white" />
+                    <feature.icon className="w-6 h-6 md:w-7 md:h-7 text-white" />
                   </motion.div>
                 </div>
                 
                 {/* 텍스트 콘텐츠 */}
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
                       {t(`features.items.${index}.title`)}
                     </h3>
-                    <p className="text-gray-600 font-medium">
+                    <p className="text-sm md:text-base text-gray-600 font-medium">
                       {t(`features.items.${index}.subtitle`)}
                     </p>
                   </div>
                   
-                  <p className="text-gray-500 leading-relaxed">
+                  <p className="text-sm md:text-base text-gray-500 leading-relaxed">
                     {t(`features.items.${index}.description`)}
                   </p>
                 </div>
@@ -293,19 +293,19 @@ const DemoSection = () => {
   const { t } = useLanguage()
   
   return (
-    <section id="demo" className="py-32 bg-slate-900 relative overflow-hidden">
+    <section id="demo" className="py-20 md:py-32 bg-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800/50 to-slate-900" />
       
       <div className="section-container relative z-10">
-        <AnimatedSection className="text-center mb-20">
+        <AnimatedSection className="text-center mb-12 md:mb-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100/10 to-purple-100/10 text-blue-400 text-sm font-medium mb-6 border border-blue-400/20"
+            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-blue-100/10 to-purple-100/10 text-blue-400 text-xs md:text-sm font-medium mb-4 md:mb-6 border border-blue-400/20"
           >
-            <PlayIcon className="w-4 h-4" />
+            <PlayIcon className="w-3 h-3 md:w-4 md:h-4" />
             {t('demo.badge')}
           </motion.div>
           
@@ -314,7 +314,7 @@ const DemoSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl lg:text-6xl font-black text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6 px-4"
           >
             {t('demo.title')} <span className="bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">{t('demo.titleHighlight')}</span>
           </motion.h2>
@@ -324,7 +324,7 @@ const DemoSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl text-slate-300 max-w-3xl mx-auto"
+            className="text-base md:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto px-4"
           >
             {t('demo.subtitle')}
           </motion.p>
@@ -338,31 +338,31 @@ const DemoSection = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative max-w-6xl mx-auto"
         >
-          <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-8 shadow-2xl border border-slate-700/50">
-            <div className="relative aspect-video bg-slate-800 rounded-2xl overflow-hidden border border-slate-600/50">
+          <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl md:rounded-3xl p-4 md:p-8 shadow-2xl border border-slate-700/50">
+            <div className="relative aspect-video bg-slate-800 rounded-xl md:rounded-2xl overflow-hidden border border-slate-600/50">
               {/* 가상 비디오 플레이어 */}
               <div className="absolute inset-0 bg-gradient-to-br from-slate-700 to-slate-800 flex items-center justify-center">
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-400 transition-colors"
+                  className="w-16 h-16 md:w-20 md:h-20 bg-blue-500 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-400 transition-colors"
                 >
-                  <PlayIcon className="w-8 h-8 text-white ml-1" />
+                  <PlayIcon className="w-6 h-6 md:w-8 md:h-8 text-white ml-1" />
                 </motion.button>
               </div>
               
               {/* 데모 정보 오버레이 */}
-              <div className="absolute bottom-4 left-4 right-4">
-                <div className="bg-black/50 backdrop-blur-sm rounded-xl p-4">
-                  <h3 className="text-white font-semibold mb-2">{t('demo.videoTitle')}</h3>
-                  <p className="text-white/70 text-sm">{t('demo.videoDescription')}</p>
+              <div className="absolute bottom-2 left-2 right-2 md:bottom-4 md:left-4 md:right-4">
+                <div className="bg-black/50 backdrop-blur-sm rounded-lg md:rounded-xl p-3 md:p-4">
+                  <h3 className="text-white font-semibold mb-1 md:mb-2 text-sm md:text-base">{t('demo.videoTitle')}</h3>
+                  <p className="text-white/70 text-xs md:text-sm">{t('demo.videoDescription')}</p>
                 </div>
               </div>
             </div>
           </div>
           
           {/* 통계 */}
-          <div className="grid grid-cols-3 gap-6 mt-8">
+          <div className="grid grid-cols-3 gap-3 md:gap-6 mt-6 md:mt-8">
             {['speed', 'accuracy', 'languages'].map((stat, index) => (
               <motion.div
                 key={stat}
@@ -372,10 +372,10 @@ const DemoSection = () => {
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-3xl font-bold text-blue-400 mb-2">
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-blue-400 mb-1 md:mb-2">
                   {t(`demo.stats.${stat}`)}
                 </div>
-                <div className="text-slate-400 text-sm">
+                <div className="text-slate-400 text-xs md:text-sm">
                   {t(`demo.stats.${stat}Label`)}
                 </div>
               </motion.div>
@@ -400,17 +400,17 @@ const TestimonialsSection = () => {
   }, [])
 
   return (
-    <section id="testimonials" className="py-32 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section id="testimonials" className="py-16 md:py-32 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       <div className="section-container relative z-10">
-        <AnimatedSection className="text-center mb-20">
+        <AnimatedSection className="text-center mb-12 md:mb-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-sm font-medium mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 text-xs md:text-sm font-medium mb-4 md:mb-6"
           >
-            <StarIcon className="w-4 h-4" />
+            <StarIcon className="w-3 h-3 md:w-4 md:h-4" />
             {t('testimonials.badge')}
           </motion.div>
           
@@ -419,7 +419,7 @@ const TestimonialsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl lg:text-6xl font-black text-slate-900 mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 mb-4 md:mb-6 px-4"
           >
             {t('testimonials.title')} <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{t('testimonials.titleHighlight')}</span>
           </motion.h2>
@@ -429,7 +429,7 @@ const TestimonialsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl text-slate-600 max-w-3xl mx-auto"
+            className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4"
           >
             {t('testimonials.subtitle')}
           </motion.p>
@@ -442,31 +442,31 @@ const TestimonialsSection = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 text-center"
+            className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl border border-slate-100 text-center mx-4 md:mx-0"
           >
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-4 md:mb-6">
               {[...Array(5)].map((_, i) => (
-                <StarIcon key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                <StarIcon key={i} className="w-5 h-5 md:w-6 md:h-6 text-yellow-400 fill-current" />
               ))}
             </div>
             
-            <blockquote className="text-2xl text-slate-700 font-medium mb-8 leading-relaxed">
+            <blockquote className="text-lg md:text-xl lg:text-2xl text-slate-700 font-medium mb-6 md:mb-8 leading-relaxed">
               &ldquo;{t(`testimonials.items.${currentIndex}.text`)}&rdquo;
             </blockquote>
             
-            <div className="flex items-center justify-center gap-4">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
+            <div className="flex items-center justify-center gap-3 md:gap-4">
+              <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-base md:text-lg">
                 {t(`testimonials.items.${currentIndex}.name`).charAt(0)}
               </div>
               <div className="text-left">
-                <div className="font-semibold text-slate-900">{t(`testimonials.items.${currentIndex}.name`)}</div>
-                <div className="text-slate-600">{t(`testimonials.items.${currentIndex}.role`)}</div>
+                <div className="font-semibold text-slate-900 text-sm md:text-base">{t(`testimonials.items.${currentIndex}.name`)}</div>
+                <div className="text-slate-600 text-xs md:text-sm">{t(`testimonials.items.${currentIndex}.role`)}</div>
               </div>
             </div>
           </motion.div>
           
           {/* 인디케이터 */}
-          <div className="flex justify-center mt-8 gap-2">
+          <div className="flex justify-center mt-6 md:mt-8 gap-2">
             {[...Array(5)].map((_, index) => (
               <button
                 key={index}
@@ -488,19 +488,19 @@ const PricingSection = () => {
   const { t } = useLanguage()
   
   return (
-    <section id="pricing" className="py-32 bg-slate-900 relative overflow-hidden">
+    <section id="pricing" className="py-16 md:py-32 bg-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800/50 to-slate-900" />
       
       <div className="section-container relative z-10">
-        <AnimatedSection className="text-center mb-20">
+        <AnimatedSection className="text-center mb-12 md:mb-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-100/10 to-purple-100/10 text-blue-400 text-sm font-medium mb-6 border border-blue-400/20"
+            className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gradient-to-r from-blue-100/10 to-purple-100/10 text-blue-400 text-xs md:text-sm font-medium mb-4 md:mb-6 border border-blue-400/20"
           >
-            <StarIcon className="w-4 h-4" />
+            <StarIcon className="w-3 h-3 md:w-4 md:h-4" />
             {t('pricing.badge')}
           </motion.div>
           
@@ -509,7 +509,7 @@ const PricingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-5xl lg:text-6xl font-black text-white mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white mb-4 md:mb-6 px-4"
           >
             {t('pricing.title')} <span className="bg-gradient-to-r from-blue-400 to-slate-300 bg-clip-text text-transparent">{t('pricing.titleHighlight')}</span>
           </motion.h2>
@@ -519,49 +519,49 @@ const PricingSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-xl text-slate-300 max-w-3xl mx-auto"
+            className="text-base md:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto px-4"
           >
             {t('pricing.subtitle')}
           </motion.p>
         </AnimatedSection>
         
-                 <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-           {[0, 1].map((index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+          {[0, 1].map((index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative bg-slate-800/50 backdrop-blur-sm rounded-3xl p-8 border transition-all duration-300 hover:scale-105 ${
+              className={`relative bg-slate-800/50 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8 border transition-all duration-300 hover:scale-105 mx-4 md:mx-0 ${
                 index === 1 
                   ? 'border-blue-400/50 bg-gradient-to-b from-blue-900/20 to-slate-800/50' 
                   : 'border-slate-700/50 hover:border-slate-600/50'
               }`}
             >
               {index === 1 && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+                <div className="absolute -top-3 md:-top-4 left-1/2 transform -translate-x-1/2">
+                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-semibold">
                     {t('pricing.popular')}
                   </span>
                 </div>
               )}
               
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-white mb-2">{t(`pricing.plans.${index}.name`)}</h3>
-                <p className="text-slate-400 mb-6">{t(`pricing.plans.${index}.description`)}</p>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2">{t(`pricing.plans.${index}.name`)}</h3>
+                <p className="text-slate-400 mb-4 md:mb-6 text-sm md:text-base">{t(`pricing.plans.${index}.description`)}</p>
                 
-                                 <div className="mb-8">
-                   <span className="text-5xl font-black text-white">
-                     {index === 0 ? '무료' : `₩${t(`pricing.plans.${index}.price.krw`)}`}
-                   </span>
-                   <span className="text-slate-400 ml-2">/{t(`pricing.plans.${index}.period`)}</span>
-                 </div>
+                <div className="mb-6 md:mb-8">
+                  <span className="text-3xl md:text-4xl lg:text-5xl font-black text-white">
+                    {index === 0 ? '무료' : `₩${t(`pricing.plans.${index}.price.krw`)}`}
+                  </span>
+                  <span className="text-slate-400 ml-2 text-sm md:text-base">/{t(`pricing.plans.${index}.period`)}</span>
+                </div>
                 
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`w-full py-4 rounded-2xl font-semibold transition-all duration-300 mb-8 ${
+                  className={`w-full py-3 md:py-4 rounded-xl md:rounded-2xl font-semibold transition-all duration-300 mb-6 md:mb-8 text-sm md:text-base ${
                     index === 1
                       ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl'
                       : 'bg-slate-700 text-white hover:bg-slate-600'
@@ -570,14 +570,14 @@ const PricingSection = () => {
                   {t(`pricing.plans.${index}.cta`)}
                 </motion.button>
                 
-                                 <ul className="space-y-4 text-left">
-                   {[0, 1, 2, 3].map((featureIndex) => (
-                     <li key={featureIndex} className="flex items-center gap-3">
-                       <CheckCircleIcon className="w-5 h-5 text-green-400 flex-shrink-0" />
-                       <span className="text-slate-300">{t(`pricing.plans.${index}.features.${featureIndex}`)}</span>
-                     </li>
-                   ))}
-                 </ul>
+                <ul className="space-y-3 md:space-y-4 text-left">
+                  {[0, 1, 2, 3].map((featureIndex) => (
+                    <li key={featureIndex} className="flex items-center gap-3">
+                      <CheckCircleIcon className="w-4 h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-slate-300 text-sm md:text-base">{t(`pricing.plans.${index}.features.${featureIndex}`)}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
@@ -593,15 +593,15 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   
   return (
-    <section id="faq" className="py-32 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section id="faq" className="py-16 md:py-32 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       <div className="section-container relative z-10">
-        <AnimatedSection className="text-center mb-20">
+        <AnimatedSection className="text-center mb-12 md:mb-20">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-5xl lg:text-6xl font-black text-slate-900 mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 mb-4 md:mb-6 px-4"
           >
             {t('faq.title')} <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{t('faq.titleHighlight')}</span>
           </motion.h2>
@@ -611,13 +611,13 @@ const FAQSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl text-slate-600 max-w-3xl mx-auto"
+            className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4"
           >
             {t('faq.subtitle')}
           </motion.p>
         </AnimatedSection>
         
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-3 md:space-y-4">
           {[0, 1, 2, 3, 4].map((index) => (
             <motion.div
               key={index}
@@ -625,20 +625,21 @@ const FAQSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl border border-slate-200 overflow-hidden"
+              className="bg-white rounded-xl md:rounded-2xl border border-slate-200 overflow-hidden mx-4 md:mx-0"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors"
+                className="w-full px-4 py-4 md:px-6 md:py-6 text-left flex justify-between items-center hover:bg-slate-50 transition-colors"
               >
-                <span className="font-semibold text-slate-900 text-lg">
+                <span className="font-semibold text-slate-900 text-base md:text-lg pr-4">
                   {t(`faq.items.${index}.question`)}
                 </span>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
+                  className="flex-shrink-0"
                 >
-                  <svg className="w-5 h-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </motion.div>
@@ -650,7 +651,7 @@ const FAQSection = () => {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="px-6 pb-6 text-slate-600 leading-relaxed">
+                <div className="px-4 pb-4 md:px-6 md:pb-6 text-slate-600 leading-relaxed text-sm md:text-base">
                   {t(`faq.items.${index}.answer`)}
                 </div>
               </motion.div>
@@ -681,7 +682,7 @@ const CTASection = () => {
   }
   
   return (
-    <footer id="cta" className="py-32 bg-gradient-to-r from-blue-600 to-slate-800 text-white relative overflow-hidden">
+    <footer id="cta" className="py-16 md:py-32 bg-gradient-to-r from-blue-600 to-slate-800 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.1),transparent)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.05),transparent)]" />
       
@@ -692,7 +693,7 @@ const CTASection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-5xl lg:text-6xl font-black leading-tight mb-6"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight mb-4 md:mb-6 px-4"
           >
             {t('cta.title')}
           </motion.h2>
@@ -702,7 +703,7 @@ const CTASection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl text-white/80 mb-12 max-w-3xl mx-auto"
+            className="text-lg md:text-xl lg:text-2xl text-white/80 mb-8 md:mb-12 max-w-3xl mx-auto px-4"
           >
             {t('cta.titleKo')}
           </motion.p>
@@ -712,7 +713,7 @@ const CTASection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl text-white/70 mb-12"
+            className="text-base md:text-lg lg:text-xl text-white/70 mb-8 md:mb-12 px-4"
           >
             {t('cta.subtitle')}
           </motion.p>
@@ -724,15 +725,15 @@ const CTASection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="max-w-md mx-auto mb-12"
+            className="max-w-md mx-auto mb-8 md:mb-12"
           >
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 px-4">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('cta.form.placeholder')}
-                className="flex-1 px-6 py-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-white/40"
+                className="flex-1 px-4 py-3 md:px-6 md:py-4 rounded-xl md:rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:border-white/40 text-sm md:text-base"
                 required
               />
               <motion.button
@@ -740,7 +741,7 @@ const CTASection = () => {
                 disabled={status === 'loading'}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-blue-600 rounded-2xl font-semibold hover:bg-white/90 transition-colors disabled:opacity-50"
+                className="px-6 py-3 md:px-8 md:py-4 bg-white text-blue-600 rounded-xl md:rounded-2xl font-semibold hover:bg-white/90 transition-colors disabled:opacity-50 text-sm md:text-base"
               >
                 {status === 'loading' ? t('cta.form.loading') : t('cta.form.cta')}
               </motion.button>
@@ -750,7 +751,7 @@ const CTASection = () => {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-green-300 mt-4"
+                className="text-green-300 mt-4 text-sm md:text-base"
               >
                 {t('cta.form.success')}
               </motion.p>
@@ -758,14 +759,14 @@ const CTASection = () => {
           </motion.form>
           
           {/* 앱 다운로드 버튼 */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-12 md:mb-16 px-4">
             <motion.a
               href="#"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-semibold hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl md:rounded-2xl text-white font-semibold hover:bg-white/20 transition-all duration-300 text-sm md:text-base"
             >
-              <PlayIcon className="w-5 h-5" />
+              <PlayIcon className="w-4 h-4 md:w-5 md:h-5" />
               {t('cta.buttons.appStore')}
             </motion.a>
             
@@ -773,9 +774,9 @@ const CTASection = () => {
               href="#"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-semibold hover:bg-white/20 transition-all duration-300"
+              className="inline-flex items-center gap-3 px-6 py-3 md:px-8 md:py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl md:rounded-2xl text-white font-semibold hover:bg-white/20 transition-all duration-300 text-sm md:text-base"
             >
-              <PlayIcon className="w-5 h-5" />
+              <PlayIcon className="w-4 h-4 md:w-5 md:h-5" />
               {t('cta.buttons.googlePlay')}
             </motion.a>
           </div>
@@ -786,14 +787,14 @@ const CTASection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
           >
             {[0, 1, 2, 3].map((index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold mb-2">
+                <div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 md:mb-2">
                   {t(`cta.stats.${index}.number`)}
                 </div>
-                <div className="text-white/70">
+                <div className="text-white/70 text-sm md:text-base">
                   {t(`cta.stats.${index}.label`)}
                 </div>
               </div>

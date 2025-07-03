@@ -53,7 +53,7 @@ const Header = () => {
           
           {/* CTA 버튼 */}
           <div className="flex items-center gap-4">
-            <LanguageToggle />
+          <LanguageToggle />
             <Link
               href="#cta"
               className="btn btn-primary text-sm"
