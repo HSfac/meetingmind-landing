@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { useLanguage, Language } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 import { GlobeAltIcon } from '@heroicons/react/24/outline'
 
 export const LanguageToggle: React.FC = () => {

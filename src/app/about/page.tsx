@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -37,7 +37,6 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
 
 export default function About() {
   const { t, language } = useLanguage()
-  const [activeTab, setActiveTab] = useState(0)
   
   const achievements = [
     { number: "25K+", label: "활성 사용자", icon: UserGroupIcon },

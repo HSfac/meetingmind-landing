@@ -7,20 +7,16 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { 
   CpuChipIcon,
   DevicePhoneMobileIcon,
-  BoltIcon,
   WifiIcon,
   Battery0Icon,
-  SignalIcon,
   CheckCircleIcon,
-  StarIcon,
   ShoppingCartIcon,
   SparklesIcon,
   ShieldCheckIcon,
   BeakerIcon,
   ArrowRightIcon,
   PlayIcon,
-  ChevronDownIcon,
-  InformationCircleIcon
+  ChevronDownIcon
 } from '@heroicons/react/24/outline'
 
 // 애니메이션 컴포넌트

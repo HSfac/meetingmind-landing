@@ -36,7 +36,7 @@ const AnimatedSection = ({ children, className = '' }: { children: React.ReactNo
 }
 
 export default function Contact() {
-  const { t, language } = useLanguage()
+  const { language } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',

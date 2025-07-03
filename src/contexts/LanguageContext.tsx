@@ -9,7 +9,7 @@ export type Language = 'ko' | 'en'
 interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
-  t: any
+  t: (key: string, params?: Record<string, string>) => string
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -53,10 +53,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const translations = language === 'ko' ? koTranslations : enTranslations
 
   // 중첩된 객체에서 값을 가져오는 헬퍼 함수
-  const getNestedValue = (obj: any, path: string) => {
-    return path.split('.').reduce((current, key) => {
-      return current && current[key] !== undefined ? current[key] : path
-    }, obj)
+  const getNestedValue = (obj: Record<string, unknown>, path: string): string => {
+    return path.split('.').reduce((current: unknown, key: string) => {
+      return current && typeof current === 'object' && current !== null && key in current 
+        ? (current as Record<string, unknown>)[key] 
+        : path
+    }, obj) as string
   }
 
   // 번역 함수

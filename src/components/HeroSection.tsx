@@ -3,7 +3,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
-import LanguageToggle from '@/components/LanguageToggle'
 import { PlayIcon, MicrophoneIcon } from '@heroicons/react/24/outline'
 
 // 애니메이션 컴포넌트
