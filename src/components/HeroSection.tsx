@@ -23,11 +23,11 @@ const HeroSection = () => {
   const { t } = useLanguage()
   
   return (
-    <section id="hero" className="relative bg-white min-h-screen flex items-center">
+    <section id="hero" className="relative bg-white min-h-screen flex items-center pt-16 md:pt-20">
       {/* Apple-style 미니멀 배경 */}
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white" />
       
-      <div className="section-container py-20 relative z-10">
+      <div className="section-container py-12 md:py-20 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
           {/* Apple 스타일 배지 */}
           <AnimatedSection>

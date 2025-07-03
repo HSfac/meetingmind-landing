@@ -109,7 +109,7 @@ export default function Privacy() {
         <html lang={language} />
       </Head>
       
-      <main className="min-h-screen bg-white pt-20 pb-16 md:pt-32 md:pb-24">
+      <main className="min-h-screen bg-white pt-24 pb-16 md:pt-32 md:pb-24">
         <div className="max-w-4xl mx-auto px-4 md:px-6">
           {/* Apple 스타일 Hero 섹션 */}
           <AnimatedSection className="text-center mb-12 md:mb-16">

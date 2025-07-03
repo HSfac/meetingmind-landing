@@ -151,7 +151,7 @@ export default function Contact() {
       <main className="min-h-screen bg-white">
 
         {/* Apple 스타일 Hero 섹션 */}
-        <section className="pt-20 pb-16 md:pt-32 md:pb-24 bg-white">
+        <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-white">
           <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
             <AnimatedSection>
               <motion.div
