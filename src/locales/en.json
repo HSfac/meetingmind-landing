@@ -736,5 +736,61 @@
         "content": "The Company designates a Personal Information Protection Officer as follows to take overall responsibility for personal information processing and handle complaints and damage relief related to personal information processing:\n\nPersonal Information Protection Officer\nName: Mr. Kim OO\nPosition: Personal Information Protection Team Leader\nContact: privacy@meetingmind.ai\n\nPersonal Information Protection Department\nDepartment: Personal Information Protection Team\nContact: privacy@meetingmind.ai"
       }
     }
+  },
+  "footer": {
+    "brand": {
+      "description": "Creating smarter meeting culture with AI-powered meeting solutions."
+    },
+    "contact": {
+      "email": "contact@meetingmind.ai",
+      "phone": "+82-2-1234-5678",
+      "address": "123 Teheran-ro, Gangnam-gu, Seoul, South Korea"
+    },
+    "sections": {
+      "product": {
+        "title": "Product",
+        "links": {
+          "support": "Support",
+          "guide": "User Guide"
+        }
+      },
+      "support": {
+        "title": "Support",
+        "links": {
+          "customerSupport": "Customer Support",
+          "faq": "FAQ",
+          "contact": "Contact Us",
+          "guide": "User Guide"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": "About Us",
+          "careers": "Careers",
+          "blog": "Blog",
+          "press": "Press"
+        }
+      },
+      "legal": {
+        "title": "Legal",
+        "links": {
+          "privacy": "Privacy Policy",
+          "terms": "Terms of Service",
+          "cookies": "Cookie Policy",
+          "security": "Security"
+        }
+      }
+    },
+    "bottom": {
+      "copyright": "© 2024 MeetingMind. All rights reserved.",
+      "madeWith": "Made with ❤️ in Seoul",
+      "backToTop": "Back to Top"
+    },
+    "social": {
+      "twitter": "Twitter",
+      "linkedin": "LinkedIn",
+      "github": "GitHub"
+    }
   }
 } 
