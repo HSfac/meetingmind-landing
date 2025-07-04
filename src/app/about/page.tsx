@@ -61,9 +61,13 @@ export default function About() {
         <meta property="og:description" content={t('about.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://meetingmind.ai/about" />
+        <meta property="og:image" content="https://meetingmind.ai/og/og-about.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${t('about.meta.title')} | MeetingMind`} />
         <meta name="twitter:description" content={t('about.meta.description')} />
+        <meta name="twitter:image" content="https://meetingmind.ai/og/og-about.jpg" />
         <link rel="canonical" href="https://meetingmind.ai/about" />
         <html lang={language} />
       </Head>

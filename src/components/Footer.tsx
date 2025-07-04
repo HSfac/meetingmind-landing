@@ -51,10 +51,12 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <Link href="/" className="inline-block mb-4 md:mb-6">
                 <div className="flex items-center gap-3">
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-gray-900 rounded-2xl flex items-center justify-center">
-                    <span className="text-white font-bold text-base md:text-lg">M</span>
-                  </div>
-                <span className="text-lg md:text-xl font-semibold text-gray-900 apple-heading">MeetingMind</span>
+                  <img 
+                    src="/brand/logo.png" 
+                    alt="MeetingMind" 
+                    className="h-8 md:h-10 w-auto"
+                  />
+                  <span className="text-lg md:text-xl font-semibold text-gray-900 apple-heading">MeetingMind</span>
                 </div>
               </Link>
               

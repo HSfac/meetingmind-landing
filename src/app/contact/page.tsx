@@ -141,9 +141,13 @@ export default function Contact() {
         <meta property="og:description" content={t('contactPage.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://meetingmind.ai/contact" />
+        <meta property="og:image" content="https://meetingmind.ai/og/og-contact.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${t('contactPage.meta.title')} | MeetingMind`} />
         <meta name="twitter:description" content={t('contactPage.meta.description')} />
+        <meta name="twitter:image" content="https://meetingmind.ai/og/og-contact.jpg" />
         <link rel="canonical" href="https://meetingmind.ai/contact" />
         <html lang={language} />
       </Head>

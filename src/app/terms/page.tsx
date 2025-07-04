@@ -71,9 +71,13 @@ export default function Terms() {
         <meta property="og:description" content={t('terms.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://meetingmind.ai/terms" />
+        <meta property="og:image" content="https://meetingmind.ai/og/og-main.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${t('terms.meta.title')} | MeetingMind`} />
         <meta name="twitter:description" content={t('terms.meta.description')} />
+        <meta name="twitter:image" content="https://meetingmind.ai/og/og-main.jpg" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://meetingmind.ai/terms" />
         <html lang={language} />

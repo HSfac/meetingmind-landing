@@ -50,6 +50,8 @@ export default function Hardware() {
       name: t('hardware.products.0.name'),
       price: t('hardware.products.0.price'),
       description: t('hardware.products.0.description'),
+      // 실제 이미지 경로를 여기에 추가하세요
+      image: '/hardware/product-1.png', // 이미지 파일을 여기에 넣으세요
       features: [
         t('hardware.products.0.features.0'),
         t('hardware.products.0.features.1'),
@@ -62,6 +64,8 @@ export default function Hardware() {
       name: t('hardware.products.1.name'),
       price: t('hardware.products.1.price'),
       description: t('hardware.products.1.description'),
+      // 실제 이미지 경로를 여기에 추가하세요
+      image: '/hardware/product-2.png', // 이미지 파일을 여기에 넣으세요
       features: [
         t('hardware.products.1.features.0'),
         t('hardware.products.1.features.1'),
@@ -104,9 +108,13 @@ export default function Hardware() {
         <meta property="og:description" content={t('hardware.meta.description')} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://meetingmind.ai/hardware" />
+        <meta property="og:image" content="https://meetingmind.ai/og/og-hardware.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${t('hardware.meta.title')} | MeetingMind`} />
         <meta name="twitter:description" content={t('hardware.meta.description')} />
+        <meta name="twitter:image" content="https://meetingmind.ai/og/og-hardware.jpg" />
         <link rel="canonical" href="https://meetingmind.ai/hardware" />
         <html lang={language} />
       </Head>
@@ -203,10 +211,12 @@ export default function Hardware() {
                 transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
                 className="relative"
               >
-                <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl md:rounded-3xl flex items-center justify-center shadow-2xl">
-                  <div className="w-20 h-20 md:w-24 md:h-24 lg:w-32 lg:h-32 bg-gray-300 rounded-xl md:rounded-2xl flex items-center justify-center">
-                    <DevicePhoneMobileIcon className="w-10 h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 text-gray-500" />
-                  </div>
+                <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl md:rounded-3xl flex items-center justify-center shadow-2xl overflow-hidden">
+                  <img 
+                    src="/hardware/hero-product.png" 
+                    alt="MeetingMind Hardware Product" 
+                    className="w-full h-full object-contain p-8"
+                  />
                 </div>
               </motion.div>
             </AnimatedSection>
@@ -235,10 +245,12 @@ export default function Hardware() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="apple-card p-6 md:p-8 group cursor-pointer hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="w-full h-48 md:h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300">
-                    <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-gray-300 rounded-lg md:rounded-xl flex items-center justify-center">
-                      <DevicePhoneMobileIcon className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 text-gray-500" />
-                    </div>
+                  <div className="w-full h-48 md:h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300 overflow-hidden">
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
+                      className="w-full h-full object-contain p-4"
+                    />
                   </div>
                   
                   <div className="mb-4">
@@ -336,7 +348,19 @@ export default function Hardware() {
                   </div>
                   <p className="text-gray-700 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">&ldquo;{testimonial.content}&rdquo;</p>
                   <div className="flex items-center gap-3 md:gap-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-300 rounded-full"></div>
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-300 rounded-full overflow-hidden">
+                      {/* 
+                        여기에 고객 프로필 이미지를 넣으세요!
+                        파일 이름: customer-1.jpg, customer-2.jpg
+                        추천 크기: 150x150px 이상
+                        
+                        <img 
+                          src={`/hardware/customer-${index + 1}.jpg`} 
+                          alt={testimonial.name} 
+                          className="w-full h-full object-cover"
+                        />
+                      */}
+                    </div>
                     <div>
                       <div className="font-semibold text-gray-900 text-sm md:text-base">{testimonial.name}</div>
                       <div className="text-xs md:text-sm text-gray-600">{testimonial.company}</div>

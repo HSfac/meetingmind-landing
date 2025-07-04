@@ -51,8 +51,13 @@ const Header = () => {
       <header className={headerClass}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Apple 스타일 로고 */}
-          <Link href="/" className={logoClass} onClick={closeMenu}>
-            MeetingMind
+          <Link href="/" className="flex items-center gap-2" onClick={closeMenu}>
+            <img 
+              src="/brand/logo.png" 
+              alt="MeetingMind" 
+              className="h-6 md:h-8 w-auto"
+            />
+            <span className={logoClass}>MeetingMind</span>
           </Link>
 
           {/* Apple 스타일 네비게이션 - 데스크탑 */}
@@ -106,9 +111,16 @@ const Header = () => {
           <div className="fixed top-0 right-0 bottom-0 w-64 bg-white shadow-xl">
             <div className="flex flex-col h-full">
               <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
-                <span className="text-lg font-semibold text-gray-900 apple-heading">
-                  MeetingMind
-                </span>
+                <div className="flex items-center gap-2">
+                  <img 
+                    src="/brand/logo.png" 
+                    alt="MeetingMind" 
+                    className="h-6 w-auto"
+                  />
+                  <span className="text-lg font-semibold text-gray-900 apple-heading">
+                    MeetingMind
+                  </span>
+                </div>
                 <button
                   onClick={closeMenu}
                   className="p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors duration-200"
