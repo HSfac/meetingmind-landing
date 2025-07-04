@@ -200,53 +200,53 @@
     },
     "specifications": {
       "title": "Technical Specifications",
-      "subtitle": "Industry-leading hardware technology",
+      "subtitle": "Discover the innovative technology of next-generation AI hardware",
       "items": {
         "0": {
-          "title": "A15 Bionic Chip",
-          "description": "Industry-leading AI processing power"
+          "title": "AI Processor",
+          "description": "Dedicated AI chipset for real-time voice analysis"
         },
         "1": {
-          "title": "12MP Camera",
-          "description": "4K ProRes video recording"
+          "title": "Mobile Integration",
+          "description": "Perfect synchronization with smartphones"
         },
         "2": {
-          "title": "Wi-Fi 6E",
-          "description": "Ultra-fast wireless connectivity"
+          "title": "Wireless Connectivity",
+          "description": "Wi-Fi 6 and Bluetooth 5.0 support"
         },
         "3": {
-          "title": "24-Hour Battery",
-          "description": "All-day lasting battery life"
+          "title": "Battery Life",
+          "description": "Up to 12 hours of continuous use"
         }
       }
     },
     "testimonials": {
       "title": "Customer Reviews",
-      "subtitle": "Real user testimonials",
+      "subtitle": "See what our real users have to say",
       "items": {
         "0": {
-          "name": "Minsu Kim",
-          "company": "Tech Startup CEO",
-          "content": "Meeting efficiency improved by 300%. This is truly an innovative product."
+          "name": "Hyunsu Kim",
+          "company": "TechCorp",
+          "content": "The hardware quality is excellent and the AI analysis accuracy is amazing. Meeting efficiency has greatly improved."
         },
         "1": {
-          "name": "Jiyoung Park",
-          "company": "Enterprise Team Leader",
-          "content": "AI translation feature is incredibly accurate. It's a great help in international meetings."
+          "name": "Seoyeon Lee",
+          "company": "StartupY",
+          "content": "Installation and setup are very simple and intuitive. All team members are satisfied."
         }
       }
     },
-         "preorder": {
-       "title": "Pre-order Benefits",
-       "subtitle": "Be the first to know about the launch",
-       "placeholder": "Enter your email address",
-       "button": "Reserve Now",
-       "success": "Pre-order completed successfully!"
-     },
-         "mobile": {
-       "title": "Also available on mobile",
-       "releaseDate": "Coming Soon"
-     },
+    "preorder": {
+      "title": "Pre-order Benefits",
+      "subtitle": "Get early bird benefits before launch. Limited quantity available.",
+      "placeholder": "Enter your email address",
+      "button": "Pre-order Now",
+      "success": "Pre-order completed successfully!"
+    },
+    "mobile": {
+      "title": "Use with mobile app",
+      "releaseDate": "Release Date"
+    },
       "specs": {
       "title": "Technical Specifications",
       "subtitle": "detailed technical specifications",

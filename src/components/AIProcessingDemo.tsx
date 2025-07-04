@@ -69,11 +69,12 @@ const ProgressBar = ({ progress, color = 'blue' }: { progress: number, color?: s
 const MindMapAnimation = () => {
   const { t } = useLanguage()
   return (
-    <div className="relative w-80 h-60 mx-auto bg-gradient-to-br from-slate-50 to-white rounded-2xl p-6 border border-gray-200 shadow-lg">
+    <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-48 sm:h-52 md:h-60 mx-auto bg-gradient-to-br from-slate-50 to-white rounded-2xl p-4 sm:p-6 border border-gray-200 shadow-lg">
       {/* SVG 곡선 가지들 */}
       <svg 
         className="absolute inset-0 w-full h-full" 
         viewBox="0 0 320 240"
+        preserveAspectRatio="xMidYMid meet"
         fill="none"
       >
         {/* 4개의 곡선 가지 */}
@@ -123,13 +124,13 @@ const MindMapAnimation = () => {
 
       {/* 중앙 메인 노드 */}
       <motion.div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-lg flex items-center justify-center z-10"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full shadow-lg flex items-center justify-center z-10"
         initial={{ scale: 0, rotate: -180 }}
         animate={{ scale: 1, rotate: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.div
-          className="text-white text-xl font-bold"
+          className="text-white text-lg sm:text-xl font-bold"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -140,7 +141,7 @@ const MindMapAnimation = () => {
       
       {/* 메인 노드 글로우 효과 */}
       <motion.div
-        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-blue-400/20 rounded-full z-0"
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-16 sm:h-16 bg-blue-400/20 rounded-full z-0"
         animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.1, 0.3] }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -186,7 +187,7 @@ const MindMapAnimation = () => {
         >
           {/* 브랜치 노드 */}
           <motion.div
-            className={`w-8 h-8 bg-gradient-to-br ${branch.color} rounded-full shadow-lg flex items-center justify-center text-sm border-2 border-white`}
+            className={`w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br ${branch.color} rounded-full shadow-lg flex items-center justify-center text-xs sm:text-sm border-2 border-white`}
             whileHover={{ scale: 1.15 }}
             transition={{ type: "spring", stiffness: 400 }}
           >
@@ -195,9 +196,9 @@ const MindMapAnimation = () => {
           
           {/* 브랜치 라벨 */}
           <motion.div
-            className="absolute bg-white/95 backdrop-blur-sm px-2.5 py-1.5 rounded-lg text-xs font-medium text-gray-700 shadow-md border border-gray-200 whitespace-nowrap"
+            className="absolute bg-white/95 backdrop-blur-sm px-1.5 py-1 sm:px-2.5 sm:py-1.5 rounded-md sm:rounded-lg text-xs font-medium text-gray-700 shadow-md border border-gray-200 whitespace-nowrap"
             style={{
-              left: index === 0 ? '20px' : index === 1 ? '20px' : index === 2 ? '-50px' : '-60px',
+              left: index === 0 ? '18px' : index === 1 ? '18px' : index === 2 ? '-45px' : '-55px',
               top: index === 0 ? '-5px' : index === 1 ? '-5px' : index === 2 ? '-5px' : '-5px',
             }}
             initial={{ opacity: 0, y: 5 }}
@@ -211,12 +212,12 @@ const MindMapAnimation = () => {
       
       {/* 하단 제목 */}
       <motion.div
-        className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 px-4 py-2 rounded-full border border-blue-200"
+        className="absolute -bottom-5 sm:-bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 px-2 py-1 sm:px-4 sm:py-2 rounded-full border border-blue-200"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 1.6 }}
       >
-        <span className="text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <span className="text-xs sm:text-sm font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           {t('aiProcessingDemo.completion.title')}
         </span>
       </motion.div>
@@ -311,7 +312,7 @@ const AIProcessingDemo = ({ className = '' }: AIProcessingDemoProps) => {
   }, [currentStep, steps])
 
   return (
-    <div className={`apple-card p-8 md:p-12 bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 shadow-2xl shadow-gray-200/50 ${className}`}>
+    <div className={`apple-card p-4 sm:p-6 md:p-8 lg:p-12 bg-gradient-to-br from-white to-gray-50/50 border border-gray-100 shadow-2xl shadow-gray-200/50 ${className}`}>
       <div className="flex flex-col items-center text-center">
         {/* 동적 아이콘 */}
         <motion.div
