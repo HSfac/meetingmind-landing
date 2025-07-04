@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { 
@@ -214,9 +215,11 @@ export default function Hardware() {
                   className="relative"
                 >
                   <div className="w-full h-80 md:h-96 lg:h-[32rem] bg-black rounded-2xl md:rounded-3xl flex items-center justify-center shadow-2xl overflow-hidden">
-                    <img 
+                    <Image 
                       src="/hardware/hero-product.png" 
                       alt="MeetingMind Hardware Product" 
+                      width={800}
+                      height={800}
                       className="w-full h-full object-contain p-6"
                     />
                   </div>
@@ -249,9 +252,11 @@ export default function Hardware() {
                   className="apple-card p-6 md:p-8 group cursor-pointer hover:shadow-lg transition-all duration-300"
                 >
                   <div className="w-full h-48 md:h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl md:rounded-2xl flex items-center justify-center mb-4 md:mb-6 group-hover:from-gray-200 group-hover:to-gray-300 transition-all duration-300 overflow-hidden">
-                    <img 
+                    <Image 
                       src={product.image} 
                       alt={product.name} 
+                      width={400}
+                      height={400}
                       className="w-full h-full object-contain p-4"
                     />
                   </div>

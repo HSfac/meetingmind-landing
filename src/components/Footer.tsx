@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { 
   EnvelopeIcon,
@@ -51,9 +52,11 @@ const Footer = () => {
             <div className="lg:col-span-2">
               <Link href="/" className="inline-block mb-4 md:mb-6">
                 <div className="flex items-center gap-3">
-                  <img 
+                  <Image 
                     src="/brand/logo.png" 
                     alt="MeetingMind" 
+                    width={40}
+                    height={40}
                     className="h-8 md:h-10 w-auto"
                   />
                   <span className="text-lg md:text-xl font-semibold text-gray-900 apple-heading">MeetingMind</span>
