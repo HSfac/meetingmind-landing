@@ -236,13 +236,13 @@
         }
       }
     },
-    "preorder": {
-      "title": "Pre-order",
-      "subtitle": "Be the first to know about the launch",
-      "placeholder": "Enter your email address",
-      "button": "Reserve Now",
-      "success": "Pre-order completed successfully!"
-    },
+         "preorder": {
+       "title": "Pre-order Benefits",
+       "subtitle": "Be the first to know about the launch",
+       "placeholder": "Enter your email address",
+       "button": "Reserve Now",
+       "success": "Pre-order completed successfully!"
+     },
          "mobile": {
        "title": "Also available on mobile",
        "releaseDate": "Coming Soon"

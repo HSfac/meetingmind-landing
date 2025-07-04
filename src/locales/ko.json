@@ -236,13 +236,13 @@
         }
       }
     },
-    "preorder": {
-      "title": "사전 예약",
-      "subtitle": "출시 소식을 가장 먼저 받아보세요",
-      "placeholder": "이메일 주소를 입력하세요",
-      "button": "예약하기",
-      "success": "사전 예약이 완료되었습니다!"
-    },
+         "preorder": {
+       "title": "사전 예약 혜택",
+       "subtitle": "출시 소식을 가장 먼저 받아보세요",
+       "placeholder": "이메일 주소를 입력하세요",
+       "button": "예약하기",
+       "success": "사전 예약이 완료되었습니다!"
+     },
          "mobile": {
        "title": "모바일 앱으로도 만나보세요",
        "releaseDate": "출시 예정"

@@ -123,103 +123,106 @@ export default function Hardware() {
 
         {/* Hero 섹션 - Apple 스타일 */}
         <section className="pt-24 pb-16 md:pt-32 md:pb-24 bg-white relative overflow-hidden">
-          <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
-            <AnimatedSection>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm font-medium mb-6 md:mb-8"
-              >
-                <CpuChipIcon className="w-3 h-3 md:w-4 md:h-4" />
-                {t('hardware.badge')}
-              </motion.div>
-              
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl apple-heading text-gray-900 mb-4 md:mb-6 leading-tight"
-              >
-                {t('hardware.title')} <span className="text-gray-600">{t('hardware.titleHighlight')}</span>
-              </motion.h1>
-              
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="text-base md:text-lg lg:text-xl apple-subheading max-w-3xl mx-auto mb-8 md:mb-12"
-              >
-                {t('hardware.subtitle')}
-              </motion.p>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-12 md:mb-16"
-              >
-                <button className="btn btn-primary">
-                  {t('hardware.cta.explore')}
-                </button>
-                <button className="btn btn-secondary">
-                  {t('hardware.cta.demo')}
-                </button>
-              </motion.div>
-              
-              {/* 앱 다운로드 버튼 */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-12 md:mb-16"
-              >
-                <div className="text-xs md:text-sm text-gray-500 mb-3 sm:mb-0 sm:mr-4">
-                  {t('hardware.mobile.title')}
-                </div>
-                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
-                  {/* App Store 버튼 */}
-                  <button className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-6 md:py-3 bg-black text-white rounded-xl md:rounded-2xl hover:bg-gray-800 transition-colors duration-200">
-                    <svg className="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-                    </svg>
-                    <div className="text-left">
-                      <div className="text-xs opacity-70">Download on the</div>
-                      <div className="text-xs md:text-sm font-semibold">App Store</div>
-                    </div>
+          <div className="max-w-7xl mx-auto px-4 md:px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* 왼쪽: 텍스트 콘텐츠 */}
+              <AnimatedSection className="text-center lg:text-left">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6 }}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 rounded-full bg-gray-100 text-gray-700 text-xs md:text-sm font-medium mb-6 md:mb-8"
+                >
+                  <CpuChipIcon className="w-3 h-3 md:w-4 md:h-4" />
+                  {t('hardware.badge')}
+                </motion.div>
+                
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl apple-heading text-gray-900 mb-4 md:mb-6 leading-tight"
+                >
+                  {t('hardware.title')} <span className="text-gray-600">{t('hardware.titleHighlight')}</span>
+                </motion.h1>
+                
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-base md:text-lg lg:text-xl apple-subheading mb-8 md:mb-12"
+                >
+                  {t('hardware.subtitle')}
+                </motion.p>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start items-center mb-8 md:mb-12"
+                >
+                  <button className="btn btn-primary">
+                    {t('hardware.cta.explore')}
                   </button>
-                  
-                  {/* Google Play 버튼 */}
-                  <button className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-6 md:py-3 bg-black text-white rounded-xl md:rounded-2xl hover:bg-gray-800 transition-colors duration-200">
-                    <svg className="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
-                    </svg>
-                    <div className="text-left">
-                      <div className="text-xs opacity-70">GET IT ON</div>
-                      <div className="text-xs md:text-sm font-semibold">Google Play</div>
-                    </div>
+                  <button className="btn btn-secondary">
+                    {t('hardware.cta.demo')}
                   </button>
-                </div>
-              </motion.div>
-            </AnimatedSection>
+                </motion.div>
+                
+                {/* 앱 다운로드 버튼 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start items-center"
+                >
+                  <div className="text-xs md:text-sm text-gray-500 mb-3 sm:mb-0 sm:mr-4">
+                    {t('hardware.mobile.title')}
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                    {/* App Store 버튼 */}
+                    <button className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-6 md:py-3 bg-black text-white rounded-xl md:rounded-2xl hover:bg-gray-800 transition-colors duration-200">
+                      <svg className="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                      </svg>
+                      <div className="text-left">
+                        <div className="text-xs opacity-70">Download on the</div>
+                        <div className="text-xs md:text-sm font-semibold">App Store</div>
+                      </div>
+                    </button>
+                    
+                    {/* Google Play 버튼 */}
+                    <button className="flex items-center gap-2 md:gap-3 px-4 py-2.5 md:px-6 md:py-3 bg-black text-white rounded-xl md:rounded-2xl hover:bg-gray-800 transition-colors duration-200">
+                      <svg className="w-6 h-6 md:w-8 md:h-8" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                      </svg>
+                      <div className="text-left">
+                        <div className="text-xs opacity-70">GET IT ON</div>
+                        <div className="text-xs md:text-sm font-semibold">Google Play</div>
+                      </div>
+                    </button>
+                  </div>
+                </motion.div>
+              </AnimatedSection>
 
-            {/* 제품 이미지 */}
-            <AnimatedSection>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="relative"
-              >
-                <div className="w-full h-64 md:h-80 lg:h-96 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl md:rounded-3xl flex items-center justify-center shadow-2xl overflow-hidden">
-                  <img 
-                    src="/hardware/hero-product.png" 
-                    alt="MeetingMind Hardware Product" 
-                    className="w-full h-full object-contain p-8"
-                  />
-                </div>
-              </motion.div>
-            </AnimatedSection>
+              {/* 오른쪽: 제품 이미지 */}
+              <AnimatedSection>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                  className="relative"
+                >
+                  <div className="w-full h-80 md:h-96 lg:h-[32rem] bg-black rounded-2xl md:rounded-3xl flex items-center justify-center shadow-2xl overflow-hidden">
+                    <img 
+                      src="/hardware/hero-product.png" 
+                      alt="MeetingMind Hardware Product" 
+                      className="w-full h-full object-contain p-6"
+                    />
+                  </div>
+                </motion.div>
+              </AnimatedSection>
+            </div>
           </div>
         </section>
 
