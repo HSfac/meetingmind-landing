@@ -170,18 +170,6 @@
       "subtitle": "We provide optimal hardware solutions for your meeting environment and team size",
       "selected": "Selected",
       "0": {
-        "name": "MeetingMind Pod",
-        "description": "Smart meeting device placed at the center of the table",
-        "features": {
-          "0": "360° voice recognition",
-          "1": "Speaker separation technology",
-          "2": "Wireless charging",
-          "3": "LED status indicator"
-        },
-        "price": "$249",
-        "releaseDate": "Q3 2024"
-      },
-      "1": {
         "name": "MeetingMind Mic",
         "description": "Personal smart microphone",
         "features": {
@@ -192,6 +180,18 @@
         },
         "price": "$79",
         "releaseDate": "Q2 2024"
+      },
+      "1": {
+        "name": "MeetingMind Pod",
+        "description": "Smart meeting device placed at the center of the table",
+        "features": {
+          "0": "360° voice recognition",
+          "1": "Speaker separation technology",
+          "2": "Wireless charging",
+          "3": "LED status indicator"
+        },
+        "price": "$249",
+        "releaseDate": "Q3 2024"
       }
     },
     "cta": {

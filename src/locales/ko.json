@@ -170,18 +170,6 @@
       "subtitle": "회의 환경과 팀 규모에 맞는 최적의 하드웨어를 제공합니다",
       "selected": "선택됨",
       "0": {
-        "name": "MeetingMind Pod",
-        "description": "테이블 중앙에 배치하는 스마트 회의 장치",
-        "features": {
-          "0": "360도 음성 인식",
-          "1": "화자 분리 기술",
-          "2": "무선 충전",
-          "3": "LED 상태 표시"
-        },
-        "price": "₩299,000",
-        "releaseDate": "2024년 3분기"
-      },
-      "1": {
         "name": "MeetingMind Mic",
         "description": "개인용 스마트 마이크로폰",
         "features": {
@@ -192,6 +180,18 @@
         },
         "price": "₩89,000",
         "releaseDate": "2024년 2분기"
+      },
+      "1": {
+        "name": "MeetingMind Pod",
+        "description": "테이블 중앙에 배치하는 스마트 회의 장치",
+        "features": {
+          "0": "360도 음성 인식",
+          "1": "화자 분리 기술",
+          "2": "무선 충전",
+          "3": "LED 상태 표시"
+        },
+        "price": "₩299,000",
+        "releaseDate": "2024년 3분기"
       }
     },
     "cta": {

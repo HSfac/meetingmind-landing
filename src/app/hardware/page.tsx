@@ -50,8 +50,8 @@ export default function Hardware() {
       name: t('hardware.products.0.name'),
       price: t('hardware.products.0.price'),
       description: t('hardware.products.0.description'),
-      // 실제 이미지 경로를 여기에 추가하세요
-      image: '/hardware/product-1.png', // 이미지 파일을 여기에 넣으세요
+      // MeetingMind Mic 이미지
+      image: '/hardware/product-1.png',
       features: [
         t('hardware.products.0.features.0'),
         t('hardware.products.0.features.1'),
@@ -64,8 +64,8 @@ export default function Hardware() {
       name: t('hardware.products.1.name'),
       price: t('hardware.products.1.price'),
       description: t('hardware.products.1.description'),
-      // 실제 이미지 경로를 여기에 추가하세요
-      image: '/hardware/product-2.png', // 이미지 파일을 여기에 넣으세요
+      // MeetingMind Pod 이미지
+      image: '/hardware/product-2.png',
       features: [
         t('hardware.products.1.features.0'),
         t('hardware.products.1.features.1'),
