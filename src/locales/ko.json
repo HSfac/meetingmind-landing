@@ -704,6 +704,47 @@
       }
     }
   },
+  "aiProcessingDemo": {
+    "steps": {
+      "recording": {
+        "title": "음성 녹음 중...",
+        "subtitle": "실시간 음성 인식",
+        "progress": "음성 데이터 수집"
+      },
+      "loading": {
+        "title": "데이터 처리 중...",
+        "subtitle": "AI 엔진 로딩",
+        "progress": "AI 엔진 초기화"
+      },
+      "analysis": {
+        "title": "AI 요약 정리 중...",
+        "subtitle": "핵심 내용 분석",
+        "progress": "내용 분석 및 요약"
+      },
+      "mindmap": {
+        "title": "마인드맵 생성 완료!",
+        "subtitle": "시각화 완료"
+      }
+    },
+    "completion": {
+      "status": "생성 완료!",
+      "description": "마인드맵이 성공적으로 생성되었습니다",
+      "title": "AI 마인드맵 생성 완료"
+    },
+    "mindmap": {
+      "branches": {
+        "keyContent": "주요 내용",
+        "keyPoints": "핵심 포인트",
+        "actionItems": "액션 아이템",
+        "conclusions": "결론"
+      }
+    },
+    "stats": {
+      "accuracy": "정확도",
+      "processingTime": "처리 시간",
+      "timeUnit": "초"
+    }
+  },
   "footer": {
     "brand": {
       "description": "AI 기반 회의 솔루션으로 더 스마트한 회의 문화를 만들어갑니다."

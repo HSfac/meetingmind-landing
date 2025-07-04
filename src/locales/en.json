@@ -786,6 +786,47 @@
       }
     }
   },
+  "aiProcessingDemo": {
+    "steps": {
+      "recording": {
+        "title": "Recording voice...",
+        "subtitle": "Real-time voice recognition",
+        "progress": "Voice data collection"
+      },
+      "loading": {
+        "title": "Processing data...",
+        "subtitle": "AI engine loading",
+        "progress": "AI engine initialization"
+      },
+      "analysis": {
+        "title": "AI summarizing...",
+        "subtitle": "Analyzing key content",
+        "progress": "Content analysis and summary"
+      },
+      "mindmap": {
+        "title": "Mind-map generation complete!",
+        "subtitle": "Visualization complete"
+      }
+    },
+    "completion": {
+      "status": "Generation complete!",
+      "description": "Mind-map successfully generated",
+      "title": "AI mind-map generation complete"
+    },
+    "mindmap": {
+      "branches": {
+        "keyContent": "Key Content",
+        "keyPoints": "Key Points",
+        "actionItems": "Action Items",
+        "conclusions": "Conclusions"
+      }
+    },
+    "stats": {
+      "accuracy": "Accuracy",
+      "processingTime": "Processing Time",
+      "timeUnit": "s"
+    }
+  },
   "footer": {
     "brand": {
       "description": "Creating smarter meeting culture with AI-powered meeting solutions."
