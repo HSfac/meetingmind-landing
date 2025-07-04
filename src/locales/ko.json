@@ -198,7 +198,56 @@
       "explore": "제품 둘러보기",
       "demo": "데모 보기"
     },
-    "specs": {
+    "specifications": {
+      "title": "기술 사양",
+      "subtitle": "업계 최고 수준의 하드웨어 기술",
+      "items": {
+        "0": {
+          "title": "A15 Bionic 칩",
+          "description": "업계 최고 성능의 AI 처리 능력"
+        },
+        "1": {
+          "title": "12MP 카메라",
+          "description": "4K ProRes 동영상 녹화"
+        },
+        "2": {
+          "title": "Wi-Fi 6E",
+          "description": "초고속 무선 연결"
+        },
+        "3": {
+          "title": "24시간 배터리",
+          "description": "하루 종일 지속되는 배터리"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "고객 리뷰",
+      "subtitle": "실제 사용자들의 생생한 후기",
+      "items": {
+        "0": {
+          "name": "김민수",
+          "company": "테크 스타트업 CEO",
+          "content": "회의 효율성이 300% 향상되었습니다. 정말 혁신적인 제품이에요."
+        },
+        "1": {
+          "name": "박지영",
+          "company": "대기업 팀장",
+          "content": "AI 번역 기능이 정말 정확해요. 국제 회의에서 큰 도움이 됩니다."
+        }
+      }
+    },
+    "preorder": {
+      "title": "사전 예약",
+      "subtitle": "출시 소식을 가장 먼저 받아보세요",
+      "placeholder": "이메일 주소를 입력하세요",
+      "button": "예약하기",
+      "success": "사전 예약이 완료되었습니다!"
+    },
+         "mobile": {
+       "title": "모바일 앱으로도 만나보세요",
+       "releaseDate": "출시 예정"
+     },
+      "specs": {
       "title": "기술 사양",
       "subtitle": "의 상세한 기술 사양을 확인하세요",
       "technical": "기술 사양",

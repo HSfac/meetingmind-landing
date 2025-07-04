@@ -77,23 +77,23 @@ export default function Hardware() {
   ]
 
   const specifications = [
-    { icon: CpuChipIcon, title: 'A15 Bionic 칩', description: '업계 최고 성능의 AI 처리 능력' },
-    { icon: DevicePhoneMobileIcon, title: '12MP 카메라', description: '4K ProRes 동영상 녹화' },
-    { icon: WifiIcon, title: 'Wi-Fi 6E', description: '초고속 무선 연결' },
-    { icon: Battery0Icon, title: '24시간 배터리', description: '하루 종일 지속되는 배터리' }
+    { icon: CpuChipIcon, title: t('hardware.specifications.items.0.title'), description: t('hardware.specifications.items.0.description') },
+    { icon: DevicePhoneMobileIcon, title: t('hardware.specifications.items.1.title'), description: t('hardware.specifications.items.1.description') },
+    { icon: WifiIcon, title: t('hardware.specifications.items.2.title'), description: t('hardware.specifications.items.2.description') },
+    { icon: Battery0Icon, title: t('hardware.specifications.items.3.title'), description: t('hardware.specifications.items.3.description') }
   ]
 
   const testimonials = [
     {
-      name: '김민수',
-      company: '테크 스타트업 CEO',
-      content: '회의 효율성이 300% 향상되었습니다. 정말 혁신적인 제품이에요.',
+      name: t('hardware.testimonials.items.0.name'),
+      company: t('hardware.testimonials.items.0.company'),
+      content: t('hardware.testimonials.items.0.content'),
       rating: 5
     },
     {
-      name: '박지영',
-      company: '대기업 팀장',
-      content: 'AI 번역 기능이 정말 정확해요. 국제 회의에서 큰 도움이 됩니다.',
+      name: t('hardware.testimonials.items.1.name'),
+      company: t('hardware.testimonials.items.1.company'),
+      content: t('hardware.testimonials.items.1.content'),
       rating: 5
     }
   ]
@@ -175,7 +175,7 @@ export default function Hardware() {
                 className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center mb-12 md:mb-16"
               >
                 <div className="text-xs md:text-sm text-gray-500 mb-3 sm:mb-0 sm:mr-4">
-                  모바일 앱으로도 만나보세요
+                  {t('hardware.mobile.title')}
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
                   {/* App Store 버튼 */}
@@ -260,7 +260,7 @@ export default function Hardware() {
                     </div>
                     <p className="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">{product.description}</p>
                     <div className="text-xs md:text-sm text-gray-500 mb-3 md:mb-4">
-                      출시 예정: {product.releaseDate}
+                      {t('hardware.mobile.releaseDate')}: {product.releaseDate}
                     </div>
                   </div>
                   
@@ -291,10 +291,10 @@ export default function Hardware() {
           <div className="max-w-7xl mx-auto px-4 md:px-6">
             <AnimatedSection className="text-center mb-12 md:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl apple-heading text-gray-900 mb-3 md:mb-4">
-                기술 사양
+                {t('hardware.specifications.title')}
               </h2>
               <p className="text-base md:text-lg lg:text-xl apple-subheading max-w-2xl mx-auto">
-                업계 최고 수준의 하드웨어 기술
+                {t('hardware.specifications.subtitle')}
               </p>
             </AnimatedSection>
             
@@ -324,10 +324,10 @@ export default function Hardware() {
           <div className="max-w-6xl mx-auto px-4 md:px-6">
             <AnimatedSection className="text-center mb-12 md:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl apple-heading text-gray-900 mb-3 md:mb-4">
-                고객 리뷰
+                {t('hardware.testimonials.title')}
               </h2>
               <p className="text-base md:text-lg lg:text-xl apple-subheading max-w-2xl mx-auto">
-                실제 사용자들의 생생한 후기
+                {t('hardware.testimonials.subtitle')}
               </p>
             </AnimatedSection>
             
@@ -377,10 +377,10 @@ export default function Hardware() {
           <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
             <AnimatedSection>
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl apple-heading text-gray-900 mb-3 md:mb-4">
-                사전 예약
+                {t('hardware.preorder.title')}
               </h2>
               <p className="text-base md:text-lg lg:text-xl apple-subheading mb-6 md:mb-8">
-                출시 소식을 가장 먼저 받아보세요
+                {t('hardware.preorder.subtitle')}
               </p>
               
               <form onSubmit={handlePreorder} className="max-w-md mx-auto">
@@ -389,7 +389,7 @@ export default function Hardware() {
                     type="email"
                     value={preorderEmail}
                     onChange={(e) => setPreorderEmail(e.target.value)}
-                    placeholder="이메일 주소를 입력하세요"
+                    placeholder={t('hardware.preorder.placeholder')}
                     className="flex-1 px-3 py-2.5 md:px-4 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-gray-900 text-sm md:text-base"
                     required
                   />
@@ -401,7 +401,7 @@ export default function Hardware() {
                     {preorderStatus === 'loading' ? (
                       <div className="animate-spin rounded-full h-4 w-4 md:h-5 md:w-5 border-2 border-white border-t-transparent"></div>
                     ) : (
-                      '예약하기'
+                      t('hardware.preorder.button')
                     )}
                   </button>
                 </div>
@@ -413,7 +413,7 @@ export default function Hardware() {
                     className="mt-4 flex items-center justify-center gap-2 text-green-600"
                   >
                     <CheckCircleIcon className="w-4 h-4 md:w-5 md:h-5" />
-                    <span className="text-sm md:text-base">사전 예약이 완료되었습니다!</span>
+                    <span className="text-sm md:text-base">{t('hardware.preorder.success')}</span>
                   </motion.div>
                 )}
               </form>

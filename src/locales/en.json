@@ -198,7 +198,56 @@
       "explore": "Explore Products",
       "demo": "Watch Demo"
     },
-    "specs": {
+    "specifications": {
+      "title": "Technical Specifications",
+      "subtitle": "Industry-leading hardware technology",
+      "items": {
+        "0": {
+          "title": "A15 Bionic Chip",
+          "description": "Industry-leading AI processing power"
+        },
+        "1": {
+          "title": "12MP Camera",
+          "description": "4K ProRes video recording"
+        },
+        "2": {
+          "title": "Wi-Fi 6E",
+          "description": "Ultra-fast wireless connectivity"
+        },
+        "3": {
+          "title": "24-Hour Battery",
+          "description": "All-day lasting battery life"
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Customer Reviews",
+      "subtitle": "Real user testimonials",
+      "items": {
+        "0": {
+          "name": "Minsu Kim",
+          "company": "Tech Startup CEO",
+          "content": "Meeting efficiency improved by 300%. This is truly an innovative product."
+        },
+        "1": {
+          "name": "Jiyoung Park",
+          "company": "Enterprise Team Leader",
+          "content": "AI translation feature is incredibly accurate. It's a great help in international meetings."
+        }
+      }
+    },
+    "preorder": {
+      "title": "Pre-order",
+      "subtitle": "Be the first to know about the launch",
+      "placeholder": "Enter your email address",
+      "button": "Reserve Now",
+      "success": "Pre-order completed successfully!"
+    },
+         "mobile": {
+       "title": "Also available on mobile",
+       "releaseDate": "Coming Soon"
+     },
+      "specs": {
       "title": "Technical Specifications",
       "subtitle": "detailed technical specifications",
       "technical": "Technical Specs",
